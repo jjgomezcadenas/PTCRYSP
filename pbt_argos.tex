@@ -1,7 +1,33 @@
 % Proton therapy presentation for funding evaluation.
 % Compile: latexmk -pdf pbt_argos.tex
 \documentclass[aspectratio=169,11pt]{beamer}
+%%%FLG%%%
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{hyperref}
+\usepackage{ragged2e}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+% Optional palette
+\definecolor{darkred}{RGB}{145,35,45}
+\definecolor{axisgray}{RGB}{80,80,80}
+\definecolor{gridgray}{RGB}{215,220,225}
+\definecolor{IBAgreen}{RGB}{102,194,45}
+\definecolor{navy}{RGB}{20,61,98}
+\definecolor{grayA}{RGB}{200,203,208}
+\definecolor{grayB}{RGB}{224,224,224}
+\definecolor{grayC}{RGB}{155,155,155}
+\definecolor{grayD}{RGB}{190,205,225}
+\definecolor{darkred}{RGB}{145,35,45}
+\definecolor{axisgray}{RGB}{70,70,70}
+\definecolor{gridgray}{RGB}{215,220,225}
+\definecolor{titleblue}{RGB}{24,82,130}
+\definecolor{textgray}{RGB}{85,95,110}
 
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{frametitle}{fg=titleblue}
+\setbeamerfont{frametitle}{series=\bfseries,size=\Large}
+%%%%%%%
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{helvet}
@@ -518,6 +544,31 @@ Compact geometry for microsatellites or high-altitude balloons; proposed LUR-50 
 \source{https://doi.org/10.1016/j.astropartphys.2025.103135}{R. Soleti, J.J. Gomez-Cadenas et al., Astropart. Phys. 172, 103135 (2025).}
 \end{frame}
 
+\begin{frame}{COCOA: demonstrated 
+scalability and efficiency}
+  \begin{columns}[T]
+    \begin{column}{0.58\textwidth}
+      \begin{itemize}
+        \item \hi{Scalability}: the scatterer is an opaque liquid scintillator
+          read by a lattice of WLS fibres, so the sensitive volume scales with
+          the cost of liquid and fibres, not with crystal growth. Inorganic
+          crystals and CZT are limited to cm-scale units that must be tiled
+          at high cost.
+        \item \hi{Efficiency}: stochastic light confinement resolves multiple
+          Compton vertices inside a single monolithic volume, allowing a thick,
+          large-acceptance scatterer.
+        \item Gamma-ray imaging has already been \hi{demonstrated} in a
+          benchtop experiment.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \includegraphics[width=0.78\linewidth]{figs/benchtop.png}\\
+      {\scriptsize\color{crGrey} Benchtop setup and reconstructed $^{60}$Co image.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
 \begin{frame}{CRYSP: \emph{CRYogenic Sensitive PET}}
   \begin{columns}[T]
     \begin{column}{0.6\textwidth}
@@ -712,5 +763,1425 @@ The model could be extensively tested and optimised in \hi{Donostia}, then expan
 \item Initial operation.
 \end{enumerate}
 \end{frame}
+
+
+\begin{frame}{Market Size: The Vision of Independent Consultants}
+
+\centering
+
+\renewcommand{\arraystretch}{1.18}
+\setlength{\tabcolsep}{4pt}
+
+\footnotesize
+
+\begin{tabular}{@{}p{4.0cm} c c c c@{}}
+\toprule
+\textbf{Source} &
+\textbf{Base year} &
+\textbf{Market size} &
+\textbf{Forecast} &
+\textbf{CAGR} \\
+\midrule
+
+\href{https://www.grandviewresearch.com/industry-analysis/proton-therapy-systems-market}
+{Grand View Research}
+& 2023
+& \$749.5 M
+& \$1.22 B in 2030
+& 7.3\% \\
+
+\href{https://www.researchandmarkets.com/reports/6091787/proton-therapy-market-forecasts}
+{Knowledge Sourcing Intelligence}
+& 2025
+& \$959 M
+& \$1.27 B in 2030
+& 5.84\% \\
+
+\href{https://www.fundamentalbusinessinsights.com/industry-report/proton-therapy-systems-market-8081}
+{Fundamental Business Insights}
+& 2025
+& \$849 M
+& \$1.73 B in 2035
+& 7.4\% \\
+
+\href{https://www.6wresearch.com/industry-report/global-proton-therapy-systems-market}
+{6Wresearch}
+& 2024
+& \$1.30 B
+& \$2.40 B in 2031
+& 8.4\% \\
+
+\href{https://www.thebusinessresearchcompany.com/report/proton-therapy-systems-global-market-report}
+{The Business Research Company}
+& 2025
+& \$1.43 B
+& \$1.58 B in 2026
+& 10.5\% \\
+
+\href{https://www.researchandmarkets.com/reports/5954217/proton-therapy-systems-market}
+{The Insight Partners}
+& 2024
+& \$1.56 B
+& \$3.27 B in 2031
+& 11.2\% \\
+
+\href{https://www.researchandmarkets.com/reports/5309802/proton-therapy-global-strategic-business-report}
+{Market Glass}
+& 2024
+& \$696 M
+& \$1.50 B in 2030
+& 13.5\% \\
+
+\bottomrule
+\end{tabular}
+
+\vspace{0.35cm}
+
+\tiny
+Market definitions and scopes differ across reports. Differences may reflect the inclusion or exclusion
+of products and services.
+
+\vspace{0.3cm}
+
+\normalsize
+\centering
+\textbf{
+Independent estimates consistently place the current global
+proton-therapy market in the order of \$1 billion per year.
+}
+\end{frame}
+
+\begin{frame}{Market Share}
+
+\vspace{0.1cm}
+
+\begin{columns}[T,onlytextwidth]
+
+%================================================
+% LEFT COLUMN
+%================================================
+\column{0.42\textwidth}
+
+
+{\small
+IBA originated in Belgium in the early 1980s as a university-led effort to develop medical cyclotrons, and evolved into the world's leading provider of proton-therapy systems and particle-accelerator technology.
+}
+
+\vspace{0.50cm}
+
+\small{
+We will analyse several elements of information provided by this actor in the newest Financial Reports (FY2025).}
+\vspace{0.50cm}
+
+{\scriptsize
+Source:
+\href{https://www.iba-worldwide.com/sites/default/files/2026-03/iba-fy25-results-presentation-en.pdf}
+{IBA FY2025 Results Presentation}.
+}
+
+%================================================
+% RIGHT COLUMN
+%================================================
+\column{0.56\textwidth}
+
+\centering
+
+{\large\bfseries Total market share in PT rooms}
+
+\vspace{0.18cm}
+
+\begin{tikzpicture}[scale=0.88]
+
+\def\radius{2.45}
+
+%------------------------------------------------
+% PIE CHART
+%------------------------------------------------
+
+% IBA: 42% = 151.2 degrees
+\fill[IBAgreen]
+(0,0) -- (90:\radius)
+arc[start angle=90,end angle=-61.2,radius=\radius]
+-- cycle;
+
+% Varian: 21% = 75.6 degrees
+\fill[grayA]
+(0,0) -- (-61.2:\radius)
+arc[start angle=-61.2,end angle=-136.8,radius=\radius]
+-- cycle;
+
+% Hitachi: 19% = 68.4 degrees
+\fill[grayB]
+(0,0) -- (-136.8:\radius)
+arc[start angle=-136.8,end angle=-205.2,radius=\radius]
+-- cycle;
+
+% Mevion: 9% = 32.4 degrees
+\fill[grayC]
+(0,0) -- (-205.2:\radius)
+arc[start angle=-205.2,end angle=-237.6,radius=\radius]
+-- cycle;
+
+% Others: 9% = 32.4 degrees
+\fill[grayD]
+(0,0) -- (-237.6:\radius)
+arc[start angle=-237.6,end angle=-270,radius=\radius]
+-- cycle;
+
+%------------------------------------------------
+% LABELS
+%------------------------------------------------
+
+% IBA
+\node[
+    align=center,
+    text=white,
+    font=\bfseries\footnotesize
+]
+at (14:1.62)
+{IBA\\42\%};
+
+% Varian
+\node[
+    align=center,
+    text=black,
+    font=\bfseries\scriptsize
+]
+at (-99:1.68)
+{Varian\\Siemens\\21\%};
+
+% Hitachi
+\node[
+    align=center,
+    text=black,
+    font=\bfseries\scriptsize
+]
+at (-171:1.68)
+{Hitachi\\19\%};
+
+% Mevion
+\node[
+    align=center,
+    text=white,
+    font=\bfseries\scriptsize
+]
+at (-221:1.78)
+{Mevion\\9\%};
+
+% Others
+\node[
+    align=center,
+    text=black,
+    font=\bfseries\scriptsize
+]
+at (111:1.78)
+{Others\\9\%};
+
+\end{tikzpicture}
+
+\vspace{0.02cm}
+
+{\tiny
+Research centres and Rutherford Cancer Centres excluded.//
+Competitors' room counts are restated by IBA to include
+previously unpublished or unconfirmed orders.
+}
+
+\end{columns}
+
+\vfill
+
+\end{frame}
+
+
+
+\begin{frame}{Proton therapy adoption}
+
+\begin{columns}[T,onlytextwidth]
+
+% =========================================================
+% LEFT COLUMN — ORIGINAL GRAPH
+% =========================================================
+\column{0.62\textwidth}
+
+\centering
+
+\includegraphics[width=\linewidth,keepaspectratio]{figs/ptcog_patients.png}
+
+\vspace{0.15cm}
+
+{\scriptsize
+Source:
+\href{https://ptcog.online/past-conferences/statistics-of-patients-treated-in-particle-therapy-facilities-worldwide/}
+{PTCOG Patient Statistics}.
+}
+
+
+% =========================================================
+% RIGHT COLUMN — TEXT
+% =========================================================
+\column{0.34\textwidth}
+
+\vspace{0.35cm}
+
+\vspace{0.35cm}
+
+{\small
+The number of patients treated with proton therapy has increased steadily at exponential pace
+}
+
+\vspace{0.45cm}
+
+{\tiny
+\begin{itemize}
+    \item \textbf{Expanding installed base}\\
+More centres and treatment rooms.
+\item\textbf{Technology maturation}\\
+More compact and standardised proton delivery systems.
+\item \textbf{Growing clinical evidence}\\
+Supporting wider adoption.
+\end{itemize}
+
+}
+
+\vspace{0.50cm}
+
+{\small\bfseries
+Proton therapy is becoming an established clinical technology.
+}
+
+\end{columns}
+
+\end{frame}
+
+% Required packages in the preamble:
+% \usepackage{graphicx}
+% \usepackage{hyperref}
+% \usepackage{xcolor}
+
+\definecolor{PTblue}{RGB}{27,84,130}
+\definecolor{PTred}{RGB}{145,45,55}
+\definecolor{PTgray}{RGB}{85,95,110}
+
+\begin{frame}{Market dynamics and Prospectives}
+
+\vspace{0.10cm}
+
+\begin{columns}[T,onlytextwidth]
+
+% =========================================================
+% LEFT COLUMN — IBA FIGURE
+% =========================================================
+\column{0.60\textwidth}
+
+\centering
+
+\includegraphics[
+    width=\linewidth,
+    keepaspectratio
+]{figs/iba_sites.png}
+
+\vspace{0.15cm}
+
+{\small\color{PTgray}
+Source:
+\href{https://www.iba-worldwide.com/sites/default/files/2025-08/iba-hy25-results_presentation.pdf}
+{IBA Half-Year Results 2025}.
+}
+
+
+% =========================================================
+% RIGHT COLUMN — INTERPRETATION
+% =========================================================
+\column{0.35\textwidth}
+
+\vspace{0.30cm}
+
+{\Large\bfseries\color{PTblue}
+A market still expanding
+}
+
+\vspace{0.40cm}
+
+{\small\color{PTgray}
+IBA, the global market leader, reports:
+}
+
+\vspace{0.45cm}
+
+
+
+% ---------------------------------------------------------
+% MAIN TAKEAWAY
+% ---------------------------------------------------------
+
+
+{\LARGE
+\bfseries
+\color{PTred}
+45\%
+}
+
+\vspace{0.08cm}
+\begin{center}
+{\normalsize\bfseries
+of IBA's current portfolio
+}
+
+\vspace{0.05cm}
+
+{\small
+is still to become operational
+}
+{\small \color{PTgray}
+This indicates substantial near-term growth
+of the installed base.
+}
+\end{center}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Clinical evidence approaching an inflection point}
+
+\begin{columns}[T,onlytextwidth]
+
+% =========================================================
+% LEFT COLUMN
+% =========================================================
+\column{0.63\textwidth}
+
+{\scriptsize
+\textbf{Historically, proton therapy faced an evidence gap:}
+its dosimetric advantages were clear, but randomized clinical evidence
+of superiority over modern photon radiotherapy remained limited.
+}
+
+\vspace{0.25cm}
+
+\centering
+
+\includegraphics[
+    width=\linewidth,
+    keepaspectratio
+]{figs/proton_trials_phase3.png}
+
+\vspace{0.10cm}
+
+{\tiny
+Source:
+\href{https://www.iba-worldwide.com/financial-presentations}
+{IBA investor presentation, 2026};
+trial data from ClinicalTrials.gov.
+}
+
+% =========================================================
+% RIGHT COLUMN
+% =========================================================
+\column{0.33\textwidth}
+
+{\large\bfseries
+The evidence base is changing
+}
+
+\vspace{0.35cm}
+
+{\LARGE\bfseries\color{PTred}
+35+
+}
+
+{\small
+major Phase III trials
+}
+
+
+{\tiny
+\emph{A large concentration of trial readouts is expected between \textbf{2026 and 2030}.}
+}
+
+\vspace{0.45cm}
+
+{\scriptsize\bfseries
+Early Phase III results:
+}
+\begin{itemize}
+    \item {\tiny
+\textbf{Oropharyngeal cancer:}
+IMPT showed non-inferior disease control and lower severe toxicity than IMRT. Frank et al.,
+\href{https://doi.org/10.1016/S0140-6736(25)01962-2}
+{\textit{The Lancet}, 2025}.
+}
+\item {\tiny
+\textbf{TORPEdO} IMPT and IMRT showed similar quality of life and disease control. Thomson et al.,
+\href{https://doi.org/10.1016/S0140-6736(26)00314-4}
+{\textit{The Lancet}, 2026}.
+}
+
+\end{itemize}
+
+
+
+
+\end{columns}
+
+\end{frame}
+
+% Required packages:
+% \usepackage{graphicx}
+% \usepackage{xcolor}
+% \usepackage{hyperref}
+
+\definecolor{PTblue}{RGB}{25,78,125}
+\definecolor{PTred}{RGB}{145,45,55}
+\definecolor{PTgray}{RGB}{80,90,105}
+
+\begin{frame}{The Proton Therapy Paradox}
+
+
+\begin{columns}[T,onlytextwidth]
+
+% ============================================================
+% COLUMN 1 — SOURCES OF UNCERTAINTY
+% ============================================================
+\column{0.27\textwidth}
+\begin{center}
+    
+{\scriptsize \bfseries\color{PTblue}
+Sources of uncertainty
+}
+\end{center}
+\tiny{
+\begin{itemize}
+\item \textbf{Anatomical changes:}Tumour and organ variation
+
+\item \textbf{Positioning \& motion}: Setup and breathing
+
+\item \textbf{Imaging \& modelling: }Stopping-power and range estimation
+
+\item \textbf{Beam delivery:}Energy, range and spot position
+
+\end{itemize}
+
+}
+\begin{center}
+{\Large\bfseries\color{PTred}
+$\Downarrow$
+}
+
+\vspace{0.08cm}
+
+{\scriptsize\bfseries\color{PTred}
+Uncertainty in where
+the beam actually stops
+}
+\end{center}
+
+
+% ============================================================
+% COLUMN 2 — CLINICAL CONSEQUENCES
+% ============================================================
+\column{0.30\textwidth}
+
+\centering
+
+{\normalsize \bfseries\color{PTblue}
+Clinical consequence
+}
+
+\vspace{0.18cm}
+
+\includegraphics[
+    width=0.94\linewidth
+]{figs/under.png}
+
+\vspace{0.15cm}
+
+\includegraphics[
+    width=0.94\linewidth
+]{figs/over.png}
+
+
+% ============================================================
+% COLUMN 3 — CONSERVATIVE RESPONSE
+% ============================================================
+\column{0.37\textwidth}
+
+{\normalsize\bfseries\color{PTblue}
+Conservative clinical response
+}
+
+\vspace{0.30cm}
+
+{\tiny
+\begin{itemize}
+    \item \textbf{Robust treatment planning:} Range setup uncertainties are explicitly incorporated into the plan.
+    \item \textbf{Conservative beam selection:} Avoidance of beam paths where range errors could place the distal edge
+inside a critical structure.
+    \item \textbf{Loss of conformality:} Extra robustness can increase irradiation of normal tissue and partially erode the physical advantage of protons.
+    \item\textbf{More verification and adaptation:} Repeat imaging, robustness evaluation and, when needed, adaptive replanning.
+
+\end{itemize}
+}
+\begin{center}
+{\Large\bfseries\color{PTred}
+$\Downarrow$
+}
+
+\vspace{0.08cm}
+
+{\scriptsize\bfseries\color{PTred}
+Uncertainty can restrict optimal beam arrangements and reduce the expected benefit in anatomically variable or particularly demanding cases.
+}
+\end{center}
+
+\end{columns}
+
+\vfill
+
+\begin{center}
+{\large\bfseries\color{PTred}
+The paradox: greater physical precision requires greater confidence in what was actually delivered.
+}
+\end{center}
+
+\vspace{0.08cm}
+
+{\tiny\color{PTgray}
+References:
+\href{https://doi.org/10.1016/j.radonc.2024.110365}
+{Robustness evaluation, Radiother. Oncol. 197 (2024) 110365};
+\href{https://doi.org/10.1016/j.phro.2024.100632}
+{Tarp et al., Phys. Imaging Radiat. Oncol. 31 (2024) 100632};
+\href{https://doi.org/10.1016/j.phro.2023.100412}
+{International survey of adaptive particle therapy, 2023}.
+}
+
+\end{frame}
+
+\begin{frame}{Range uncertainty is a clinically relevant limitation}
+
+\vspace{-0.05cm}
+
+\begin{center}
+{\small\bfseries\color{darkred}
+Range uncertainty has measurable dosimetric consequences and already drives additional clinical adaptation workflows.
+}
+\end{center}
+
+\vspace{0.10cm}
+
+\begin{columns}[T,onlytextwidth]
+
+% ============================================================
+% LEFT COLUMN
+% ============================================================
+\column{0.49\textwidth}
+
+{\footnotesize\bfseries\color{PTblue}
+Dosimetric impact
+}
+
+\vspace{0.10cm}
+
+{\tiny
+
+\textbf{Tarp et al., 2024}  
+Reducing assumed range uncertainty from 3.5\% to 2.0\% reduced irradiation of normal tissue in brain, head-and-neck and breast plans.  
+\href{https://doi.org/10.1016/j.phro.2024.100632}
+{\textit{Phys. Imaging Radiat. Oncol.} 31 (2024) 100632}
+
+\vspace{0.16cm}
+
+\textbf{Taasti et al., 2023}  
+Reducing range uncertainty from 3\% to 2\% reduced dose to at least one OAR in \textbf{89\% of patients}; \textbf{44\%} showed a predicted reduction in toxicity.  
+\href{https://pmc.ncbi.nlm.nih.gov/articles/PMC10461272/}
+{Clinical benefit of range-uncertainty reduction}
+
+\vspace{0.16cm}
+
+\textbf{EPTN systematic review, 2024}  
+Higher proton dose conformity comes at the cost of greater sensitivity to physical, anatomical and positioning uncertainties.  
+\href{https://doi.org/10.1016/j.radonc.2024.110365}
+{\textit{Radiother. Oncol.} 197 (2024) 110365}
+
+}
+
+% ============================================================
+% RIGHT COLUMN
+% ============================================================
+\column{0.49\textwidth}
+
+{\footnotesize\bfseries\color{PTblue}
+Clinical workflow impact
+}
+
+\vspace{0.10cm}
+
+{\tiny
+
+\textbf{Trnkova et al., 2023}  
+\textbf{84\% of surveyed particle-therapy centres} use treatment adaptation to account for changes occurring between treatment fractions. A major barrier was the lack of integrated and efficient workflows.  
+\href{https://doi.org/10.1016/j.phro.2023.100442}
+{\textit{Phys. Imaging Radiat. Oncol.} 26 (2023) 100442}
+
+\vspace{0.16cm}
+
+\textbf{Clinical management review, 2024}  
+Range errors can cause target undershoot or distal overshoot into normal tissue, compromising part of the theoretical dosimetric advantage of particle therapy.  
+\href{https://doi.org/10.1051/vcm/2024004}
+{Beam range uncertainty and its clinical management}
+
+}
+
+\end{columns}
+\end{frame}
+
+
+\begin{frame}{Reaction from the Industry}
+\begin{center}
+{\small\bfseries\color{darkred}
+The major players already recognise the significance of the issue and are adapting their strategies accordingly.
+}
+
+
+\vspace{0.10cm}
+\includegraphics[width=0.8\linewidth]{figs/iba_strat.png}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}{In-vivo verification: measuring what was actually delivered}
+
+\vspace{-0.05cm}
+
+\begin{center}
+{\small\bfseries
+In-vivo verification uses signals generated by the treatment itself to test whether the
+proton beam propagated through the patient as expected.
+}
+\end{center}
+
+\vspace{0.15cm}
+
+\begin{columns}[T,onlytextwidth]
+
+% ============================================================
+% LEFT COLUMN
+% ============================================================
+\column{0.32\textwidth}
+
+{\footnotesize\bfseries\color{PTblue}
+PET-based verification
+}
+
+\vspace{0.08cm}
+
+{\tiny \linespread{0.75}\selectfont
+Proton interactions create $\beta^+$ emitters along the beam path.
+Their spatial distribution provides an indirect measurement of where irradiation occurred.
+}
+
+\vspace{0.12cm}
+
+{\scriptsize\bfseries
+Clinical examples
+}
+\tiny{
+\begin{itemize}
+    \item \textbf{Nishio et al. -- BOLPs-RGp, Japan}\\
+Gantry-mounted PET used in 48 patients for daily beam-delivery verification.
+\href{https://doi.org/10.1016/j.ijrobp.2009.05.065}
+{\textit{Int. J. Radiat. Oncol. Biol. Phys.} 76 (2010) 277--286}
+\item \textbf{Moglioni et al. -- INSIDE, CNAO}
+In-beam PET detected abnormal inter-fractional range variations associated with anatomical changes.
+\href{https://doi.org/10.3389/fonc.2022.929949}
+{\textit{Front. Oncol.} 12 (2022) 929949}
+\item 
+\textbf{Zhu et al. -- MGH NeuroPET}
+In-room PET enabled acquisition within minutes after treatment, reducing biological washout.
+\href{https://pubmed.ncbi.nlm.nih.gov/21677366/}
+{\textit{Phys. Med. Biol.} 56 (2011)}
+\end{itemize}
+
+
+}
+
+
+% ============================================================
+% CENTRE COLUMN
+% ============================================================
+\column{0.32\textwidth}
+
+{\footnotesize\bfseries\color{PTblue}
+Prompt-gamma verification
+}
+
+\vspace{0.08cm}
+
+{\tiny\linespread{0.75}\selectfont
+Prompt $\gamma$ rays are produced immediately during proton interactions,
+enabling verification \textbf{while the beam is being delivered}.
+}
+
+\vspace{0.12cm}
+
+Hay que corregir un bug en lo que esta comentado
+%{\scriptsize\bfseries Clinical and technological progress}
+%\tiny{
+%\begin{itemize}
+%    \item \textbf{Richter et al., 2016}
+%First clinical application of prompt-gamma imaging; inter-%fractional range variations were measured during treatment.
+%\href{https://pubmed.ncbi.nlm.nih.gov/26774764/}
+%  \item  {\textit{Radiother. Oncol.} 118 (2016)}\textbf{Xie et al., 2017} Clinical pencil-beam-scanning study demonstrated millimetre-scale range verification. \href{https://pubmed.ncbi.nlm.nih.gov/28816148/}
+%    \item{\textit{Int. J. Radiat. Oncol. Biol. Phys.} 99 (2017)}\textbf{Safavi et al., 2026} Nozzle-mounted Compton-camera system integrated with a clinical proton gantry.\href{https://pubmed.ncbi.nlm.nih.gov/42282050/}
+%\end{itemize}
+%}
+
+
+% ============================================================
+% RIGHT COLUMN
+% ============================================================
+\column{0.32\textwidth}
+
+{\footnotesize\bfseries\color{PTblue}
+Towards intervention
+}
+
+\vspace{0.08cm}
+
+{\scriptsize
+The objective is not simply to generate another image, but to provide an independent check
+of the delivered treatment.
+}
+
+\vspace{0.12cm}
+
+{\scriptsize
+Verification can potentially identify:
+}
+
+\vspace{0.04cm}
+
+{\scriptsize\bfseries
+Unexpected range shifts
+
+\vspace{0.06cm}
+Anatomical changes
+
+\vspace{0.06cm}
+Setup or modelling errors
+
+\vspace{0.06cm}
+Fractions requiring review or adaptation
+}
+
+\vspace{0.15cm}
+
+{\scriptsize
+The concept is now moving towards adaptive workflows, where in-vivo verification can act
+as a safety layer for deciding when additional imaging or replanning is required.
+}
+
+\vspace{0.08cm}
+
+{\tiny
+\href{https://doi.org/10.1002/mp.70142}
+{Bertschi et al., \textit{Med. Phys.} 52 (2025) e70142}
+}
+
+\end{columns}
+
+\vspace{0.12cm}
+
+\begin{center}
+{\small\bfseries\color{darkred}
+The goal is to replace part of today's assumed uncertainty
+with patient-specific information from the delivered fraction.
+}
+\end{center}
+
+\end{frame}
+
+\begin{frame}{Why has in-vivo verification not become routine?}
+
+\vspace{0.10cm}
+
+\begin{center}
+{\scriptsize\bfseries
+The physics feasibility has been demonstrated.
+The remaining challenge is turning a measurement into a clinical decision.
+}
+\end{center}
+
+\vspace{0.35cm}
+
+\begin{columns}[T,onlytextwidth]
+
+% ============================================================
+% 1
+% ============================================================
+\column{0.23\textwidth}
+
+{\tiny\bfseries\color{PTblue}
+1. Measure
+}
+
+\vspace{0.12cm}
+
+{\tiny
+PET, prompt-$\gamma$ and other techniques can detect
+signals correlated with the proton path.
+}
+
+\vspace{0.25cm}
+
+{\tiny\bfseries
+This has been demonstrated clinically for more than a decade.
+}
+
+
+% ============================================================
+% 2
+% ============================================================
+\column{0.23\textwidth}
+
+{\scriptsize\bfseries\color{PTblue}
+2. Interpret
+}
+
+\vspace{0.12cm}
+
+{\tiny
+The measured signal is \textbf{not the absorbed dose}.
+It must be related to range using physical and anatomical models.
+}
+
+\vspace{0.25cm}
+
+{\tiny
+A deviation may originate from anatomy, setup, imaging,
+beam delivery or modelling.
+}
+
+
+% ============================================================
+% 3
+% ============================================================
+\column{0.23\textwidth}
+
+{\scriptsize\bfseries\color{darkred}
+3. Decide
+}
+
+\vspace{0.12cm}
+
+{\tiny
+A measured range difference does not automatically tell the clinician
+whether treatment should continue, be reviewed, re-imaged or replanned.
+}
+
+\vspace{0.25cm}
+
+{\tiny\bfseries
+This is the critical translation step.
+}
+
+
+% ============================================================
+% 4
+% ============================================================
+\column{0.23\textwidth}
+
+{\scriptsize\bfseries\color{PTblue}
+4. Integrate
+}
+
+\vspace{0.12cm}
+
+{\tiny
+A commercial system must fit the gantry and workflow,
+analyse data automatically and avoid reducing patient throughput.
+}
+
+\vspace{0.25cm}
+
+{\tiny
+Clinical benefit and economic value must then justify the added complexity.
+}
+
+\end{columns}
+
+\vspace{0.55cm}
+
+\begin{center}
+{\footnotesize\bfseries\color{darkred}
+The bottleneck has shifted from detecting the signal
+to making the information actionable.
+}
+\end{center}
+
+{\tiny\color{gray}
+Examples and reviews:
+\href{https://doi.org/10.1016/j.ijrobp.2009.05.065}
+{Nishio et al., IJROBP 76 (2010)};
+\href{https://pubmed.ncbi.nlm.nih.gov/21677366/}
+{Zhu et al., PMB 56 (2011)};
+\href{https://doi.org/10.1016/j.radonc.2016.01.004}
+{Richter et al., Radiother. Oncol. 118 (2016)};
+\href{https://pmc.ncbi.nlm.nih.gov/articles/PMC12630069/}
+{Bertschi et al., 2025}.
+}
+
+\end{frame}
+
+\begin{frame}{Two decades of in-vivo verification: what have we learned?}
+
+\vspace{0.10cm}
+
+\renewcommand{\arraystretch}{1.32}
+\setlength{\tabcolsep}{4pt}
+
+\begin{center}
+\tiny
+
+\begin{tabular}{@{}p{2.25cm} p{3.25cm} p{3.45cm} p{3.45cm}@{}}
+\toprule
+
+\textbf{System} &
+\textbf{Clinical achievement} &
+\textbf{Strength} &
+\textbf{Remaining gap} \\
+
+\midrule
+
+\textbf{BOLPs-RGp}; 
+Japan, 2010
+&
+Gantry-mounted PET used in
+\textbf{48 patients}.
+&
+Daily visualization of changes in
+the proton-irradiated volume.
+&
+Open PET geometry; indirect activity--range relationship;
+post-irradiation acquisition.
+\\\hline
+
+\textbf{NeuroPET};
+MGH, 2011
+&
+Mobile full-ring PET installed
+inside the treatment room.
+&
+Acquisition started only a few minutes
+after irradiation without patient repositioning.
+&
+Still post-treatment; biological washout and
+additional workflow remain.
+\\\hline
+
+\textbf{Prompt Gamma};
+IBA / OncoRay / Penn,
+2016--2021
+&
+First clinical PGI; later clinical PBS verification
+and $\sim$1\,mm range-validation uncertainty.
+&
+Measurement occurs
+\textbf{during beam delivery}.
+&
+Dedicated hardware and interpretation workflow;
+clinical use remained study/prototype based.
+\\\hline
+
+\textbf{INSIDE};
+CNAO, 2019--present
+&
+In-beam PET integrated in a clinical treatment room;
+detected anomalous inter-fractional changes.
+&
+Direct integration with clinical hadrontherapy.
+&
+Limited-angle PET geometry and complex conversion
+from activity changes to actionable clinical decisions.
+\\\hline
+
+\textbf{Range probing / PGI};
+2020--2025
+&
+Clinical range probing and increasingly fast PGI
+are being developed as safeguards for adaptive therapy.
+&
+Designed explicitly to detect fractions
+requiring additional attention.
+&
+The remaining step is an
+\textbf{validated intervention workflow}:
+detect $\rightarrow$ review $\rightarrow$ re-image/replan.
+\\\hline
+
+\bottomrule
+\end{tabular}
+\end{center}
+
+\\\hline
+
+\begin{center}
+{\footnotesize\bfseries\color{darkred}
+Repeated clinical feasibility has not yet produced a universal workflow
+that converts a detected deviation into an immediate clinical action.
+}
+\end{center}
+
+\vspace{0.18cm}
+
+{\tiny\color{gray}
+\href{https://doi.org/10.1016/j.ijrobp.2009.05.065}
+{Nishio et al., 2010};
+\href{https://doi.org/10.1088/0031-9155/56/13/019}
+{Zhu et al., 2011};
+\href{https://doi.org/10.1016/j.radonc.2016.01.004}
+{Richter et al., 2016};
+\href{https://pubmed.ncbi.nlm.nih.gov/28816148/}
+{Xie et al., 2017};
+\href{https://doi.org/10.3389/fonc.2022.929949}
+{Moglioni et al., 2022};
+\href{https://pubmed.ncbi.nlm.nih.gov/34229052/}
+{Berthold et al., 2021};
+\href{https://pmc.ncbi.nlm.nih.gov/articles/PMC12630069/}
+{Bertschi et al., 2025}.
+}
+
+\end{frame}
+
+\begin{frame}{Main Challenges Ahead}
+
+\vspace{0.05cm}
+
+\begin{center}
+{\footnotesize\bfseries
+Clinical feasibility has been demonstrated.
+The main barriers now lie in translation into routine clinical practice.
+}
+\end{center}
+
+\vspace{0.25cm}
+
+\begin{columns}[T,onlytextwidth]
+
+% ============================================================
+% COLUMN 1
+% ============================================================
+\column{0.24\textwidth}
+
+{\scriptsize\bfseries\color{PTblue}
+Physical integration
+}
+
+\vspace{0.12cm}
+
+{\tiny
+Detectors must operate close to the patient without interfering with
+the gantry, couch or beam angles.
+}
+
+\vspace{0.15cm}
+
+{\tiny
+PET requires large solid angle; collimated prompt-$\gamma$ systems
+can be bulky and heavy.
+}
+
+
+% ============================================================
+% COLUMN 2
+% ============================================================
+\column{0.24\textwidth}
+
+{\scriptsize
+\bfseries\color{PTblue}
+From signal to information
+}
+
+\vspace{0.12cm}
+
+{\tiny
+PET activity or prompt-$\gamma$ emission is
+\textbf{not a direct measurement of absorbed dose}.
+}
+
+\vspace{0.15cm}
+
+{\tiny
+Limited statistics, biological washout, background and model
+uncertainties complicate the interpretation of measured deviations.
+}
+
+
+% ============================================================
+% COLUMN 3
+% ============================================================
+\column{0.24\textwidth}
+
+{\scriptsize\bfseries\color{darkred}
+From detection to action
+}
+
+\vspace{0.12cm}
+
+{\tiny
+Detecting an abnormal range does not automatically determine
+the clinical response.
+}
+
+\vspace{0.15cm}
+
+{\tiny
+Current workflows may still require control imaging,
+dose recalculation, QA and replanning --- potentially adding
+hours or days.
+}
+
+\vspace{0.15cm}
+
+{\tiny\bfseries
+No mature closed-loop adaptive workflow yet.
+}
+
+
+% ============================================================
+% COLUMN 4
+% ============================================================
+\column{0.24\textwidth}
+
+{\scriptsize\bfseries\color{PTblue}
+Commercial viability
+}
+
+\vspace{0.12cm}
+
+{\tiny
+Additional hardware and workflow must not reduce patient throughput.
+}
+
+\vspace{0.15cm}
+
+{\tiny
+Regulatory validation is demanding (FDA \emph{de novo} marcado CE MDR )
+\vspace{0.15cm}
+Dedicated reimbursement
+for range verification is generally absent.
+}
+
+\vspace{0.15cm}
+
+{\tiny
+Clinical benefit must justify the additional cost and complexity.
+}
+
+\end{columns}
+
+\hline
+
+\begin{center}
+{\scriptsize\bfseries\color{darkred}
+The bottleneck has shifted from measuring the range
+to making the measurement clinically actionable and economically sustainable.
+}
+\end{center}
+
+\end{frame}
+
+\begin{frame}{Bottom-up market sizing for in-vivo proton monitoring}
+
+\vspace{-0.05cm}
+
+\begin{center}
+{\scriptsize\bfseries
+A specialised high-value instrumentation market built on new installations,
+retrofit of the installed base, and recurring software/service revenues.
+}
+\end{center}
+
+\vspace{0.22cm}
+
+\begin{columns}[T,onlytextwidth]
+
+% ============================================================
+% COLUMN 1
+% ============================================================
+\column{0.31\textwidth}
+
+{\scriptsize\bfseries\color{PTblue}
+New installations
+}
+
+\vspace{0.12cm}
+
+{\tiny
+IBA sold 12 rooms in 2025, representing 63\% of global room sales.
+}
+
+\vspace{0.16cm}
+
+\begin{center}
+{\large\bfseries
+$\sim$19
+}
+
+{\tiny
+new PT rooms/year globally
+}
+\end{center}
+
+\vspace{0.16cm}
+
+{\tiny
+Assumed monitoring-system ASP:
+\textbf{\EUR\,250--500k}
+}
+
+\vspace{0.10cm}
+
+\begin{center}
+{\footnotesize\bfseries\color{darkred}
+\EUR\,5--10 M/year
+}
+
+{\tiny
+new-build hardware market
+}
+\end{center}
+
+
+% ============================================================
+% COLUMN 2
+% ============================================================
+\column{0.33\textwidth}
+
+{\scriptsize\bfseries\color{PTblue}
+Installed-base opportunity
+}
+
+\vspace{0.12cm}
+
+{\tiny
+The larger opportunity comes from retrofitting the existing installed base.
+}
+
+\vspace{0.16cm}
+
+{\tiny
+At a 5\% annual adoption/upgrade rate:
+}
+
+\vspace{0.08cm}
+
+\begin{center}
+{\large\bfseries
+10--15
+}
+
+{\tiny
+retrofit systems/year
+}
+\end{center}
+
+\vspace{0.12cm}
+
+\begin{center}
+{\footnotesize\bfseries\color{darkred}
+\EUR\,8--18 M/year
+}
+
+{\tiny
+new-build + retrofit hardware
+}
+\end{center}
+
+\vspace{0.12cm}
+
+{\tiny
+Installed-base TAM:
+\textbf{\EUR\,75--150 M}
+at the assumed ASP.
+}
+
+
+% ============================================================
+% COLUMN 3
+% ============================================================
+\column{0.31\textwidth}
+
+{\scriptsize\bfseries\color{PTblue}
+Recurring value
+}
+
+\vspace{0.12cm}
+
+{\tiny
+IBA's 2025 Proton Therapy revenues:
+}
+
+\vspace{0.08cm}
+
+{\tiny
+\textbf{\EUR\,202.7 M equipment}\\
+\textbf{\EUR\,131.7 M services}
+}
+
+\vspace{0.16cm}
+
+{\tiny
+A monitoring platform could similarly combine:
+}
+
+\vspace{0.06cm}
+
+{\tiny
+hardware + software + maintenance + upgrades
+}
+
+\vspace{0.14cm}
+
+\begin{center}
+{\footnotesize\bfseries\color{darkred}
+\EUR\,15--30 M/year
+}
+
+{\tiny
+plausible mature annual market
+}
+\end{center}
+
+\end{columns}
+
+\vspace{0.30cm}
+
+\begin{center}
+{\small\bfseries\color{darkred}
+Working estimate: \EUR\,10--20 M/year initially,
+with potential towards \EUR\,20--30 M/year in a mature market.
+}
+\end{center}
+
+\vspace{0.10cm}
+
+{\tiny\color{gray}
+Sources:
+\href{https://www.iba-worldwide.com/sites/default/files/2026-03/iba-fy25-results-presentation-en.pdf}
+{IBA FY2025 Results Presentation};
+\href{https://www.iba-worldwide.com/sites/default/files/2026-04/iba_5009_ra_2025_coulage_en-web2.pdf}
+{IBA Annual Report 2025}.
+ASP and retrofit rates are scenario assumptions, not observed market prices.
+}
+
+\end{frame}
+
+\begin{frame}{What's the Plan}
+\end{frame}
+
 
 \end{document}
