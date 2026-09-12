@@ -1,0 +1,40 @@
+\begin{frame}{Bottom-up installation market}
+
+{\small Scenario at \hi{\EUR\,{{market_ticket|m1}} M per installed system}: new rooms and retrofits.\par}
+\vspace{0.18cm}
+\begin{columns}[T,onlytextwidth]
+\column{0.485\textwidth}
+{\footnotesize\bfseries\color{crBlue}New-room opportunity\par}
+\vspace{0.10cm}
+{\small IBA: {{iba_orders|n}} room orders in {{room_order_year|y}}, at {{iba_share|p}}\% share.\par
+Approximately {{global_orders|n}} global room orders/year.\par}
+\vspace{0.12cm}
+{\scriptsize At {{new_adoption|p}}\% monitoring uptake: {{new_systems|n}} systems/year.\par}
+{\large\bfseries\color{darkred}\EUR\,{{new_revenue|m1}} M/year\par}
+\column{0.485\textwidth}
+{\footnotesize\bfseries\color{crBlue}Retrofit opportunity\par}
+\vspace{0.10cm}
+{\small Assume {{eligible_rooms|n}} eligible existing rooms.\par
+{{retrofit_adoption|p}}\% annual uptake gives {{retrofit_systems|n}} systems/year.\par}
+\vspace{0.12cm}
+{\scriptsize Same complete-system ticket; compatibility assumed.\par}
+{\large\bfseries\color{darkred}\EUR\,{{retrofit_revenue|m1}} M/year\par}
+\end{columns}
+\vspace{0.35cm}
+\setbeamercolor{marketpanel}{bg=crBlue!5,fg=black}
+\begin{beamercolorbox}[sep=8pt,wd=\textwidth]{marketpanel}
+{\small\bfseries {{annual_systems|n}} installations/year\hfill
+\color{darkred}\EUR\,{{annual_market|m1}} M/year in system sales\par}
+\vspace{0.10cm}
+{\scriptsize Eligible installed-base potential: {{eligible_rooms|n}} rooms at the agreed ticket =
+\EUR\,{{base_potential|m0}} M, a one-time opportunity rather than annual revenue.\par}
+\end{beamercolorbox}
+\vspace{0.20cm}
+{\footnotesize\bfseries\color{darkred}Recurring services are a separate market, calculated on active paying contracts.\par}
+\vfill
+{\fontsize{6}{7}\selectfont\color{crGrey}\raggedright
+Source: \href{https://www.iba-worldwide.com/sites/default/files/2026-03/iba-fy25-results-presentation-en.pdf}{IBA FY{{room_order_year|y}} results: room orders and share}.
+Global order estimate rounded before calculating revenue. Orders are not same-year installations; a sustained order-to-delivery rate is assumed.\par
+Eligible rooms and uptake are scenario assumptions, not verified demand. Market opportunity is not a company sales forecast; achievable share requires validation.\par
+Model: costs/installation\_market.csv.\par}
+\end{frame}

@@ -1,0 +1,16 @@
+id,label,value,unit,formula,notes
+recurring_price,Annual contract price,,EUR/year,service_price,
+recurring_cost,Annual direct cost per contract,,EUR/year,service_cost,
+recurring_profit,Annual gross profit per contract,,EUR/year,service_profit,
+small_contracts,Small scenario: active paying contracts,10,contracts,,"Annual steady-state illustration, not a ramp forecast or market-share claim; all contracts active for a full year."
+small_revenue,Small scenario: annual recurring revenue,,EUR/year,small_contracts*recurring_price,
+small_cost,Small scenario: annual direct cost,,EUR/year,small_contracts*recurring_cost,
+small_profit,Small scenario: annual gross profit,,EUR/year,small_contracts*recurring_profit,Central company operating expenses excluded; not operating profit.
+medium_contracts,Medium scenario: active paying contracts,100,contracts,,"Annual steady-state illustration, not a ramp forecast or market-share claim; all contracts active for a full year."
+medium_revenue,Medium scenario: annual recurring revenue,,EUR/year,medium_contracts*recurring_price,
+medium_cost,Medium scenario: annual direct cost,,EUR/year,medium_contracts*recurring_cost,
+medium_profit,Medium scenario: annual gross profit,,EUR/year,medium_contracts*recurring_profit,Central company operating expenses excluded; not operating profit.
+large_contracts,Large scenario: active paying contracts,300,contracts,,"Annual steady-state illustration, not a ramp forecast or market-share claim; all contracts active for a full year."
+large_revenue,Large scenario: annual recurring revenue,,EUR/year,large_contracts*recurring_price,
+large_cost,Large scenario: annual direct cost,,EUR/year,large_contracts*recurring_cost,
+large_profit,Large scenario: annual gross profit,,EUR/year,large_contracts*recurring_profit,Central company operating expenses excluded; not operating profit.

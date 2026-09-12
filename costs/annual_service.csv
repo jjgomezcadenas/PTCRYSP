@@ -1,0 +1,27 @@
+id,label,value,unit,formula,notes
+cryocooler_service,Cryocooler and compressor maintenance reserve,8000,EUR/year,,Provisional allocation within agreed EUR 30k; no routine liquid nitrogen purchases.
+hardware_spares,"Detector, electronics and computing spares",10000,EUR/year,,Provisional allowance; major replacements excluded.
+hardware_calibration,Calibration and performance verification,7000,EUR/year,,"Includes service technician labour, distinct from monitoring staff."
+hardware_travel,Service travel and transport,5000,EUR/year,,Provisional allowance.
+hardware_annual,Hardware maintenance total,,EUR/year,cryocooler_service+hardware_spares+hardware_calibration+hardware_travel,Agreed baseline EUR 30k; supplier validation remains outstanding.
+salary,Dedicated monitoring specialist gross salary,50000,EUR/year,,Proposed Spanish hiring baseline accepted by user; not a salary survey.
+employer_rate,Employer contribution allowance,0.32,fraction,,Approximation based on Spanish contributions; exact payroll depends on classification. https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/CotizacionRecaudacionTrabajadores/10721/10957/583?changeLanguage=es
+employer_cost,Employer contributions,,EUR/year,salary*employer_rate,
+employee_cost,Dedicated employee loaded cost,,EUR/year,salary+employer_cost,
+relief_rate,Relief coverage allowance,0.2,fraction,,"Budget provision for leave, sickness and training; requires actual qualified cover. One working shift only."
+relief_cost,Relief coverage cost,,EUR/year,employee_cost*relief_rate,
+personnel_unrounded,Personnel cost before budget rounding,,EUR/year,employee_cost+relief_cost,
+personnel_rounding,Personnel rounding increment,1000,EUR,,Round up to this increment.
+personnel_spain,Rounded Spain personnel budget,,EUR/year,ceil(personnel_unrounded/personnel_rounding)*personnel_rounding,
+country_factor,Personnel country correction factor,1,factor,,"Spain baseline; adjust for other markets. Applied only to personnel, not hardware/software."
+personnel_annual,Country-adjusted personnel budget,,EUR/year,personnel_spain*country_factor,
+software_remote,Secure remote access and monitoring,2000,EUR/year,,Non-personnel allowance; local installation.
+software_backup,Backup software and security certificates,1000,EUR/year,,Non-personnel allowance.
+software_licences,Third-party licences and contingency,2000,EUR/year,,Non-personnel allowance; no cloud reconstruction or hosting.
+software_annual,Software operating expenses,,EUR/year,software_remote+software_backup+software_licences,Hardware purchased at installation. Hospital supplies electricity/networking. Central software engineer excluded here and budgeted at company level.
+service_cost,Direct annual service cost,,EUR/year,hardware_annual+personnel_annual+software_annual,
+service_target_margin,Target service gross margin,0.4,fraction,,Planning target.
+service_target_price,Annual price at target margin,,EUR/year,service_cost/(1-service_target_margin),
+service_price,Agreed annual service ticket,200000,EUR/year,,Accepted by user; excludes VAT. Service after included installation warranty; avoid charging twice for warranty coverage.
+service_profit,Gross profit per annual contract,,EUR/year,service_price-service_cost,"Before central engineer, expert escalation, management and other company expenses."
+service_margin,Actual service gross margin,,fraction,service_profit/service_price,

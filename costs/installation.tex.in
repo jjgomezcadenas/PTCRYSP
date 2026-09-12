@@ -1,0 +1,53 @@
+\begin{frame}{Installed-system economics}
+
+{\small PET + Compton camera + software: a complete, commissioned monitoring system.\par}
+\vspace{0.18cm}
+\begin{columns}[T,onlytextwidth]
+\column{0.56\textwidth}
+{\footnotesize\bfseries\color{crBlue}Estimated cost to deliver one system\par}
+\vspace{0.10cm}
+{\scriptsize
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}p{6.5cm}r@{}}
+\toprule
+\textbf{Component / activity} & \textbf{\EUR\,k} \\
+\midrule
+PET raw materials & {{pet_raw|k}} \\
+Compton camera & {{camera_raw|k}} \\
+Computing, other hardware and raw-cost allowance & {{other_raw|k}} \\
+\textbf{Total raw hardware budget} & \textbf{ {{raw_budget|k}} } \\
+\midrule
+Assembly, integration, software deployment, & \\
+installation, validation and warranty allowance & {{delivery_extra|k}} \\
+\midrule
+\textbf{Total delivered cost} & \textbf{ {{delivered_cost|k}} } \\
+\bottomrule
+\end{tabular}\par}
+\column{0.405\textwidth}
+\setbeamercolor{ticketpanel}{bg=crBlue!5,fg=black}
+\begin{beamercolorbox}[sep=8pt,wd=\linewidth]{ticketpanel}
+\raggedright
+{\footnotesize\bfseries\color{crBlue}Agreed selling ticket\par}
+\vspace{0.12cm}
+{\LARGE\bfseries\color{darkred}\EUR\,{{installation_price|m1}} M\par}
+{\scriptsize per installed system, excluding VAT\par}
+\vspace{0.16cm}
+{\small\textbf{\EUR\,{{installation_profit|m1}} M gross profit}\par
+\textbf{ {{installation_margin|p1}}\% gross margin}\par}
+\vspace{0.12cm}
+{\scriptsize At a {{installation_target_margin|p}}\% target margin:\par
+\EUR\,{{installation_target_price|m2}} M before rounding the ticket.\par}
+\end{beamercolorbox}
+\vspace{0.12cm}
+{\scriptsize\raggedright Initial software licence and standard commissioning included; ongoing service priced separately.\par}
+\end{columns}
+\vspace{0.20cm}
+{\footnotesize\bfseries\color{darkred}
+{{installation_example_count|n}} installations represent \EUR\,{{installation_example_revenue|m0}} M of system revenue.\par}
+\vfill
+{\fontsize{6}{7}\selectfont\color{crGrey}\raggedright
+Working model: project inputs and budgeting allowances, pending supplier and site validation. The residual hardware allowance is not a supplier quote.\par
+Gross profit funds central software engineering, R\&D, regulatory work, sales and overhead. Major building works, tax and ongoing service are excluded.\par
+Model: costs/installation.csv.\par}
+\end{frame}

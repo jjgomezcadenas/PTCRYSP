@@ -1,0 +1,384 @@
+{
+  "values": {
+    "pet_raw": 740000.0,
+    "camera_raw": 100000.0,
+    "raw_budget": 1000000.0,
+    "other_raw": 160000.0,
+    "delivery_extra": 300000.0,
+    "delivered_cost": 1300000.0,
+    "installation_target_margin": 0.4,
+    "installation_target_price": 2166666.666666667,
+    "installation_price": 2200000.0,
+    "installation_profit": 900000.0,
+    "installation_margin": 0.4090909090909091,
+    "installation_example_count": 10.0,
+    "installation_example_revenue": 22000000.0,
+    "room_order_year": 2025.0,
+    "iba_orders": 12.0,
+    "iba_share": 0.63,
+    "global_orders_estimate": 19.047619047619047,
+    "global_orders": 19.0,
+    "new_adoption": 1.0,
+    "new_systems": 19.0,
+    "market_ticket": 2200000.0,
+    "new_revenue": 41800000.0,
+    "eligible_rooms": 300.0,
+    "retrofit_adoption": 0.05,
+    "retrofit_systems": 15.0,
+    "retrofit_revenue": 33000000.0,
+    "annual_systems": 34.0,
+    "annual_market": 74800000.0,
+    "base_potential": 660000000.0,
+    "cryocooler_service": 8000.0,
+    "hardware_spares": 10000.0,
+    "hardware_calibration": 7000.0,
+    "hardware_travel": 5000.0,
+    "hardware_annual": 30000.0,
+    "salary": 50000.0,
+    "employer_rate": 0.32,
+    "employer_cost": 16000.0,
+    "employee_cost": 66000.0,
+    "relief_rate": 0.2,
+    "relief_cost": 13200.0,
+    "personnel_unrounded": 79200.0,
+    "personnel_rounding": 1000.0,
+    "personnel_spain": 80000.0,
+    "country_factor": 1.0,
+    "personnel_annual": 80000.0,
+    "software_remote": 2000.0,
+    "software_backup": 1000.0,
+    "software_licences": 2000.0,
+    "software_annual": 5000.0,
+    "service_cost": 115000.0,
+    "service_target_margin": 0.4,
+    "service_target_price": 191666.6666666667,
+    "service_price": 200000.0,
+    "service_profit": 85000.0,
+    "service_margin": 0.425,
+    "recurring_price": 200000.0,
+    "recurring_cost": 115000.0,
+    "recurring_profit": 85000.0,
+    "small_contracts": 10.0,
+    "small_revenue": 2000000.0,
+    "small_cost": 1150000.0,
+    "small_profit": 850000.0,
+    "medium_contracts": 100.0,
+    "medium_revenue": 20000000.0,
+    "medium_cost": 11500000.0,
+    "medium_profit": 8500000.0,
+    "large_contracts": 300.0,
+    "large_revenue": 60000000.0,
+    "large_cost": 34500000.0,
+    "large_profit": 25500000.0
+  },
+  "slides": {
+    "installation": [
+      {
+        "id": "pet_raw",
+        "format": "k",
+        "display": "740"
+      },
+      {
+        "id": "camera_raw",
+        "format": "k",
+        "display": "100"
+      },
+      {
+        "id": "other_raw",
+        "format": "k",
+        "display": "160"
+      },
+      {
+        "id": "raw_budget",
+        "format": "k",
+        "display": "1,000"
+      },
+      {
+        "id": "delivery_extra",
+        "format": "k",
+        "display": "300"
+      },
+      {
+        "id": "delivered_cost",
+        "format": "k",
+        "display": "1,300"
+      },
+      {
+        "id": "installation_price",
+        "format": "m1",
+        "display": "2.2"
+      },
+      {
+        "id": "installation_profit",
+        "format": "m1",
+        "display": "0.9"
+      },
+      {
+        "id": "installation_margin",
+        "format": "p1",
+        "display": "40.9"
+      },
+      {
+        "id": "installation_target_margin",
+        "format": "p",
+        "display": "40"
+      },
+      {
+        "id": "installation_target_price",
+        "format": "m2",
+        "display": "2.17"
+      },
+      {
+        "id": "installation_example_count",
+        "format": "n",
+        "display": "10"
+      },
+      {
+        "id": "installation_example_revenue",
+        "format": "m0",
+        "display": "22"
+      }
+    ],
+    "installation_market": [
+      {
+        "id": "market_ticket",
+        "format": "m1",
+        "display": "2.2"
+      },
+      {
+        "id": "iba_orders",
+        "format": "n",
+        "display": "12"
+      },
+      {
+        "id": "room_order_year",
+        "format": "y",
+        "display": "2025"
+      },
+      {
+        "id": "iba_share",
+        "format": "p",
+        "display": "63"
+      },
+      {
+        "id": "global_orders",
+        "format": "n",
+        "display": "19"
+      },
+      {
+        "id": "new_adoption",
+        "format": "p",
+        "display": "100"
+      },
+      {
+        "id": "new_systems",
+        "format": "n",
+        "display": "19"
+      },
+      {
+        "id": "new_revenue",
+        "format": "m1",
+        "display": "41.8"
+      },
+      {
+        "id": "eligible_rooms",
+        "format": "n",
+        "display": "300"
+      },
+      {
+        "id": "retrofit_adoption",
+        "format": "p",
+        "display": "5"
+      },
+      {
+        "id": "retrofit_systems",
+        "format": "n",
+        "display": "15"
+      },
+      {
+        "id": "retrofit_revenue",
+        "format": "m1",
+        "display": "33.0"
+      },
+      {
+        "id": "annual_systems",
+        "format": "n",
+        "display": "34"
+      },
+      {
+        "id": "annual_market",
+        "format": "m1",
+        "display": "74.8"
+      },
+      {
+        "id": "eligible_rooms",
+        "format": "n",
+        "display": "300"
+      },
+      {
+        "id": "base_potential",
+        "format": "m0",
+        "display": "660"
+      },
+      {
+        "id": "room_order_year",
+        "format": "y",
+        "display": "2025"
+      }
+    ],
+    "annual_service": [
+      {
+        "id": "hardware_annual",
+        "format": "k",
+        "display": "30"
+      },
+      {
+        "id": "personnel_annual",
+        "format": "k",
+        "display": "80"
+      },
+      {
+        "id": "software_annual",
+        "format": "k",
+        "display": "5"
+      },
+      {
+        "id": "service_cost",
+        "format": "k",
+        "display": "115"
+      },
+      {
+        "id": "service_price",
+        "format": "k",
+        "display": "200"
+      },
+      {
+        "id": "service_profit",
+        "format": "k",
+        "display": "85"
+      },
+      {
+        "id": "service_margin",
+        "format": "p1",
+        "display": "42.5"
+      },
+      {
+        "id": "service_target_margin",
+        "format": "p",
+        "display": "40"
+      },
+      {
+        "id": "service_target_price",
+        "format": "k1",
+        "display": "191.7"
+      },
+      {
+        "id": "salary",
+        "format": "k",
+        "display": "50"
+      },
+      {
+        "id": "employer_rate",
+        "format": "p",
+        "display": "32"
+      },
+      {
+        "id": "relief_rate",
+        "format": "p",
+        "display": "20"
+      },
+      {
+        "id": "personnel_unrounded",
+        "format": "k1",
+        "display": "79.2"
+      },
+      {
+        "id": "personnel_spain",
+        "format": "k",
+        "display": "80"
+      },
+      {
+        "id": "country_factor",
+        "format": "n",
+        "display": "1"
+      }
+    ],
+    "recurring_market": [
+      {
+        "id": "recurring_price",
+        "format": "k",
+        "display": "200"
+      },
+      {
+        "id": "recurring_profit",
+        "format": "k",
+        "display": "85"
+      },
+      {
+        "id": "small_contracts",
+        "format": "n",
+        "display": "10"
+      },
+      {
+        "id": "small_revenue",
+        "format": "m2",
+        "display": "2.00"
+      },
+      {
+        "id": "small_cost",
+        "format": "m2",
+        "display": "1.15"
+      },
+      {
+        "id": "small_profit",
+        "format": "m2",
+        "display": "0.85"
+      },
+      {
+        "id": "medium_contracts",
+        "format": "n",
+        "display": "100"
+      },
+      {
+        "id": "medium_revenue",
+        "format": "m2",
+        "display": "20.00"
+      },
+      {
+        "id": "medium_cost",
+        "format": "m2",
+        "display": "11.50"
+      },
+      {
+        "id": "medium_profit",
+        "format": "m2",
+        "display": "8.50"
+      },
+      {
+        "id": "large_contracts",
+        "format": "n",
+        "display": "300"
+      },
+      {
+        "id": "large_revenue",
+        "format": "m2",
+        "display": "60.00"
+      },
+      {
+        "id": "large_cost",
+        "format": "m2",
+        "display": "34.50"
+      },
+      {
+        "id": "large_profit",
+        "format": "m2",
+        "display": "25.50"
+      },
+      {
+        "id": "recurring_cost",
+        "format": "k",
+        "display": "115"
+      }
+    ]
+  }
+}

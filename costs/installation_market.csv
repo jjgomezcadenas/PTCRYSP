@@ -1,0 +1,17 @@
+id,label,value,unit,formula,notes
+room_order_year,Room order reference year,2025,year,,https://www.iba-worldwide.com/sites/default/files/2026-03/iba-fy25-results-presentation-en.pdf (p. 13)
+iba_orders,IBA room orders,12,rooms/year,,https://www.iba-worldwide.com/sites/default/files/2026-03/iba-fy25-results-presentation-en.pdf (p. 13)
+iba_share,IBA share of room orders,0.63,fraction,,https://www.iba-worldwide.com/sites/default/files/2026-03/iba-fy25-results-presentation-en.pdf (p. 13); reported share is rounded.
+global_orders_estimate,Global room order estimate,,rooms/year,iba_orders/iba_share,
+global_orders,Rounded global room order basis,,rooms/year,"round(global_orders_estimate,0)",Round before market calculation to recover the agreed 19-room scenario.
+new_adoption,Monitoring uptake in new rooms,1,fraction,,"Full-uptake scenario, not observed adoption. Orders assumed to translate to deliveries at a sustained annual rate."
+new_systems,New-room monitoring systems,,systems/year,global_orders*new_adoption,
+market_ticket,Installed-system selling price,,EUR,installation_price,
+new_revenue,New-room annual system market,,EUR/year,new_systems*market_ticket,
+eligible_rooms,Eligible existing rooms,300,rooms,,"Scenario assumption, not a verified installed-base count; compatibility must be validated."
+retrofit_adoption,Annual retrofit uptake,0.05,fraction,,Scenario assumption.
+retrofit_systems,Annual retrofit systems,,systems/year,eligible_rooms*retrofit_adoption,
+retrofit_revenue,Annual retrofit system market,,EUR/year,retrofit_systems*market_ticket,
+annual_systems,Combined annual installations,,systems/year,new_systems+retrofit_systems,
+annual_market,Combined annual system market,,EUR/year,new_revenue+retrofit_revenue,"Addressable scenario, not company revenue or gross profit."
+base_potential,One-time eligible installed-base potential,,EUR,eligible_rooms*market_ticket,"Stock opportunity, not annual revenue; not added to annual market."
