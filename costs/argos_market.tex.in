@@ -1,7 +1,7 @@
 \begin{frame}{Total potential market}
 
 {\small \hi{All suppliers combined}, at full room compatibility and adoption.\par
-\EUR\,{{tam_price|m1}} M per system; \EUR\,{{tam_fee|k}} k per year for services.\par}
+\EUR\,{{tam_price|m1}} M per system with the first service year included; \EUR\,{{tam_fee|k}} k per year for the following {{contract_years|n}} years, then \EUR\,{{tam_post_fee|k}} k per year.\par}
 \vspace{0.08cm}
 \begin{center}
 {\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{10pt}
@@ -21,5 +21,5 @@ Net additional rooms since {{growth_start_year|y}} & {{tam_short_added_shown|n}}
 {\footnotesize
 \textbf{Systems:} cumulative sales associated with net room expansion; excludes existing-room retrofits and replacements.\par
 \vspace{0.10cm}
-\textbf{Services:} annual fees on all projected rooms, including existing rooms; full-year contracts.\par}
+\textbf{Services:} rooms in their included year pay nothing, rooms in the following {{contract_years|n}} years pay the full fee, older rooms the hardware fee; full-year contracts.\par}
 \end{frame}

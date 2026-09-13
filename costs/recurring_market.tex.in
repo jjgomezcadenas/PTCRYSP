@@ -21,6 +21,6 @@
 \vspace{0.25cm}
 {\footnotesize\bfseries\color{darkred}Recurring revenue grows with the serviced installed base, independently of new-system sales.\par}
 \vspace{0.15cm}
-{\small Each contract includes dedicated monitoring personnel and relief coverage;
-local staffing costs grow with the number of serviced installations.\par}
+{\small Each paid contract covers {{contract_years|n}} years after the service year included with the system;
+after handover an installation pays the \EUR\,{{post_fee|k}} k/year hardware fee.\par}
 \end{frame}

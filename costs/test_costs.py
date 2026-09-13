@@ -35,11 +35,11 @@ class CostModelTests(unittest.TestCase):
 
     def test_agreed_baseline_and_rounding(self):
         v = self.values()
-        for key, expected in {'delivered_cost': 1200000, 'installation_price': 2500000,
+        for key, expected in {'delivered_cost': 1350000, 'installation_price': 2500000,
                               'annual_market': 85000000, 'base_potential': 750000000,
                               'personnel_unrounded': 79200, 'personnel_spain': 80000,
-                              'service_cost': 115000, 'service_profit': 135000,
-                              'medium_revenue': 25000000, 'medium_profit': 13500000}.items():
+                              'service_cost': 130000, 'service_profit': 270000,
+                              'medium_revenue': 40000000, 'medium_profit': 27000000}.items():
             self.assertAlmostEqual(v[key], expected, msg=key)
 
     def test_installation_price_flows_to_market(self):
@@ -47,7 +47,7 @@ class CostModelTests(unittest.TestCase):
         v = self.values()
         self.assertEqual(v['annual_market'], 34 * 2400000)
         self.assertEqual(v['base_potential'], 300 * 2400000)
-        self.assertEqual(v['delivered_cost'], 1200000)
+        self.assertEqual(v['delivered_cost'], 1350000)
 
     def test_reduced_budget_flows_to_funding_and_team(self):
         self.assertEqual(self.values()['startup_funding'], 4000000)
@@ -62,7 +62,7 @@ class CostModelTests(unittest.TestCase):
         self.change('market_growth', 'growth_central', value='0')
         v = self.values()
         self.assertEqual(v['tam_long_systems'], 0)
-        self.assertEqual(v['tam_long_services'], 300 * 250000)
+        self.assertEqual(v['tam_long_services'], 300 * 50000)
         self.change('market_growth', 'growth_central', value='0.05')
         self.change('installation', 'installation_price', value='2400000')
         self.change('annual_service', 'service_price', value='200000')
@@ -70,14 +70,16 @@ class CostModelTests(unittest.TestCase):
         rooms = 300 * 1.05 ** 20
         self.assertAlmostEqual(v['central_long'], rooms)
         self.assertAlmostEqual(v['tam_long_systems'], (rooms - 300) * 2400000)
-        self.assertAlmostEqual(v['tam_long_services'], rooms * 200000)
+        recent = 300 * 1.05 ** 19 - 300 * 1.05 ** 14
+        older = 300 * 1.05 ** 14
+        self.assertAlmostEqual(v['tam_long_services'], recent * 200000 + older * 50000)
 
     def test_country_cost_flows_to_recurring_profit_not_ticket(self):
         self.change('annual_service', 'country_factor', value='1.2')
         v = self.values()
         self.assertEqual(v['personnel_annual'], 96000)
-        self.assertEqual(v['service_price'], 250000)
-        self.assertEqual(v['medium_profit'], 100 * (250000 - 131000))
+        self.assertEqual(v['service_price'], 400000)
+        self.assertEqual(v['medium_profit'], 100 * (400000 - 146000))
 
     def test_adoption_does_not_change_stock_opportunity(self):
         self.change('installation_market', 'new_adoption', value='0.5')
@@ -97,9 +99,9 @@ class CostModelTests(unittest.TestCase):
         with self.assertRaises(ValueError): self.values()
 
     def test_loss_scenario_is_reported_not_rejected(self):
-        self.change('annual_service', 'country_factor', value='4')
+        self.change('annual_service', 'country_factor', value='6')
         v = self.values()
-        self.assertEqual(v['service_profit'], -105000)
+        self.assertEqual(v['service_profit'], -130000)
         self.assertLess(v['service_margin'], 0)
 
     def test_pdf_expectations_ignore_comments_but_keep_escaped_percent(self):

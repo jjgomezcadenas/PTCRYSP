@@ -1,11 +1,13 @@
 \begin{frame}{Annual services: scope and economics}
 
-{\small Per installation: hardware maintenance, local software and a dedicated monitoring specialist.\par}
-\vspace{0.18cm}
+{\scriptsize Per fraction: online Compton red-light check, in-room PET within minutes, and AI analysis giving
+a go/no-go for the next fraction, the distal edge, fraction statistics and updated coverage.
+Data and models stay on local machines. An ARGOS specialist on site interprets results with the treating team, by tumour type.\par}
+\vspace{0.10cm}
 \begin{columns}[T,onlytextwidth]
 \column{0.59\textwidth}
 {\scriptsize
-\renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraystretch}{1.05}
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{@{}p{6.7cm}r@{}}
 \toprule
@@ -13,10 +15,10 @@
 \midrule
 \textbf{Hardware maintenance} & \textbf{ {{hardware_annual|k}} } \\
 Cryocooler, spares, calibration and service travel & \\
-\textbf{Dedicated monitoring personnel + cover} & \textbf{ {{personnel_annual|k}} } \\
-Daily QA, measurement review and clinical support & \\
+\textbf{Dedicated ARGOS specialist + cover} & \textbf{ {{personnel_annual|k}} } \\
+Daily QA, per-fraction analysis and interpretation with the treating team & \\
 \textbf{Local software operating expenses} & \textbf{ {{software_annual|k}} } \\
-Secure access, backup software and external licences & \\
+\textbf{Liability insurance and post-market surveillance} & \textbf{ {{liability_annual|k}} } \\
 \midrule
 \textbf{Total annual direct cost} & \textbf{ {{service_cost|k}} } \\
 \bottomrule
@@ -28,18 +30,23 @@ Secure access, backup software and external licences & \\
 {\footnotesize\bfseries\color{crBlue}Annual service fee\par}
 \vspace{0.12cm}
 {\LARGE\bfseries\color{darkred}\EUR\,{{service_price|k}} k\par}
-{\scriptsize per installation, excluding VAT\par}
+{\scriptsize per installation, excluding VAT; {{contract_years|n}}-year contract after the included first year\par}
 \vspace{0.16cm}
 {\small\textbf{\EUR\,{{service_profit|k}} k gross profit}\par
 \textbf{ {{service_margin|p1}}\% gross margin}\par}
 \end{beamercolorbox}
 \end{columns}
-\vspace{0.16cm}
+\vspace{0.08cm}
 {\footnotesize\bfseries\color{darkred}Central software engineers and company overhead are funded from service gross profit.\par}
-\vfill
+\vspace{0.08cm}
+{\scriptsize First service year included in the system price; the paid contract covers the following {{contract_years|n}} years,
+includes training of hospital personnel and ends with handover after {{onsite_years|n}} years on site.
+Thereafter a \EUR\,{{post_fee|k}} k/year hardware fee (\EUR\,{{post_profit|k}} k gross profit).\par}
+\vspace{0.04cm}
+{\scriptsize Personnel costs are estimated for Spain, where the project will be funded:
+baseline salary \EUR\,{{salary|k}} k + {{employer_rate|p}}\% employer costs, {{relief_rate|p}}\% relief allowance,
+\EUR\,{{personnel_unrounded|k1}} k rounded to \EUR\,{{personnel_spain|k}} k.\par}
 {\fontsize{6}{7}\selectfont\color{crGrey}\raggedright
-Personnel: Spain baseline salary \EUR\,{{salary|k}} k + {{employer_rate|p}}\% employer costs;
-{{relief_rate|p}}\% relief allowance gives \EUR\,{{personnel_unrounded|k1}} k, rounded to \EUR\,{{personnel_spain|k}} k.
 %Country factor: {{country_factor|n}}.\par
 %One dedicated position during one working shift, with qualified relief to be arranged. Clinicians retain treatment decisions. Hospital supplies electricity and networking.\par
 %Major upgrades and extended-hours staffing excluded. Service starts after included warranty; no double charging of warranty coverage.

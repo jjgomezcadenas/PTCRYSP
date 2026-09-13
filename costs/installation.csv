@@ -1,16 +1,24 @@
 id,label,value,unit,formula,notes
-pet_raw,PET raw materials,740000,EUR,,"User input; materials cost, not selling price."
-camera_raw,Compton camera,100000,EUR,,Order-of-magnitude project estimate.
-raw_budget,Complete raw hardware budget,1000000,EUR,,"User-agreed rounded budget including PET, camera and computing."
-other_raw,"Computing, other hardware and raw-cost allowance",,EUR,raw_budget-pet_raw-camera_raw,"Residual allowance, not a supplier quote."
-delivery_extra,"Assembly, integration, software deployment, installation, validation and warranty",200000,EUR,,User-agreed aggregate; excludes central product development and major building works.
+pet_raw,"PET ring, BGO monolithic, 600 mm bore, 300 mm length",740000,EUR,,"Crystal, SiPMs and electronics from the scanner cost model (figs/scanner_totals.png, BGO, D = 600 mm, L = 300 mm). Materials cost, not selling price."
+camera_raw,Compton camera,100000,EUR,,"COCOA design: liquid-scintillator scatterer read by wavelength-shifting fibres, absorber with a few monolithic crystals; cost dominated by fibres, SiPMs and electronics."
+cryo_raw,"Cryogenic system, -80 C",160000,EUR,,"BGO ring operated at about -80 C; chiller-class cooling, no liquid nitrogen. Project estimate, pending supplier quotes."
+raw_budget,Complete raw hardware budget,,EUR,pet_raw+camera_raw+cryo_raw,"Sum of PET ring, camera and cryogenics. Computing is budgeted in the delivery line."
+delivery_extra,"Assembly, integration, computing, installation, validation and warranty",350000,EUR,,"Allowance for assembly and test of the module ring, on-site installation and commissioning with acceptance tests, workstations and DAQ computing, and warranty. Excludes central product development and major building works."
 delivered_cost,Total delivered cost,,EUR,raw_budget+delivery_extra,
 installation_target_margin,Target gross margin,0.4,fraction,,Historical 40% pricing reference; current commercial price is an independent input.
 installation_target_price,Price at target margin,,EUR,delivered_cost/(1-installation_target_margin),
 installation_price,Installed system price,2500000,EUR,,Excludes VAT; includes initial software licence and standard commissioning.
-installation_profit,Gross profit per installation,,EUR,installation_price-delivered_cost,"Before central software engineering, R&D, regulatory programme, sales and corporate overhead."
+first_year_service,First service year included with the system,,EUR,free_year_cost,Specialist and local software for the included year; hardware under warranty.
+system_total_cost,Total cost including the first service year,,EUR,delivered_cost+first_year_service,
+installation_profit,Gross profit per installation,,EUR,installation_price-system_total_cost,"After delivered cost and the included first service year. Before central software engineering, R&D, regulatory programme, sales and corporate overhead."
 installation_margin,Actual gross margin,,fraction,installation_profit/installation_price,
+sens_cost_mid,"Sensitivity: delivered cost, mid case",1600000,EUR,,Illustrative overrun case for the margin sensitivity line; not a forecast.
+sens_margin_mid,"Sensitivity: gross margin, mid case",,fraction,(installation_price-sens_cost_mid-first_year_service)/installation_price,Includes the first service year.
+sens_cost_high,"Sensitivity: delivered cost, high case",1900000,EUR,,Illustrative overrun case for the margin sensitivity line; not a forecast.
+sens_margin_high,"Sensitivity: gross margin, high case",,fraction,(installation_price-sens_cost_high-first_year_service)/installation_price,Includes the first service year.
+backup_pet_raw,"Backup PET ring, CsI(Tl) monolithic, same geometry, room temperature",600000,EUR,,"Scanner cost model, CsI, D = 600 mm, L = 300 mm. No cryogenics. No dependence on BGO supply, which is concentrated in China."
+backup_raw_budget,Backup raw hardware budget,,EUR,backup_pet_raw+camera_raw,CsI(Tl) ring plus Compton camera; no cryogenic system.
+backup_delivered_cost,Backup delivered cost,,EUR,backup_raw_budget+delivery_extra,Same delivery allowance as the baseline.
+backup_saving,Backup delivered-cost saving,,EUR,delivered_cost-backup_delivered_cost,Ring cost difference plus avoided cryogenics.
 installation_example_count,Illustrative installed systems,10,systems,,"Volume conversion, not a forecast."
 installation_example_revenue,Revenue at illustrative volume,,EUR,installation_example_count*installation_price,
-installation_negotiated_price,Negotiated system price scenario,2200000,EUR,,Price sensitivity; not the target commercial offer.
-installation_negotiated_margin,Negotiated system gross margin,,fraction,(installation_negotiated_price-delivered_cost)/installation_negotiated_price,

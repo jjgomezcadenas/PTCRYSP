@@ -4,7 +4,7 @@ hardware_spares,"Detector, electronics and computing spares",10000,EUR/year,,Pro
 hardware_calibration,Calibration and performance verification,7000,EUR/year,,"Includes service technician labour, distinct from monitoring staff."
 hardware_travel,Service travel and transport,5000,EUR/year,,Provisional allowance.
 hardware_annual,Hardware maintenance total,,EUR/year,cryocooler_service+hardware_spares+hardware_calibration+hardware_travel,Agreed baseline EUR 30k; supplier validation remains outstanding.
-salary,Dedicated monitoring specialist gross salary,50000,EUR/year,,Proposed Spanish hiring baseline accepted by user; not a salary survey.
+salary,Dedicated monitoring specialist gross salary,50000,EUR/year,,Physicist-level profile; Spanish hiring baseline. One working shift; next-fraction verdicts batched to the morning.
 employer_rate,Employer contribution allowance,0.32,fraction,,Approximation based on Spanish contributions; exact payroll depends on classification. https://www.seg-social.es/wps/portal/wss/internet/Trabajadores/CotizacionRecaudacionTrabajadores/10721/10957/583?changeLanguage=es
 employer_cost,Employer contributions,,EUR/year,salary*employer_rate,
 employee_cost,Dedicated employee loaded cost,,EUR/year,salary+employer_cost,
@@ -19,12 +19,21 @@ software_remote,Secure remote access and monitoring,2000,EUR/year,,Non-personnel
 software_backup,Backup software and security certificates,1000,EUR/year,,Non-personnel allowance.
 software_licences,Third-party licences and contingency,2000,EUR/year,,Non-personnel allowance; no cloud reconstruction or hosting.
 software_annual,Software operating expenses,,EUR/year,software_remote+software_backup+software_licences,Hardware purchased at installation. Hospital supplies electricity/networking. Central software engineer excluded here and budgeted at company level.
-service_cost,Direct annual service cost,,EUR/year,hardware_annual+personnel_annual+software_annual,
+liability_annual,Liability insurance and post-market surveillance,15000,EUR/year,,Product liability cover and post-market surveillance obligations for decision-support software under the Medical Device Regulation. Allowance within the 10-20 k EUR range agreed 2026-09-14.
+service_cost,Direct annual service cost,,EUR/year,hardware_annual+personnel_annual+software_annual+liability_annual,
 service_target_margin,Target service gross margin,0.4,fraction,,Historical 40% pricing reference; current commercial price is an independent input.
 service_target_price,Annual price at target margin,,EUR/year,service_cost/(1-service_target_margin),
-service_price,Annual service fee,250000,EUR/year,,Accepted by user; excludes VAT. Service after included installation warranty; avoid charging twice for warranty coverage.
+service_price,Annual service fee,400000,EUR/year,,"Agreed 2026-09-14: 5-year contract with ARGOS specialist on site, training of hospital personnel and handover of operation at the end of the term. Excludes VAT."
 service_profit,Gross profit per annual contract,,EUR/year,service_price-service_cost,"Before central engineer, expert escalation, management and other company expenses."
 service_margin,Actual service gross margin,,fraction,service_profit/service_price,
+free_years,Service years included with the system,1,years,,Agreed 2026-09-14: first year of service included in the system price; the paid contract starts afterwards.
+free_year_cost,Direct cost of the included service year,,EUR,personnel_annual+software_annual+liability_annual,"Specialist, local software and liability cover; hardware maintenance in year one is covered by the installation warranty."
+contract_years,Contract term,5,years,,Paid full-service term starting after the included year; operation handed over to trained hospital personnel afterwards.
+onsite_years,Years with ARGOS specialist on site,,years,free_years+contract_years,
+contract_value,Full-service contract value,,EUR,service_price*contract_years,"Revenue over the contract term, excluding VAT."
+contract_profit,Gross profit over the contract term,,EUR,service_profit*contract_years,
+post_fee,Hardware maintenance fee after handover,50000,EUR/year,,Agreed 2026-09-14. Hardware maintenance only; ARGOS remains manufacturer of the software.
+post_cost,Direct cost after handover,,EUR/year,hardware_annual,Hardware maintenance lines only.
+post_profit,Gross profit after handover,,EUR/year,post_fee-post_cost,
+post_margin,Gross margin after handover,,fraction,post_profit/post_fee,
 service_price_ratio,Annual fee as share of system selling price,,fraction,service_price/installation_price,"Comparison with selling price, not manufacturing cost."
-service_negotiated_price,Negotiated annual service fee scenario,200000,EUR/year,,Price sensitivity; agreed scope unchanged.
-service_negotiated_margin,Negotiated service gross margin,,fraction,(service_negotiated_price-service_cost)/service_negotiated_price,

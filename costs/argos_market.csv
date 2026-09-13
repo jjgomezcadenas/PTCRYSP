@@ -1,11 +1,16 @@
 id,label,value,unit,formula,notes
 tam_price,Price per ARGOS system,,EUR,installation_price,
 tam_fee,Annual service fee,,EUR/year,service_price,
+tam_post_fee,Hardware fee after handover,,EUR/year,post_fee,
 tam_short_added,Cumulative net additional rooms,,rooms,central_short-growth_base,
 tam_short_added_shown,Rounded cumulative net additional rooms,,rooms,"round(tam_short_added,0)",
 tam_short_systems,Cumulative system sales potential from net expansion,,EUR,tam_short_added*tam_price,Full compatibility and adoption; all suppliers; excludes existing-base retrofits and replacement. Uses unrounded projections.
-tam_short_services,Annual service potential on entire projected room base,,EUR/year,central_short*tam_fee,"Full compatibility and adoption; all projected operating rooms on full-year contracts. All suppliers, not ARGOS company revenue."
+tam_short_recent,Rooms within the full-service term,,rooms,growth_base*(1+growth_central)**(growth_short-free_years)-growth_base*(1+growth_central)**(growth_short-free_years-contract_years),Rooms past their included year and within the paid contract term.
+tam_short_older,Rooms past the contract term,,rooms,growth_base*(1+growth_central)**(growth_short-free_years-contract_years),"Rooms on the hardware fee, including the initial base."
+tam_short_services,Annual service potential on entire projected room base,,EUR/year,tam_short_recent*tam_fee+tam_short_older*tam_post_fee,"Full compatibility and adoption; rooms in their included year pay nothing, rooms within the paid term the full fee, older rooms the hardware fee. All suppliers, not ARGOS company revenue."
 tam_long_added,Cumulative net additional rooms,,rooms,central_long-growth_base,
 tam_long_added_shown,Rounded cumulative net additional rooms,,rooms,"round(tam_long_added,0)",
 tam_long_systems,Cumulative system sales potential from net expansion,,EUR,tam_long_added*tam_price,Full compatibility and adoption; all suppliers; excludes existing-base retrofits and replacement. Uses unrounded projections.
-tam_long_services,Annual service potential on entire projected room base,,EUR/year,central_long*tam_fee,"Full compatibility and adoption; all projected operating rooms on full-year contracts. All suppliers, not ARGOS company revenue."
+tam_long_recent,Rooms within the full-service term,,rooms,growth_base*(1+growth_central)**(growth_long-free_years)-growth_base*(1+growth_central)**(growth_long-free_years-contract_years),Rooms past their included year and within the paid contract term.
+tam_long_older,Rooms past the contract term,,rooms,growth_base*(1+growth_central)**(growth_long-free_years-contract_years),"Rooms on the hardware fee, including the initial base."
+tam_long_services,Annual service potential on entire projected room base,,EUR/year,tam_long_recent*tam_fee+tam_long_older*tam_post_fee,"Full compatibility and adoption; rooms in their included year pay nothing, rooms within the paid term the full fee, older rooms the hardware fee. All suppliers, not ARGOS company revenue."
