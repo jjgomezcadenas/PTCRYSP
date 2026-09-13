@@ -1,6 +1,26 @@
 # ARGOS cost model
 
-The six CSV files are the source of truth. Each maps to one Excel worksheet/named table and one presentation slide:
+## Startup budget
+
+`costs-reduced.csv` is the independent four-year estimate revised line by line with the user. Calculate it with `load_model(table_names=('costs-reduced',))`. Its funding requirement is EUR 4,000,000, including a fixed EUR 300,000 device contingency and a fixed EUR 252,000 programme reserve. Clinical and external regulatory allowances are EUR 50,000 and EUR 25,000. Lead architect staffing, quality/regulatory staffing, clinical monitoring staffing and working capital are zero; the original budget remains in `costs_startup.csv`. An administrative clerk at EUR 40,000/year employer cost for four years replaces the company administration allowance. An additional fixed EUR 263,000 backup allowance brings the current total to EUR 4M; it remains an editable input when other costs change.
+
+`costs_startup.csv` contains the editable budget from `costs_startup.tex`, using the same input/formula columns as the other models. Amounts are in euros. Edit `value` for inputs; derived rows have only a `formula`. Personnel costs derive from staffing, annual employer cost and funded years. Programme duration controls full-programme roles and annual overhead; technician and monitoring years are separate inputs to review when changing duration.
+
+Calculate the startup budget from the repository root:
+
+```python
+from costs.build_costs import load_model
+_, _, values, _ = load_model(table_names=('costs_startup',))
+print(values['startup_funding'])          # 6660000
+print(values['startup_funding_rounded'])  # 6700000
+print(values['startup_headroom'])         # 340000
+```
+
+The original `costs_startup.csv` remains separate from the presentation workbook and matches the original LaTeX note. The reduced budget now generates the funding-request slide and supplies the linked `startup_team.csv` and `startup_programme.csv` tables. Run the standard generator and rebuild to update the workbook and slides after editing it. Neither startup LaTeX note is automatically regenerated. Three- and five-year ranges in the original note are indicative, not separately calculated budgets.
+
+## Presentation models
+
+The nine CSV files are the source of truth. Each maps to one Excel worksheet/named table and one presentation slide:
 
 | CSV table | Financial slide |
 | --- | --- |
@@ -10,8 +30,11 @@ The six CSV files are the source of truth. Each maps to one Excel worksheet/name
 | `recurring_market.csv` | Recurring services: annual revenue potential |
 | `market_growth.csv` | Proton therapy: market growth |
 | `argos_market.csv` | Total potential market |
+| `costs-reduced.csv` | Funding request |
+| `startup_team.csv` | Development team |
+| `startup_programme.csv` | Building the full demonstrator |
 
-All money is in EUR, excluding VAT. Rates are fractions (e.g. `0.05` means 5%). Each row has a stable `id`, label, unit, notes and **either** an input `value` **or** a derived `formula`. Formula identifiers can refer to rows in any of the six tables. Arithmetic (including exponentiation `**`), `round(value, digits)` and `ceil(value)` are supported; formulas are parsed without Python `eval`. Rounding uses Excel's half-away-from-zero convention.
+All money is in EUR, excluding VAT. Rates are fractions (e.g. `0.05` means 5%). Each row has a stable `id`, label, unit, notes and **either** an input `value` **or** a derived `formula`. Formula identifiers can refer to rows in any of the nine tables. Arithmetic (including exponentiation `**`), `round(value, digits)` and `ceil(value)` are supported; formulas are parsed without Python `eval`. Rounding uses Excel's half-away-from-zero convention.
 
 ## Generate and verify
 
@@ -30,12 +53,12 @@ The script works from any current directory; paths for model files are resolved 
 
 Generated outputs:
 
-- `costs.xlsx`: six sheets with six filterable Excel tables. Blue values are editable inputs **for review experiments only**; derived cells have Excel formulas and cached Python-calculated values. Save lasting changes back to CSV and regenerate. Excel edits are not imported automatically.
+- `costs.xlsx`: nine sheets with nine filterable Excel tables. Blue values are editable inputs **for review experiments only**; derived cells have Excel formulas and cached Python-calculated values. Save lasting changes back to CSV and regenerate. Excel edits are not imported automatically.
 - `calculated.json`: full-precision values and slide-display metadata for Python consumers.
-- `slides.tex`: six financial frames included by `pbt_argos.tex`. Edit the corresponding `.tex.in` templates for wording/layout, not this generated file. Numeric placeholders such as `{{service_price|k}}` pull values from the model.
+- `slides.tex`: nine financial frames included by `pbt_argos.tex`. Edit the corresponding `.tex.in` templates for wording/layout, not this generated file. Numeric placeholders such as `{{service_price|k}}` pull values from the model.
 - `consistency_report.md`: results for CSV calculations, workbook cached values/formulas, slide count, deck inclusion and optional rendered-PDF number checks. A run without `--pdf` explicitly reports the PDF as unchecked.
 
-`--check` refuses stale generated text/workbook values. It updates only the consistency report, not the model outputs or slides. PDF checks locate each financial slide by title and check all displayed model number strings; they are not a substitute for visual layout inspection. The audit covers these six financial slides, not unrelated epidemiology or third-party market-survey numbers elsewhere in the deck.
+`--check` refuses stale generated text/workbook values. It updates only the consistency report, not the model outputs or slides. PDF checks locate each financial slide by title and check all displayed model number strings; they are not a substitute for visual layout inspection. The audit covers these nine financial slides, not unrelated epidemiology or third-party market-survey numbers elsewhere in the deck.
 
 ## Manipulate with Python
 

@@ -1,0 +1,26 @@
+id,label,value,unit,formula,notes
+team_ceo_annual,ceo annual,,EUR/year,startup_ceo_annual,Linked to costs-reduced.csv.
+team_ceo_years,ceo years,,years,startup_ceo_years,Linked to costs-reduced.csv.
+team_ceo_total,ceo total,,EUR,startup_ceo_total,Linked to costs-reduced.csv.
+team_ceo_fte,ceo fte,,FTE,startup_ceo_fte,Linked to costs-reduced.csv.
+team_hardware_engineer_annual,hardware engineer annual,,EUR/year,startup_hardware_engineer_annual,Linked to costs-reduced.csv.
+team_hardware_engineer_years,hardware engineer years,,years,startup_hardware_engineer_years,Linked to costs-reduced.csv.
+team_hardware_engineer_total,hardware engineer total,,EUR,startup_hardware_engineer_total,Linked to costs-reduced.csv.
+team_hardware_engineer_fte,hardware engineer fte,,FTE,startup_hardware_engineer_fte,Linked to costs-reduced.csv.
+team_software_annual,software annual,,EUR/year,startup_software_annual,Linked to costs-reduced.csv.
+team_software_years,software years,,years,startup_software_years,Linked to costs-reduced.csv.
+team_software_total,software total,,EUR,startup_software_total,Linked to costs-reduced.csv.
+team_software_fte,software fte,,FTE,startup_software_fte,Linked to costs-reduced.csv.
+team_physicist_annual,physicist annual,,EUR/year,startup_physicist_annual,Linked to costs-reduced.csv.
+team_physicist_years,physicist years,,years,startup_physicist_years,Linked to costs-reduced.csv.
+team_physicist_total,physicist total,,EUR,startup_physicist_total,Linked to costs-reduced.csv.
+team_physicist_fte,physicist fte,,FTE,startup_physicist_fte,Linked to costs-reduced.csv.
+team_technician_annual,technician annual,,EUR/year,startup_technician_annual,Linked to costs-reduced.csv.
+team_technician_years,technician years,,years,startup_technician_years,Linked to costs-reduced.csv.
+team_technician_total,technician total,,EUR,startup_technician_total,Linked to costs-reduced.csv.
+team_technician_fte,technician fte,,FTE,startup_technician_fte,Linked to costs-reduced.csv.
+team_admin_clerk_annual,admin clerk annual,,EUR/year,startup_admin_clerk_annual,Linked to costs-reduced.csv.
+team_admin_clerk_years,admin clerk years,,years,startup_admin_clerk_years,Linked to costs-reduced.csv.
+team_admin_clerk_total,admin clerk total,,EUR,startup_admin_clerk_total,Linked to costs-reduced.csv.
+team_admin_clerk_fte,admin clerk fte,,FTE,startup_admin_clerk_fte,Linked to costs-reduced.csv.
+team_total,Total personnel,,EUR,startup_personnel,

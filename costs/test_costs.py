@@ -49,6 +49,15 @@ class CostModelTests(unittest.TestCase):
         self.assertEqual(v['base_potential'], 300 * 2400000)
         self.assertEqual(v['delivered_cost'], 1200000)
 
+    def test_reduced_budget_flows_to_funding_and_team(self):
+        self.assertEqual(self.values()['startup_funding'], 4000000)
+        self.change('costs-reduced', 'startup_software_annual', value='90000')
+        v = self.values()
+        self.assertEqual(v['startup_funding'], 4020000)
+        self.assertEqual(v['team_software_total'], 360000)
+        self.assertEqual(v['team_total'], 1750000)
+        self.assertEqual(v['programme_hardware_package'], 1440000)
+
     def test_growth_and_prices_flow_to_total_market(self):
         self.change('market_growth', 'growth_central', value='0')
         v = self.values()

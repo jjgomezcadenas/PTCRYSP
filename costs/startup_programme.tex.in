@@ -1,0 +1,37 @@
+\begin{frame}{Building the full demonstrator}
+
+{\small \hi{ {{programme_pet_count|n}} PET + {{programme_camera_count|n}} Compton camera}, integrated software and monitoring service.\par}
+\vspace{0.20cm}
+\begin{columns}[T,onlytextwidth]
+\column{0.49\textwidth}
+{\footnotesize\bfseries\color{crBlue}Hardware and prototype\par}
+\vspace{0.12cm}
+{\small\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lr@{}}
+\toprule
+ & \EUR\,k \\
+\midrule
+PET materials & {{programme_pet|k}} \\
+Compton camera & {{programme_camera|k}} \\
+Computing and other hardware & {{programme_other_hardware|k}} \\
+Fabrication and test equipment & {{programme_external_work|k}} \\
+First-device contingency & {{programme_device_reserve|k}} \\
+\midrule
+\textbf{Total} & \textbf{ {{programme_hardware_package|k}} } \\
+\bottomrule
+\end{tabular}\par}
+\column{0.46\textwidth}
+{\footnotesize\bfseries\color{crBlue}Development with Donostia Hospital\par}
+\vspace{0.14cm}
+{\small\textbf{Year {{programme_first|n}} --- Design}\par}
+{\footnotesize Procurement, software architecture, quality system and clinical protocol.\par}
+\vspace{0.15cm}
+{\small\textbf{Year {{programme_second|n}} --- Phantom tests}\par}
+{\footnotesize Assemble the system; test accuracy, reliability and service procedures.\par}
+\vspace{0.15cm}
+{\small\textbf{Years {{programme_clinical_start|n}}--{{programme_end|n}} --- Clinical validation}\par}
+{\footnotesize Clinical investigations, workflow validation and conformity assessment.\par}
+\end{columns}
+\vspace{0.20cm}
+{\footnotesize Hospital programme: \EUR\,{{programme_clinical|k}}k. External regulatory and conformity work: \EUR\,{{programme_regulatory|k}}k.\par}
+\end{frame}

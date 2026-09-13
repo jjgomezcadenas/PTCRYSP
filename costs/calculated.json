@@ -111,7 +111,108 @@
     "tam_long_added": 495.9893115433266,
     "tam_long_added_shown": 496.0,
     "tam_long_systems": 1239973278.8583164,
-    "tam_long_services": 198997327.88583165
+    "tam_long_services": 198997327.88583165,
+    "startup_years": 4.0,
+    "startup_pet": 740000.0,
+    "startup_camera": 100000.0,
+    "startup_other_hardware": 100000.0,
+    "startup_raw": 940000.0,
+    "startup_external_work": 200000.0,
+    "startup_device_reserve": 300000.0,
+    "startup_hardware_package": 1440000.0,
+    "startup_ceo_fte": 1.0,
+    "startup_ceo_annual": 100000.0,
+    "startup_ceo_years": 4.0,
+    "startup_ceo_total": 400000.0,
+    "startup_architect_fte": 0.0,
+    "startup_architect_annual": 100000.0,
+    "startup_architect_years": 4.0,
+    "startup_architect_total": 0.0,
+    "startup_hardware_engineer_fte": 1.0,
+    "startup_hardware_engineer_annual": 85000.0,
+    "startup_hardware_engineer_years": 4.0,
+    "startup_hardware_engineer_total": 340000.0,
+    "startup_software_fte": 1.0,
+    "startup_software_annual": 85000.0,
+    "startup_software_years": 4.0,
+    "startup_software_total": 340000.0,
+    "startup_physicist_fte": 1.0,
+    "startup_physicist_annual": 85000.0,
+    "startup_physicist_years": 4.0,
+    "startup_physicist_total": 340000.0,
+    "startup_technician_fte": 1.0,
+    "startup_technician_annual": 50000.0,
+    "startup_technician_years": 3.0,
+    "startup_technician_total": 150000.0,
+    "startup_quality_fte": 0.0,
+    "startup_quality_annual": 90000.0,
+    "startup_quality_years": 4.0,
+    "startup_quality_total": 0.0,
+    "startup_monitor_fte": 0.0,
+    "startup_monitor_annual": 80000.0,
+    "startup_monitor_years": 2.0,
+    "startup_monitor_total": 0.0,
+    "startup_admin_clerk_fte": 1.0,
+    "startup_admin_clerk_annual": 40000.0,
+    "startup_admin_clerk_years": 4.0,
+    "startup_admin_clerk_total": 160000.0,
+    "startup_personnel": 1730000.0,
+    "startup_clinical": 50000.0,
+    "startup_regulatory": 25000.0,
+    "startup_space_annual": 10000.0,
+    "startup_space_total": 40000.0,
+    "startup_it_annual": 20000.0,
+    "startup_it_total": 80000.0,
+    "startup_travel_annual": 30000.0,
+    "startup_travel_total": 120000.0,
+    "startup_nonhardware": 2045000.0,
+    "startup_planned": 3485000.0,
+    "startup_reserve": 252000.0,
+    "startup_working_capital": 0.0,
+    "startup_backup": 263000.0,
+    "startup_funding": 4000000.0,
+    "startup_rounding": 100000.0,
+    "startup_funding_rounded": 4000000.0,
+    "startup_operating": 315000.0,
+    "team_ceo_annual": 100000.0,
+    "team_ceo_years": 4.0,
+    "team_ceo_total": 400000.0,
+    "team_ceo_fte": 1.0,
+    "team_hardware_engineer_annual": 85000.0,
+    "team_hardware_engineer_years": 4.0,
+    "team_hardware_engineer_total": 340000.0,
+    "team_hardware_engineer_fte": 1.0,
+    "team_software_annual": 85000.0,
+    "team_software_years": 4.0,
+    "team_software_total": 340000.0,
+    "team_software_fte": 1.0,
+    "team_physicist_annual": 85000.0,
+    "team_physicist_years": 4.0,
+    "team_physicist_total": 340000.0,
+    "team_physicist_fte": 1.0,
+    "team_technician_annual": 50000.0,
+    "team_technician_years": 3.0,
+    "team_technician_total": 150000.0,
+    "team_technician_fte": 1.0,
+    "team_admin_clerk_annual": 40000.0,
+    "team_admin_clerk_years": 4.0,
+    "team_admin_clerk_total": 160000.0,
+    "team_admin_clerk_fte": 1.0,
+    "team_total": 1730000.0,
+    "programme_pet": 740000.0,
+    "programme_camera": 100000.0,
+    "programme_other_hardware": 100000.0,
+    "programme_external_work": 200000.0,
+    "programme_device_reserve": 300000.0,
+    "programme_hardware_package": 1440000.0,
+    "programme_clinical": 50000.0,
+    "programme_regulatory": 25000.0,
+    "programme_first": 1.0,
+    "programme_second": 2.0,
+    "programme_clinical_start": 3.0,
+    "programme_end": 4.0,
+    "programme_pet_count": 1.0,
+    "programme_camera_count": 1.0
   },
   "slides": {
     "installation": [
@@ -564,6 +665,277 @@
         "id": "tam_long_services",
         "format": "m0",
         "display": "199"
+      }
+    ],
+    "costs-reduced": [
+      {
+        "id": "startup_hardware_package",
+        "format": "k",
+        "display": "1,440"
+      },
+      {
+        "id": "startup_personnel",
+        "format": "k",
+        "display": "1,730"
+      },
+      {
+        "id": "startup_operating",
+        "format": "k",
+        "display": "315"
+      },
+      {
+        "id": "startup_reserve",
+        "format": "k",
+        "display": "252"
+      },
+      {
+        "id": "startup_backup",
+        "format": "k",
+        "display": "263"
+      },
+      {
+        "id": "startup_funding",
+        "format": "k",
+        "display": "4,000"
+      },
+      {
+        "id": "startup_funding",
+        "format": "m0",
+        "display": "4"
+      },
+      {
+        "id": "startup_years",
+        "format": "n",
+        "display": "4"
+      },
+      {
+        "id": "startup_clinical",
+        "format": "k",
+        "display": "50"
+      },
+      {
+        "id": "startup_regulatory",
+        "format": "k",
+        "display": "25"
+      },
+      {
+        "id": "startup_space_total",
+        "format": "k",
+        "display": "40"
+      },
+      {
+        "id": "startup_it_total",
+        "format": "k",
+        "display": "80"
+      },
+      {
+        "id": "startup_travel_total",
+        "format": "k",
+        "display": "120"
+      }
+    ],
+    "startup_team": [
+      {
+        "id": "team_total",
+        "format": "m2",
+        "display": "1.73"
+      },
+      {
+        "id": "team_ceo_fte",
+        "format": "n",
+        "display": "1"
+      },
+      {
+        "id": "team_ceo_annual",
+        "format": "k",
+        "display": "100"
+      },
+      {
+        "id": "team_ceo_years",
+        "format": "n",
+        "display": "4"
+      },
+      {
+        "id": "team_ceo_total",
+        "format": "k",
+        "display": "400"
+      },
+      {
+        "id": "team_hardware_engineer_fte",
+        "format": "n",
+        "display": "1"
+      },
+      {
+        "id": "team_hardware_engineer_annual",
+        "format": "k",
+        "display": "85"
+      },
+      {
+        "id": "team_hardware_engineer_years",
+        "format": "n",
+        "display": "4"
+      },
+      {
+        "id": "team_hardware_engineer_total",
+        "format": "k",
+        "display": "340"
+      },
+      {
+        "id": "team_software_fte",
+        "format": "n",
+        "display": "1"
+      },
+      {
+        "id": "team_software_annual",
+        "format": "k",
+        "display": "85"
+      },
+      {
+        "id": "team_software_years",
+        "format": "n",
+        "display": "4"
+      },
+      {
+        "id": "team_software_total",
+        "format": "k",
+        "display": "340"
+      },
+      {
+        "id": "team_physicist_fte",
+        "format": "n",
+        "display": "1"
+      },
+      {
+        "id": "team_physicist_annual",
+        "format": "k",
+        "display": "85"
+      },
+      {
+        "id": "team_physicist_years",
+        "format": "n",
+        "display": "4"
+      },
+      {
+        "id": "team_physicist_total",
+        "format": "k",
+        "display": "340"
+      },
+      {
+        "id": "team_technician_fte",
+        "format": "n",
+        "display": "1"
+      },
+      {
+        "id": "team_technician_annual",
+        "format": "k",
+        "display": "50"
+      },
+      {
+        "id": "team_technician_years",
+        "format": "n",
+        "display": "3"
+      },
+      {
+        "id": "team_technician_total",
+        "format": "k",
+        "display": "150"
+      },
+      {
+        "id": "team_admin_clerk_fte",
+        "format": "n",
+        "display": "1"
+      },
+      {
+        "id": "team_admin_clerk_annual",
+        "format": "k",
+        "display": "40"
+      },
+      {
+        "id": "team_admin_clerk_years",
+        "format": "n",
+        "display": "4"
+      },
+      {
+        "id": "team_admin_clerk_total",
+        "format": "k",
+        "display": "160"
+      },
+      {
+        "id": "team_total",
+        "format": "k",
+        "display": "1,730"
+      }
+    ],
+    "startup_programme": [
+      {
+        "id": "programme_pet_count",
+        "format": "n",
+        "display": "1"
+      },
+      {
+        "id": "programme_camera_count",
+        "format": "n",
+        "display": "1"
+      },
+      {
+        "id": "programme_pet",
+        "format": "k",
+        "display": "740"
+      },
+      {
+        "id": "programme_camera",
+        "format": "k",
+        "display": "100"
+      },
+      {
+        "id": "programme_other_hardware",
+        "format": "k",
+        "display": "100"
+      },
+      {
+        "id": "programme_external_work",
+        "format": "k",
+        "display": "200"
+      },
+      {
+        "id": "programme_device_reserve",
+        "format": "k",
+        "display": "300"
+      },
+      {
+        "id": "programme_hardware_package",
+        "format": "k",
+        "display": "1,440"
+      },
+      {
+        "id": "programme_first",
+        "format": "n",
+        "display": "1"
+      },
+      {
+        "id": "programme_second",
+        "format": "n",
+        "display": "2"
+      },
+      {
+        "id": "programme_clinical_start",
+        "format": "n",
+        "display": "3"
+      },
+      {
+        "id": "programme_end",
+        "format": "n",
+        "display": "4"
+      },
+      {
+        "id": "programme_clinical",
+        "format": "k",
+        "display": "50"
+      },
+      {
+        "id": "programme_regulatory",
+        "format": "k",
+        "display": "25"
       }
     ]
   }

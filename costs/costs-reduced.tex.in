@@ -1,0 +1,41 @@
+\begin{frame}{Funding request}
+
+\begin{columns}[T,onlytextwidth]
+\column{0.57\textwidth}
+{\small\bfseries\color{crBlue}Use of funds\par}
+\vspace{0.12cm}
+{\small\renewcommand{\arraystretch}{1.35}\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}lr@{}}
+\toprule
+ & \EUR\,k \\
+\midrule
+Hardware and prototype & {{startup_hardware_package|k}} \\
+Personnel & {{startup_personnel|k}} \\
+Clinical, regulatory and operations & {{startup_operating|k}} \\
+Programme reserve & {{startup_reserve|k}} \\
+Backup & {{startup_backup|k}} \\
+\midrule
+\textbf{Total} & \textbf{ {{startup_funding|k}} } \\
+\bottomrule
+\end{tabular}\par}
+\column{0.38\textwidth}
+\setbeamercolor{fundingpanel}{bg=crBlue!5,fg=black}
+\begin{beamercolorbox}[sep=10pt,wd=\linewidth]{fundingpanel}
+{\LARGE\bfseries\color{darkred}\EUR\,{{startup_funding|m0}} M\par}
+\vspace{0.08cm}
+{\large Over {{startup_years|n}} years\par}
+\vspace{0.20cm}
+{\small PET + Compton camera\par
+Integrated software\par
+Clinical monitoring service\par}
+\vspace{0.18cm}
+{\footnotesize Development and validation with Donostia Hospital.\par}
+\end{beamercolorbox}
+\end{columns}
+\vspace{0.22cm}
+{\footnotesize\bfseries\color{darkred}From phantom tests to a complete clinical demonstrator.\par}
+\vspace{0.10cm}
+{\scriptsize Operations: hospital programme \EUR\,{{startup_clinical|k}}k;
+regulatory work \EUR\,{{startup_regulatory|k}}k; premises \EUR\,{{startup_space_total|k}}k;
+IT \EUR\,{{startup_it_total|k}}k; travel \EUR\,{{startup_travel_total|k}}k.\par}
+\end{frame}

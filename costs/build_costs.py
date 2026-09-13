@@ -19,14 +19,14 @@ from pathlib import Path
 from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parent
-TABLES = ('installation', 'installation_market', 'annual_service', 'recurring_market', 'market_growth', 'argos_market')
+TABLES = ('installation', 'installation_market', 'annual_service', 'recurring_market', 'market_growth', 'argos_market', 'costs-reduced', 'startup_team', 'startup_programme')
 TOKEN = re.compile(r'\{\{([a-z_]+)\|([a-z0-9]+)\}\}')
 NS = {'m': 'http://schemas.openxmlformats.org/spreadsheetml/2006/main'}
 
 
-def load_model(directory=ROOT):
+def load_model(directory=ROOT, table_names=TABLES):
     tables, rows, values, cells = {}, {}, {}, {}
-    for name in TABLES:
+    for name in table_names:
         with (Path(directory) / f'{name}.csv').open(newline='') as f:
             tables[name] = list(csv.DictReader(f))
         for index, row in enumerate(tables[name], 2):
@@ -116,7 +116,7 @@ def write_workbook(tables, values, cells):
             sheet.set_column('F:F', 57)
             sheet.set_column('G:G', 100)
             sheet.add_table(0, 0, len(rows), 6, {
-                'name': f'model_{name}', 'style': 'Table Style Medium 2',
+                'name': f"model_{name.replace('-', '_')}", 'style': 'Table Style Medium 2',
                 'columns': [{'header': h} for h in ['ID', 'Item', 'Kind', 'Value', 'Unit', 'Calculation', 'Assumption / source']]})
             for index, row in enumerate(rows, 1):
                 key = row['id']

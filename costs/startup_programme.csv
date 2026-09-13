@@ -1,0 +1,15 @@
+id,label,value,unit,formula,notes
+programme_pet,pet,,EUR,startup_pet,Linked to costs-reduced.csv.
+programme_camera,camera,,EUR,startup_camera,Linked to costs-reduced.csv.
+programme_other_hardware,other hardware,,EUR,startup_other_hardware,Linked to costs-reduced.csv.
+programme_external_work,external work,,EUR,startup_external_work,Linked to costs-reduced.csv.
+programme_device_reserve,device reserve,,EUR,startup_device_reserve,Linked to costs-reduced.csv.
+programme_hardware_package,hardware package,,EUR,startup_hardware_package,Linked to costs-reduced.csv.
+programme_clinical,clinical,,EUR,startup_clinical,Linked to costs-reduced.csv.
+programme_regulatory,regulatory,,EUR,startup_regulatory,Linked to costs-reduced.csv.
+programme_first,Design year,1,year,,Relative to programme start.
+programme_second,Prototype year,2,year,,
+programme_clinical_start,Clinical phase first year,3,year,,
+programme_end,Programme end,,year,startup_years,
+programme_pet_count,PET demonstrators,1,devices,,
+programme_camera_count,Compton camera demonstrators,1,devices,,

@@ -1,0 +1,63 @@
+id,label,value,unit,formula,notes
+startup_years,Programme duration,4,years,,
+startup_pet,PET raw materials,740000,EUR,,
+startup_camera,Compton camera,100000,EUR,,
+startup_other_hardware,Computing and other hardware,160000,EUR,,
+startup_raw,Raw hardware total,,EUR,startup_pet+startup_camera+startup_other_hardware,
+startup_external_work,Prototype fabrication and test equipment,200000,EUR,,External purchases and contracted work only; employee labour is in personnel.
+startup_device_reserve_rate,First-device contingency rate,0.25,fraction,,
+startup_device_reserve,First-device contingency,,EUR,(startup_raw+startup_external_work)*startup_device_reserve_rate,
+startup_hardware_package,Hardware and prototype package including contingency,,EUR,startup_raw+startup_external_work+startup_device_reserve,
+startup_ceo_fte,CEO / project and business lead: staffing,1,FTE,,
+startup_ceo_annual,CEO / project and business lead: annual employer cost per FTE,90000,EUR/year,,Includes employer contributions.
+startup_ceo_years,CEO / project and business lead: funded years,,years,startup_years,
+startup_ceo_total,CEO / project and business lead: programme cost,,EUR,startup_ceo_fte*startup_ceo_annual*startup_ceo_years,
+startup_architect_fte,System architect / technical lead: staffing,1,FTE,,
+startup_architect_annual,System architect / technical lead: annual employer cost per FTE,100000,EUR/year,,Includes employer contributions.
+startup_architect_years,System architect / technical lead: funded years,,years,startup_years,
+startup_architect_total,System architect / technical lead: programme cost,,EUR,startup_architect_fte*startup_architect_annual*startup_architect_years,
+startup_hardware_engineer_fte,Detector and electronics engineer: staffing,1,FTE,,
+startup_hardware_engineer_annual,Detector and electronics engineer: annual employer cost per FTE,85000,EUR/year,,Includes employer contributions.
+startup_hardware_engineer_years,Detector and electronics engineer: funded years,,years,startup_years,
+startup_hardware_engineer_total,Detector and electronics engineer: programme cost,,EUR,startup_hardware_engineer_fte*startup_hardware_engineer_annual*startup_hardware_engineer_years,
+startup_software_fte,Software engineers: staffing,2,FTE,,
+startup_software_annual,Software engineers: annual employer cost per FTE,85000,EUR/year,,Includes employer contributions.
+startup_software_years,Software engineers: funded years,,years,startup_years,
+startup_software_total,Software engineers: programme cost,,EUR,startup_software_fte*startup_software_annual*startup_software_years,
+startup_physicist_fte,Medical physicist / validation lead: staffing,1,FTE,,
+startup_physicist_annual,Medical physicist / validation lead: annual employer cost per FTE,90000,EUR/year,,Includes employer contributions.
+startup_physicist_years,Medical physicist / validation lead: funded years,,years,startup_years,
+startup_physicist_total,Medical physicist / validation lead: programme cost,,EUR,startup_physicist_fte*startup_physicist_annual*startup_physicist_years,
+startup_technician_fte,Assembly and laboratory technician: staffing,1,FTE,,
+startup_technician_annual,Assembly and laboratory technician: annual employer cost per FTE,60000,EUR/year,,Includes employer contributions.
+startup_technician_years,Assembly and laboratory technician: funded years,3,years,,Independent duration; review when changing programme length.
+startup_technician_total,Assembly and laboratory technician: programme cost,,EUR,startup_technician_fte*startup_technician_annual*startup_technician_years,
+startup_quality_fte,Quality and regulatory lead: staffing,0.5,FTE,,
+startup_quality_annual,Quality and regulatory lead: annual employer cost per FTE,90000,EUR/year,,Includes employer contributions.
+startup_quality_years,Quality and regulatory lead: funded years,,years,startup_years,
+startup_quality_total,Quality and regulatory lead: programme cost,,EUR,startup_quality_fte*startup_quality_annual*startup_quality_years,
+startup_monitor_fte,Clinical monitoring specialist: staffing,1,FTE,,
+startup_monitor_annual,Clinical monitoring specialist: annual employer cost per FTE,80000,EUR/year,,Includes employer contributions. Includes one-shift relief provision.
+startup_monitor_years,Clinical monitoring specialist: funded years,2,years,,Independent duration; review when changing programme length.
+startup_monitor_total,Clinical monitoring specialist: programme cost,,EUR,startup_monitor_fte*startup_monitor_annual*startup_monitor_years,
+startup_personnel,Total personnel,,EUR,startup_ceo_total+startup_architect_total+startup_hardware_engineer_total+startup_software_total+startup_physicist_total+startup_technician_total+startup_quality_total+startup_monitor_total,
+startup_clinical,Hospital and clinical programme,500000,EUR,,Phantom sessions; beam access; hospital staff; trial coordination; data management; study insurance. Excludes company personnel.
+startup_regulatory,External regulatory and conformity work,250000,EUR,,Advice; independent testing; audits and certification work. Excludes company quality staff.
+startup_space_annual,Office and laboratory space: annual cost,60000,EUR/year,,
+startup_space_total,Office and laboratory space: programme cost,,EUR,startup_space_annual*startup_years,
+startup_it_annual,Software tools and IT operations: annual cost,30000,EUR/year,,
+startup_it_total,Software tools and IT operations: programme cost,,EUR,startup_it_annual*startup_years,
+startup_administration_annual,Company administration: annual cost,40000,EUR/year,,
+startup_administration_total,Company administration: programme cost,,EUR,startup_administration_annual*startup_years,
+startup_travel_annual,Travel and transport: annual cost,30000,EUR/year,,
+startup_travel_total,Travel and transport: programme cost,,EUR,startup_travel_annual*startup_years,
+startup_nonhardware,Programme expenditure outside hardware package,,EUR,startup_personnel+startup_clinical+startup_regulatory+startup_space_total+startup_it_total+startup_administration_total+startup_travel_total,
+startup_planned,Planned expenditure including first-device contingency,,EUR,startup_hardware_package+startup_nonhardware,
+startup_reserve_rate,Programme reserve rate,0.2,fraction,,Applies only outside hardware package; no duplicate device contingency.
+startup_reserve,Programme reserve,,EUR,startup_nonhardware*startup_reserve_rate,
+startup_working_capital,Working-capital buffer,300000,EUR,,Cash requirement for payment timing and recoverable VAT; not an additional development expense.
+startup_funding,Total funding requirement,,EUR,startup_planned+startup_reserve+startup_working_capital,
+startup_rounding,Funding display rounding increment,100000,EUR,,
+startup_funding_rounded,Funding requirement rounded up,,EUR,ceil(startup_funding/startup_rounding)*startup_rounding,
+startup_funding_target,Proposed funding target,7000000,EUR,,Independent financing proposal; revise if changing costs.
+startup_headroom,Funding target less funding requirement,,EUR,startup_funding_target-startup_funding,

@@ -1,0 +1,24 @@
+\begin{frame}{Development team}
+
+{\small Personnel budget: \hi{\EUR\,{{team_total|m2}} M}. Annual figures include employer costs.\par}
+\vspace{0.18cm}
+\begin{center}
+{\small\renewcommand{\arraystretch}{1.35}\setlength{\tabcolsep}{8pt}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Role & FTE & \EUR\,k/year & Years & Total \EUR\,k \\
+\midrule
+CEO / project lead & {{team_ceo_fte|n}} & {{team_ceo_annual|k}} & {{team_ceo_years|n}} & {{team_ceo_total|k}} \\
+Detector and electronics engineer & {{team_hardware_engineer_fte|n}} & {{team_hardware_engineer_annual|k}} & {{team_hardware_engineer_years|n}} & {{team_hardware_engineer_total|k}} \\
+Software engineer & {{team_software_fte|n}} & {{team_software_annual|k}} & {{team_software_years|n}} & {{team_software_total|k}} \\
+Medical physicist / validation lead & {{team_physicist_fte|n}} & {{team_physicist_annual|k}} & {{team_physicist_years|n}} & {{team_physicist_total|k}} \\
+Assembly and laboratory technician & {{team_technician_fte|n}} & {{team_technician_annual|k}} & {{team_technician_years|n}} & {{team_technician_total|k}} \\
+Administrative clerk & {{team_admin_clerk_fte|n}} & {{team_admin_clerk_annual|k}} & {{team_admin_clerk_years|n}} & {{team_admin_clerk_total|k}} \\
+\midrule
+\textbf{Total} & & & & \textbf{ {{team_total|k}} } \\
+\bottomrule
+\end{tabular}\par}
+\end{center}
+\vspace{0.12cm}
+{\footnotesize Hardware integration, reconstruction software, phantom measurements and clinical validation.\par}
+\end{frame}

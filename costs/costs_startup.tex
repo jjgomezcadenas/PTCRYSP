@@ -1,0 +1,172 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{booktabs,array,tabularx}
+\usepackage{eurosym}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+\newcommand{\keur}{\EUR\,k}
+\title{ARGOS: initial investment estimate}
+\author{Working budget for discussion}
+\date{13 September 2026}
+\begin{document}
+\maketitle
+
+\section{Scope and proposed funding}
+
+The proposed programme builds one PET scanner, one Compton camera and the
+integrated software and service needed for a full system demonstrator.
+Development with Donostia Hospital proceeds from phantom tests to clinical
+investigations, clinical validation and conformity assessment.
+
+The central estimate is \textbf{\EUR\,6.7 million over four years}, with a
+\textbf{funding target of \EUR\,7 million}. A first investment of
+\EUR\,2--3 million could finance the initial stage, but would not cover the
+complete programme and company operations.
+
+The estimate assumes a Donostia-based team, access to hospital and proton-beam
+facilities by agreement, and no construction of a proton-therapy facility.
+Costs are planning allowances in 2026 euros, excluding recoverable VAT.
+No sales revenue, grants or partner contributions are deducted. Price increases
+and schedule overruns draw on the programme reserve.
+
+\section{Four-year budget}
+
+\begin{table}[htbp]
+\centering\small
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{@{}p{4.5cm}rX@{}}
+\toprule
+Item & \keur & Scope \\
+\midrule
+PET, Compton camera and computing & 1,000 & Existing raw-hardware estimate. \\
+Prototype fabrication and test equipment & 200 & Purchased fabrication, phantoms, fixtures, installation and external technical work. \\
+First-device contingency & 300 & Failed components, redesigns and replacement parts. \\
+Personnel & 2,660 & Development, management, quality and clinical monitoring. \\
+Hospital and clinical programme & 500 & Phantom sessions, beam access, hospital staff, trial coordination, data management and study insurance. \\
+External regulatory and conformity work & 250 & Specialist advice, independent testing, audits and certification work. \\
+Office and laboratory space & 240 & \EUR\,60k/year, including utilities. \\
+Software tools and IT operations & 120 & \EUR\,30k/year: tools, security, backup and licences. \\
+Company administration & 160 & \EUR\,40k/year: accounting, legal work, IP and corporate insurance. \\
+Travel and transport & 120 & \EUR\,30k/year: hospital visits, suppliers, conferences and equipment transport. \\
+\midrule
+\textbf{Planned expenditure} & \textbf{5,550} & Includes the first-device contingency. \\
+Programme reserve & 810 & 20\% of the \EUR\,4.05M outside the hardware/prototype package. \\
+Working-capital buffer & 300 & Payment timing, recoverable VAT and cash at programme completion. \\
+\midrule
+\textbf{Funding requirement} & \textbf{6,660} & \textbf{Round to \EUR\,6.7M; target \EUR\,7M.} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The raw-hardware estimate comprises \EUR\,740k for PET materials,
+\EUR\,100k for the Compton camera and \EUR\,160k for computing and other
+hardware. These inputs follow the existing installation model.
+
+The \EUR\,200k prototype allowance covers external purchases and contracted
+work. Employee assembly, integration and software development are charged to
+personnel. The full delivered-system cost is not added again. The first-device
+contingency is 25\% of the \EUR\,1.2M hardware and external-work base; the
+programme reserve applies only to the remaining expenditure.
+
+Working capital is a cash requirement, not an additional development expense.
+The difference between \EUR\,6.66M and the \EUR\,7M funding target provides
+\EUR\,340k of further headroom.
+
+\section{Personnel}
+
+Annual figures are total employer costs, including employer contributions,
+not gross salaries. They are proposed hiring allowances rather than salary
+survey results. Founders taking operating roles are included in the paid team.
+
+\begin{table}[htbp]
+\centering\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{@{}Xlrr@{}}
+\toprule
+Role & Staffing period & Annual \keur & Total \keur \\
+\midrule
+CEO / project and business lead & $1\times4$ years & 90 & 360 \\
+System architect / technical lead & $1\times4$ years & 100 & 400 \\
+Detector and electronics engineer & $1\times4$ years & 85 & 340 \\
+Software engineers & $2\times4$ years & 85 each & 680 \\
+Medical physicist / validation lead & $1\times4$ years & 90 & 360 \\
+Assembly and laboratory technician & $1\times3$ years & 60 & 180 \\
+Quality and regulatory lead & $0.5\times4$ years & 90 per FTE & 180 \\
+Clinical monitoring specialist & $1\times2$ years & 80 & 160 \\
+\midrule
+\textbf{Total} & & & \textbf{2,660} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The software engineers develop reconstruction, data integration, interfaces
+and service tools. Their costs are company development expenditure; they are
+not included in the non-personnel IT allowance.
+
+The medical physicist leads validation. A separate monitoring specialist
+operates the daily clinical service during the two clinical years. The
+\EUR\,80k/year provision follows the existing monitoring-cost assumption,
+including relief coverage for one shift. Hospital staff and trial costs are
+in the separate \EUR\,500k clinical allowance, which should be replaced by a
+costed hospital agreement once the protocol and patient numbers are defined.
+
+\section{Development sequence}
+
+\begin{description}
+\item[Year 1.] Detailed design, procurement, software architecture, quality
+system and clinical protocol.
+\item[Year 2.] Integrated prototype, phantom measurements, reliability testing
+and service procedures.
+\item[Years 3--4.] Authorised clinical investigations, system improvements,
+clinical validation and conformity assessment.
+\end{description}
+
+Donostia Hospital is the clinical development and validation partner. Device
+market certification follows the applicable conformity-assessment route;
+the hospital does not itself grant it. Spanish clinical investigations require
+the relevant ethics review and AEMPS authorisation~\cite{aemps}; notified bodies
+assess conformity where required by the device's regulatory route~\cite{ec}.
+
+The funded endpoint is a working, clinically evaluated demonstrator and its
+service, with European conformity work included. The budget does not cover a
+large multicentre study proving improved patient outcomes, worldwide market
+approvals or production facilities for commercial-scale manufacturing.
+
+\section{Effect of programme duration}
+
+\begin{center}
+\begin{tabular}{@{}lr@{}}
+\toprule
+Development period & Funding range \\
+\midrule
+3 years & \EUR\,5.5--6M \\
+\textbf{4 years} & \textbf{\EUR\,6.5--7M} \\
+5 years & \EUR\,7.5--8M \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+These are indicative duration variants, not separately costed programmes.
+The three-year case requires substantial design maturity and prompt access
+to clinical testing; compressing the schedule does not automatically reduce
+engineering effort. Retaining the team and facilities for an additional year
+costs approximately \EUR\,0.8--0.9M before contingency.
+
+The proposed starting point is \textbf{\EUR\,7M over four years}, potentially
+raised in stages against prototype and clinical milestones. This note records
+the budget proposal separately from the six existing financial and market
+tables; it does not alter the presentation or workbook.
+
+\begin{thebibliography}{9}
+\small
+\bibitem{aemps} AEMPS, \emph{Investigaciones cl\'inicas con productos sanitarios}.
+\url{https://www.aemps.gob.es/productos-sanitarios/investigacionclinica-productossanitarios/}.
+\bibitem{ec} European Commission, \emph{Notified bodies for medical devices}.
+\url{https://health.ec.europa.eu/medical-devices-topics-interest/notified-bodies-medical-devices_en}.
+\end{thebibliography}
+\end{document}
