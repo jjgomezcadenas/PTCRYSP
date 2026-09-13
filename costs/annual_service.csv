@@ -20,8 +20,11 @@ software_backup,Backup software and security certificates,1000,EUR/year,,Non-per
 software_licences,Third-party licences and contingency,2000,EUR/year,,Non-personnel allowance; no cloud reconstruction or hosting.
 software_annual,Software operating expenses,,EUR/year,software_remote+software_backup+software_licences,Hardware purchased at installation. Hospital supplies electricity/networking. Central software engineer excluded here and budgeted at company level.
 service_cost,Direct annual service cost,,EUR/year,hardware_annual+personnel_annual+software_annual,
-service_target_margin,Target service gross margin,0.4,fraction,,Planning target.
+service_target_margin,Target service gross margin,0.4,fraction,,Historical 40% pricing reference; current commercial price is an independent input.
 service_target_price,Annual price at target margin,,EUR/year,service_cost/(1-service_target_margin),
-service_price,Agreed annual service ticket,200000,EUR/year,,Accepted by user; excludes VAT. Service after included installation warranty; avoid charging twice for warranty coverage.
+service_price,Annual service fee,250000,EUR/year,,Accepted by user; excludes VAT. Service after included installation warranty; avoid charging twice for warranty coverage.
 service_profit,Gross profit per annual contract,,EUR/year,service_price-service_cost,"Before central engineer, expert escalation, management and other company expenses."
 service_margin,Actual service gross margin,,fraction,service_profit/service_price,
+service_price_ratio,Annual fee as share of system selling price,,fraction,service_price/installation_price,"Comparison with selling price, not manufacturing cost."
+service_negotiated_price,Negotiated annual service fee scenario,200000,EUR/year,,Price sensitivity; agreed scope unchanged.
+service_negotiated_margin,Negotiated service gross margin,,fraction,(service_negotiated_price-service_cost)/service_negotiated_price,

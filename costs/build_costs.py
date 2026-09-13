@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Calculate four CSV models, export Excel and generate/check their four slides.
+"""Calculate CSV models, export Excel and generate/check one slide per table.
 
 Inputs and formulas live in CSV, not in this script. Formula expressions support
 row identifiers, arithmetic, round(value, digits), and ceil(value).
@@ -19,7 +19,7 @@ from pathlib import Path
 from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parent
-TABLES = ('installation', 'installation_market', 'annual_service', 'recurring_market')
+TABLES = ('installation', 'installation_market', 'annual_service', 'recurring_market', 'market_growth', 'argos_market')
 TOKEN = re.compile(r'\{\{([a-z_]+)\|([a-z0-9]+)\}\}')
 NS = {'m': 'http://schemas.openxmlformats.org/spreadsheetml/2006/main'}
 
@@ -50,6 +50,7 @@ def load_model(directory=ROOT):
             if isinstance(node.op, ast.Sub): return a - b
             if isinstance(node.op, ast.Mult): return a * b
             if isinstance(node.op, ast.Div): return a / b
+            if isinstance(node.op, ast.Pow): return a ** b
         if isinstance(node, ast.UnaryOp) and isinstance(node.op, ast.USub):
             return -evaluate(node.operand)
         if isinstance(node, ast.Call) and isinstance(node.func, ast.Name) and not node.keywords:
@@ -85,7 +86,7 @@ def excel_expression(expression, cells):
         if isinstance(node, ast.Constant): return str(node.value)
         if isinstance(node, ast.Name): return cells[node.id]
         if isinstance(node, ast.BinOp):
-            op = {ast.Add: '+', ast.Sub: '-', ast.Mult: '*', ast.Div: '/'}[type(node.op)]
+            op = {ast.Add: '+', ast.Sub: '-', ast.Mult: '*', ast.Div: '/', ast.Pow: '^'}[type(node.op)]
             return f'({convert(node.left)}{op}{convert(node.right)})'
         if isinstance(node, ast.UnaryOp): return f'(-{convert(node.operand)})'
         if isinstance(node, ast.Call):
@@ -99,7 +100,7 @@ def write_workbook(tables, values, cells):
     import xlsxwriter
     with xlsxwriter.Workbook(ROOT / 'costs.xlsx', {'strings_to_urls': False}) as book:
         book.set_properties({'title': 'ARGOS installation and service economics',
-                             'comments': 'Generated from four CSV tables. Edit CSV, then regenerate.'})
+                             'comments': 'Generated from CSV tables. Edit CSV, then regenerate.'})
         normal = book.add_format({'num_format': '#,##0.00;[Red]-#,##0.00'})
         fraction = book.add_format({'num_format': '0.0%'})
         input_fmt = book.add_format({'font_color': '#1565C0', 'num_format': '#,##0.00'})
@@ -133,7 +134,7 @@ def formatted(value, fmt):
     if fmt == 'n': return f'{value:,.0f}' if value == int(value) else f'{value:,.2f}'.rstrip('0').rstrip('.')
     if fmt == 'k': return f'{value / 1000:,.0f}' if value % 1000 == 0 else f'{value / 1000:,.1f}'
     if re.fullmatch(r'm[012]', fmt): return f'{value / 1e6:,.{fmt[1]}f}'
-    if fmt == 'p': return f'{100 * value:.0f}' if (100 * value).is_integer() else f'{100 * value:.1f}'
+    if fmt == 'p': return f'{100 * value:.0f}' if math.isclose(100 * value, round(100 * value), abs_tol=1e-10) else f'{100 * value:.1f}'
     if fmt == 'p1': return f'{100 * value:.1f}'
     if fmt == 'k1': return f'{value / 1000:,.1f}'
     raise ValueError(f'Unknown number format: {fmt}')
@@ -149,8 +150,15 @@ def render(values):
         def substitute(match):
             key, fmt = match.groups()
             text = formatted(float(values[key]), fmt)
-            expected[name].append({'id': key, 'format': fmt, 'display': text})
             return text
+        # Commented-out notes are generated, but are not visible in the PDF.
+        # Preserve escaped percent signs used in rendered percentages.
+        for line in template.splitlines():
+            visible = re.split(r'(?<!\\)%', line, maxsplit=1)[0]
+            for match in TOKEN.finditer(visible):
+                key, fmt = match.groups()
+                expected[name].append({'id': key, 'format': fmt,
+                                       'display': formatted(float(values[key]), fmt)})
         slide = TOKEN.sub(substitute, template)
         if '{{' in slide: raise ValueError(f'Unresolved placeholder in {name}')
         slides.append(f'% Generated from {name}.csv and {name}.tex.in; do not edit.\n' + slide)
@@ -164,7 +172,7 @@ def check_workbook(tables, values, cells):
         workbook = ET.fromstring(archive.read('xl/workbook.xml'))
         names = [node.attrib['name'] for node in workbook.findall('m:sheets/m:sheet', NS)]
         assert names == list(TABLES), 'Workbook sheets do not match CSV tables'
-        assert len([name for name in archive.namelist() if re.fullmatch(r'xl/tables/table\d+\.xml', name)]) == 4
+        assert len([name for name in archive.namelist() if re.fullmatch(r'xl/tables/table\d+\.xml', name)]) == len(TABLES)
         for index, (name, rows) in enumerate(tables.items(), 1):
             sheet = ET.fromstring(archive.read(f'xl/worksheets/sheet{index}.xml'))
             data = {node.attrib['r']: node for node in sheet.findall('.//m:c', NS)}
@@ -218,14 +226,14 @@ def main():
     check_workbook(tables, values, cells)
     main_tex = (ROOT.parent / 'pbt_argos.tex').read_text()
     assert main_tex.count(r'\input{costs/slides.tex}') == 1, 'Deck must include the model slides exactly once'
-    assert tex.count(r'\begin{frame}') == len(tables) == 4
+    assert tex.count(r'\begin{frame}') == len(tables) == len(TABLES)
     pdf_pages = check_pdf(args.pdf, expected) if args.pdf else {}
     lines = ['# Cost model consistency report', '',
-             '- PASS: four CSV tables, four Excel sheets/named tables, four generated financial slides.',
+             f'- PASS: {len(TABLES)} CSV tables, Excel sheets/named tables and generated slides.',
              f'- PASS: all {len(rows)} input/derived values match Excel cached values; formulas match Python expressions.',
              '- PASS: all displayed model numbers are generated from the CSV calculation model.',
              '- PASS: deck includes the generated slides exactly once.',
-             '- Scope: the four installation/service financial slides; unrelated clinical and market-survey slides are outside this audit.']
+             '- Scope: the generated economics and market slides; unrelated clinical and market-survey slides are outside this audit.']
     if pdf_pages:
         lines += [f'- PASS: {name}: rendered PDF page {page}; all model number strings found.' for name, page in pdf_pages.items()]
         lines += ['- PDF matching checks displayed numbers and titles, not layout; visual review remains a separate step.']

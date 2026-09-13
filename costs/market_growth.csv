@@ -1,0 +1,28 @@
+id,label,value,unit,formula,notes
+growth_start_year,Reference year,2026,year,,
+growth_base,Provisional operating proton rooms,300,rooms,,Planning assumption; not a verified inventory or ARGOS-compatible base.
+growth_short,First horizon,10,years,,
+growth_long,Second horizon,20,years,,
+growth_short_year,First projection year,,year,growth_start_year+growth_short,
+growth_long_year,Second projection year,,year,growth_start_year+growth_long,
+growth_slow,Assumed annual net growth: slow,0.03,fraction,,Judgement-based scenario; not a fitted forecast or confidence interval.
+slow_short,Operating rooms: slow short,,rooms,growth_base*(1+growth_slow)**growth_short,
+slow_short_shown,Rounded rooms: slow short,,rooms,"round(slow_short,0)",
+slow_long,Operating rooms: slow long,,rooms,growth_base*(1+growth_slow)**growth_long,
+slow_long_shown,Rounded rooms: slow long,,rooms,"round(slow_long,0)",
+growth_central,Assumed annual net growth: central,0.05,fraction,,Judgement-based scenario; not a fitted forecast or confidence interval.
+central_short,Operating rooms: central short,,rooms,growth_base*(1+growth_central)**growth_short,
+central_short_shown,Rounded rooms: central short,,rooms,"round(central_short,0)",
+central_long,Operating rooms: central long,,rooms,growth_base*(1+growth_central)**growth_long,
+central_long_shown,Rounded rooms: central long,,rooms,"round(central_long,0)",
+growth_fast,Assumed annual net growth: fast,0.07,fraction,,Judgement-based scenario; not a fitted forecast or confidence interval.
+fast_short,Operating rooms: fast short,,rooms,growth_base*(1+growth_fast)**growth_short,
+fast_short_shown,Rounded rooms: fast short,,rooms,"round(fast_short,0)",
+fast_long,Operating rooms: fast long,,rooms,growth_base*(1+growth_fast)**growth_long,
+fast_long_shown,Rounded rooms: fast long,,rooms,"round(fast_long,0)",
+observed_centres,Proton facilities January 2026,128,centres,,Yap et al. doi:10.3389/fonc.2026.1791102; PTCOG compilation.
+construction_rooms,Listed proton rooms under construction June 2026,57,rooms,,Manual PTCOG tally; includes stale/uncertain dates; excludes carbon-only rooms. https://ptcog.online/facilities-under-construction/
+recent_iba_orders,IBA H1 2026 room orders,5,rooms,,IBA H1 2026 presentation p13.
+recent_iba_share,IBA H1 2026 reported order share,0.31,fraction,,https://www.iba-worldwide.com/sites/default/files/2026-08/iba_h1_2026_results_presentation.pdf
+recent_global_orders,Implied H1 global room orders,,rooms,"round(recent_iba_orders/recent_iba_share,0)",
+recent_iba_backlog,IBA H1 2026 equipment projects,46,projects,,7 ProteusPLUS and 39 ProteusONE; includes 11 installations underway. Overlaps PTCOG pipeline.

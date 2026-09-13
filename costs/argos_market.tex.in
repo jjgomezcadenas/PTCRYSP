@@ -1,0 +1,25 @@
+\begin{frame}{Total potential market}
+
+{\small \hi{All suppliers combined}, at full room compatibility and adoption.\par
+\EUR\,{{tam_price|m1}} M per system; \EUR\,{{tam_fee|k}} k per year for services.\par}
+\vspace{0.08cm}
+\begin{center}
+{\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{10pt}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Central growth case & {{growth_short_year|y}} & {{growth_long_year|y}} \\
+\midrule
+Operating treatment rooms & {{central_short_shown|n}} & {{central_long_shown|n}} \\
+Net additional rooms since {{growth_start_year|y}} & {{tam_short_added_shown|n}} & {{tam_long_added_shown|n}} \\
+\midrule
+\textbf{Cumulative new-system potential (\EUR\,M)} & \textbf{{{tam_short_systems|m0}}} & \textbf{{{tam_long_systems|m0}}} \\
+\textbf{Annual service potential (\EUR\,M/year)} & \textbf{{{tam_short_services|m0}}} & \textbf{{{tam_long_services|m0}}} \\
+\bottomrule
+\end{tabular}\par}
+\end{center}
+\vspace{0.05cm}
+{\footnotesize
+\textbf{Systems:} cumulative sales associated with net room expansion; excludes existing-room retrofits and replacements.\par
+\vspace{0.10cm}
+\textbf{Services:} annual fees on all projected rooms, including existing rooms; full-year contracts.\par}
+\end{frame}

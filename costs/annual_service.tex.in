@@ -25,15 +25,13 @@ Secure access, backup software and external licences & \\
 \setbeamercolor{servicepanel}{bg=crBlue!5,fg=black}
 \begin{beamercolorbox}[sep=8pt,wd=\linewidth]{servicepanel}
 \raggedright
-{\footnotesize\bfseries\color{crBlue}Annual service ticket\par}
+{\footnotesize\bfseries\color{crBlue}Annual service fee\par}
 \vspace{0.12cm}
 {\LARGE\bfseries\color{darkred}\EUR\,{{service_price|k}} k\par}
 {\scriptsize per installation, excluding VAT\par}
 \vspace{0.16cm}
 {\small\textbf{\EUR\,{{service_profit|k}} k gross profit}\par
 \textbf{ {{service_margin|p1}}\% gross margin}\par}
-\vspace{0.12cm}
-{\scriptsize {{service_target_margin|p}}\% target gives \EUR\,{{service_target_price|k1}} k; rounded commercial ticket above.\par}
 \end{beamercolorbox}
 \end{columns}
 \vspace{0.16cm}
@@ -42,8 +40,8 @@ Secure access, backup software and external licences & \\
 {\fontsize{6}{7}\selectfont\color{crGrey}\raggedright
 Personnel: Spain baseline salary \EUR\,{{salary|k}} k + {{employer_rate|p}}\% employer costs;
 {{relief_rate|p}}\% relief allowance gives \EUR\,{{personnel_unrounded|k1}} k, rounded to \EUR\,{{personnel_spain|k}} k.
-Country factor: {{country_factor|n}}.\par
-One dedicated position during one working shift, with qualified relief to be arranged. Clinicians retain treatment decisions. Hospital supplies electricity and networking.\par
-Major upgrades and extended-hours staffing excluded. Service starts after included warranty; no double charging of warranty coverage.
+%Country factor: {{country_factor|n}}.\par
+%One dedicated position during one working shift, with qualified relief to be arranged. Clinicians retain treatment decisions. Hospital supplies electricity and networking.\par
+%Major upgrades and extended-hours staffing excluded. Service starts after included warranty; no double charging of warranty coverage.
 \par}
 \end{frame}

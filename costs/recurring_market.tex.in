@@ -23,9 +23,4 @@
 \vspace{0.15cm}
 {\small Each contract includes dedicated monitoring personnel and relief coverage;
 local staffing costs grow with the number of serviced installations.\par}
-\vfill
-{\fontsize{6}{7}\selectfont\color{crGrey}\raggedright
-Illustrative active-contract scenarios, not a company ramp forecast. All contracts are assumed active and paying for a full year, after included warranty.\par
-Direct cost per contract: \EUR\,{{recurring_cost|k}} k/year at the agreed scope and country mix. Central engineering, management, sales and other company costs are excluded; gross profit is not operating profit.\par
-Model: costs/recurring\_market.csv.\par}
 \end{frame}

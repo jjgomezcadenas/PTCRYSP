@@ -3,12 +3,14 @@ pet_raw,PET raw materials,740000,EUR,,"User input; materials cost, not selling p
 camera_raw,Compton camera,100000,EUR,,Order-of-magnitude project estimate.
 raw_budget,Complete raw hardware budget,1000000,EUR,,"User-agreed rounded budget including PET, camera and computing."
 other_raw,"Computing, other hardware and raw-cost allowance",,EUR,raw_budget-pet_raw-camera_raw,"Residual allowance, not a supplier quote."
-delivery_extra,"Assembly, integration, software deployment, installation, validation and warranty",300000,EUR,,User-agreed aggregate; excludes central product development and major building works.
+delivery_extra,"Assembly, integration, software deployment, installation, validation and warranty",200000,EUR,,User-agreed aggregate; excludes central product development and major building works.
 delivered_cost,Total delivered cost,,EUR,raw_budget+delivery_extra,
-installation_target_margin,Target gross margin,0.4,fraction,,"Planning target, not an industry benchmark."
+installation_target_margin,Target gross margin,0.4,fraction,,Historical 40% pricing reference; current commercial price is an independent input.
 installation_target_price,Price at target margin,,EUR,delivered_cost/(1-installation_target_margin),
-installation_price,Agreed selling ticket,2200000,EUR,,Excludes VAT; includes initial software licence and standard commissioning.
+installation_price,Installed system price,2500000,EUR,,Excludes VAT; includes initial software licence and standard commissioning.
 installation_profit,Gross profit per installation,,EUR,installation_price-delivered_cost,"Before central software engineering, R&D, regulatory programme, sales and corporate overhead."
 installation_margin,Actual gross margin,,fraction,installation_profit/installation_price,
 installation_example_count,Illustrative installed systems,10,systems,,"Volume conversion, not a forecast."
 installation_example_revenue,Revenue at illustrative volume,,EUR,installation_example_count*installation_price,
+installation_negotiated_price,Negotiated system price scenario,2200000,EUR,,Price sensitivity; not the target commercial offer.
+installation_negotiated_margin,Negotiated system gross margin,,fraction,(installation_negotiated_price-delivered_cost)/installation_negotiated_price,

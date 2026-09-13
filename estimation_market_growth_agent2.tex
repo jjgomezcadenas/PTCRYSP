@@ -1,0 +1,251 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{eurosym}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+
+\title{Estimating the growth of the proton-therapy market\\
+\large Treatment-room scenarios for 2036 and 2046}
+\author{Working note for the ARGOS investment discussion}
+\date{13 September 2026}
+
+\begin{document}
+\maketitle
+
+\section{Purpose and preliminary conclusion}
+
+This note develops an initial estimate of the worldwide proton-therapy
+installed base over the next ten and twenty years. It is intended to support
+discussion of the potential market for ARGOS, rather than to forecast ARGOS
+sales directly.
+
+The proposed central case is approximately \textbf{500 operating proton-treatment
+rooms in 2036 and 800 in 2046}, starting from a \emph{provisional} baseline of
+300 rooms in 2026 and assuming 5\% annual net growth. Slower and faster growth
+cases use 3\% and 7\%, respectively. The baseline room count requires verification
+before these figures are presented as an evidence-based market estimate.
+
+These are scenario calculations constructed for this discussion, not published
+market forecasts or statistical confidence intervals.
+
+\section{What is being counted?}
+
+The unit of analysis is an \textbf{operating clinical proton-treatment room}.
+A centre can contain several rooms, and an accelerator can supply more than
+one room. Consequently, centres, accelerators, room orders and operating rooms
+must not be treated as interchangeable quantities.
+
+The present ARGOS commercial model assumes one monitoring system per treatment
+room. This is a commercial and technical assumption, not an established mapping
+for every facility. Actual eligibility depends on room geometry, patient
+transfer arrangements, gantry or upright treatment configuration and clinical
+workflow. Carbon-ion-only rooms and research-only rooms should not be included
+in a proton-room inventory. Dedicated ocular rooms should be identified
+separately when assessing ARGOS compatibility.
+
+\section{Evidence available for the starting point and pipeline}
+
+\begin{itemize}
+\item A June 2026 publication compiling PTCOG data reports \textbf{128
+proton-therapy facilities operating in January 2026}. It also reports that
+approximately 65\% of facilities under construction or planned have a single
+treatment room. The increasing share of single-room projects means that centre
+growth need not equal room growth~\cite{yap2026}.
+
+\item A manual tally of PTCOG's June 2026 construction list gives approximately
+\textbf{57 proton-treatment rooms across 32 proton-capable projects}, counting
+only the proton rooms in the mixed proton/carbon project and excluding
+carbon-only projects. Some listed completion dates are old or uncertain.
+This is a tally of the published list, not independent confirmation that all
+projects remain active or will open on schedule~\cite{ptcogconstruction}.
+
+\item IBA reported \textbf{43 equipment projects in its year-end 2025 backlog}:
+36 single-room ProteusONE projects and seven multi-room ProteusPLUS projects.
+This manufacturer backlog overlaps the facility pipeline and must not be added
+to the PTCOG count as a separate set of installations~\cite{iba2025}.
+\end{itemize}
+
+The evidence establishes an existing clinical network and a substantial
+development pipeline. It does not by itself determine a worldwide treatment-room
+count or a twenty-year growth rate. The \textbf{300-room baseline remains a
+planning assumption}; it has not been obtained here from a reconciled,
+facility-by-facility inventory. In particular, it should not be described as
+300 verified ARGOS-compatible rooms.
+
+\section{Growth model}
+
+Let $N_0$ be the number of operating proton-treatment rooms at the 2026 reference
+point and $g$ the annual net growth rate. The scenario model is
+\begin{equation}
+N(t)=N_0(1+g)^t,\qquad N_0=300,
+\end{equation}
+where $t$ is the number of years after 2026. Thus $t=10$ corresponds to 2036 and
+$t=20$ to 2046. Results are rounded to whole rooms for display; calculations
+should retain full precision internally.
+
+The three annual growth assumptions represent different development paths:
+\begin{description}
+\item[Slow growth: 3\%.] Continued expansion constrained by capital requirements,
+reimbursement, staffing and project execution.
+\item[Central case: 5\%.] Steady deployment of compact systems, geographic
+expansion and gradual improvement in clinical acceptance.
+\item[Fast growth: 7\%.] Stronger adoption supported by favourable clinical
+evidence, reimbursement and lower deployment costs.
+\end{description}
+
+These descriptions are modelling judgements. The rates have not been fitted to
+a historical room-count series. They also assume a constant rate over each
+horizon; actual expansion is likely to be uneven.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lrrrr}
+\toprule
+Scenario & Annual growth & 2026 rooms & 2036 rooms & 2046 rooms\\
+\midrule
+Slow & 3\% & 300 & 403 & 542\\
+Central & 5\% & 300 & 489 & 796\\
+Fast & 7\% & 300 & 590 & 1,161\\
+\bottomrule
+\end{tabular}
+\caption{Worldwide operating proton-treatment rooms under three assumed growth
+rates. Figures are calculated scenarios, not observed future installations.}
+\end{table}
+
+The phrase ``3--7\% sensitivity'' means \emph{repeating the calculation with
+different assumed annual growth rates}. It does not mean that the forecast has
+a measured statistical uncertainty of 3--7\%, nor that a probability has been
+assigned to the resulting range. ``Slow, central and fast growth scenarios'' is
+the clearer presentation wording.
+
+\section{Interpreting the central case}
+
+With 5\% annual net growth, the first year's increase is approximately 15 rooms.
+At the 2036 installed-base level, the following year's increase would be about
+24 rooms; at the 2046 level, about 40 rooms. This describes a gradual increase
+in annual deployment rather than a fixed number of new rooms every year.
+
+For comparison, simply adding 19 rooms annually to the 300-room baseline would
+give 490 rooms after ten years and 680 after twenty years, before allowing for
+closures. The 19-room figure comes from the existing model's rounded estimate
+of global 2025 room orders: IBA's 12 orders divided by its reported 63\% share.
+An order is not a commissioned room; this comparison assumes a sustained
+conversion of orders into deliveries~\cite{ibapresentation}.
+
+The central case therefore implies a similar ten-year result to constant
+additions at that rate, but some acceleration over twenty years. The fast case
+requires considerably stronger expansion and should not be treated as the
+default outcome.
+
+The growth rate is defined as \emph{net} growth in operating rooms. It does not
+separately predict closures, refurbishment or equipment replacement. Gross
+new commissioning can exceed net growth when older rooms close. Replacement
+of equipment in a continuing room does not increase the installed-room count.
+
+\section{Sensitivity to the starting inventory}
+
+The initial room count is a separate source of uncertainty from the growth
+rate. Reducing the baseline from 300 to 250 lowers every projection by one sixth,
+approximately 16.7\%.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lrrr}
+\toprule
+Central case: 5\% annual growth & 2026 rooms & 2036 rooms & 2046 rooms\\
+\midrule
+Lower starting inventory & 250 & 407 & 663\\
+Working starting inventory & 300 & 489 & 796\\
+\bottomrule
+\end{tabular}
+\caption{Effect of changing the assumed starting inventory. Neither starting
+value is presented here as an audited count.}
+\end{table}
+
+Verifying the baseline should therefore precede any attempt to refine the
+forecast to narrow numerical ranges. A practical inventory should record the
+facility, country, clinical proton rooms, operating status, opening date and
+ARGOS compatibility. Construction and planning lists should be reconciled to
+remove duplicates and projects that have already opened, closed or stalled.
+
+\section{Implications for the ARGOS market}
+
+The central case adds approximately 189 rooms by 2036 and 496 rooms by 2046
+relative to the assumed 2026 baseline. At the current proposed ARGOS system
+price of \EUR\,2.5 million, the corresponding net-expansion proxy represents
+approximately \textbf{\EUR\,0.47 billion over ten years and \EUR\,1.24 billion
+over twenty years}, before applying compatibility, monitoring adoption or
+ARGOS market share. Values use the unrounded growth calculation and constant
+2026 prices.
+
+These amounts are cumulative potential system sales associated with net room
+expansion, not annual revenues and not a forecast of ARGOS sales. They exclude
+retrofits of the existing base and replacement demand. Because closures have
+not been modelled separately, the net expansion is not an estimate of gross
+new-build deliveries.
+
+For an annual commercial forecast, the relevant relationship is
+\begin{equation}
+\begin{aligned}
+\text{ARGOS system revenue}
+&=\text{eligible installations}\times\text{monitoring adoption}\\
+&\quad\times\text{ARGOS share}\times\text{system price}.
+\end{aligned}
+\end{equation}
+The eligible-installation term must be constructed separately for new rooms
+and retrofits. Service revenue is then determined by the active paying ARGOS
+contract base, using the proposed \EUR\,250,000 annual fee, rather than by
+multiplying every proton room by that fee.
+
+\section{Recommended use in the investment discussion}
+
+Use \textbf{5\% annual net room growth as the central working assumption}, with
+3\% and 7\% cases to show the effect of slower and faster expansion. The rounded
+central message is ``approximately 500 treatment rooms in ten years and 800 in
+twenty years'', explicitly conditional on a 300-room starting inventory.
+
+Before incorporating the forecast into the financial tables or presentation,
+verify the starting room inventory and compare the assumed growth rates with a
+consistent historical series. Do not substitute revenue growth rates from
+equipment-market reports for growth in physical treatment-room numbers.
+
+This note is separate from the existing four-table financial model. It does
+not modify its installation volumes, pricing assumptions or presentation slides.
+
+\begin{thebibliography}{9}
+\small
+\bibitem{yap2026}
+J.~Yap, A.~Steinberg, H.~Norman, K.~P.~Nesteruk and S.~Sheehy,
+``Towards ultra-fast treatments: large energy acceptance beam delivery systems
+and opportunities for proton beam therapy'',
+\emph{Frontiers in Oncology} \textbf{16}, 1791102 (3 June 2026).
+\href{https://doi.org/10.3389/fonc.2026.1791102}{doi:10.3389/fonc.2026.1791102}.
+Facility counts and single-room fraction are reported in the introduction and
+Figure~1, using PTCOG data from early 2026.
+
+\bibitem{ptcogconstruction}
+Particle Therapy Co-Operative Group,
+\emph{Facilities under construction}, update June 2026.
+\url{https://ptcog.online/facilities-under-construction/}.
+Accessed 13 September 2026.
+
+\bibitem{iba2025}
+IBA, \emph{Full-year 2025 results}, 27 March 2026.
+\href{https://www.iba-worldwide.com/sites/default/files/2026-03/260327-iba-fy2025-results-en.pdf}{Official results release}.
+Proton Therapy business discussion: equipment backlog and room deliveries.
+
+\bibitem{ibapresentation}
+IBA, \emph{Full-year results 2025 presentation}, 27 March 2026, p.~13.
+\href{https://www.iba-worldwide.com/sites/default/files/2026-03/iba-fy25-results-presentation-en.pdf}{Official results presentation}.
+Reported IBA room orders and market share for 2025.
+\end{thebibliography}
+
+\end{document}

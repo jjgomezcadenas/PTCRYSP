@@ -1,0 +1,32 @@
+\begin{frame}{Proton therapy: market growth}
+
+{\small \hi{Treatment rooms worldwide}: provisional starting base of {{growth_base|n}} in {{growth_start_year|y}}.\par}
+\vspace{0.12cm}
+\begin{center}
+{\small\renewcommand{\arraystretch}{1.25}\setlength{\tabcolsep}{14pt}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+ & Assumed annual growth & {{growth_short_year|y}} & {{growth_long_year|y}} \\
+\midrule
+Slow & {{growth_slow|p}}\% & {{slow_short_shown|n}} & {{slow_long_shown|n}} \\
+Central & {{growth_central|p}}\% & {{central_short_shown|n}} & {{central_long_shown|n}} \\
+Fast & {{growth_fast|p}}\% & {{fast_short_shown|n}} & {{fast_long_shown|n}} \\
+\bottomrule
+\end{tabular}\par}
+\end{center}
+\vspace{0.10cm}
+{\footnotesize\bfseries\color{crBlue}Current evidence\par}
+\vspace{0.08cm}
+{\small
+\textbf{PTCOG:} {{observed_centres|n}} operating proton centres (January {{growth_start_year|y}});
+about {{construction_rooms|n}} proton rooms listed under construction (June).\par
+\vspace{0.08cm}
+\textbf{IBA, first half {{growth_start_year|y}}:} {{recent_iba_orders|n}} room orders at {{recent_iba_share|p}}\% share
+imply about {{recent_global_orders|n}} global orders; {{recent_iba_backlog|n}} IBA equipment projects in backlog.\par}
+\vfill
+{\fontsize{6}{7}\selectfont\color{crGrey}\raggedright
+\href{https://doi.org/10.3389/fonc.2026.1791102}{Yap et al., Front. Oncol. 16 (2026) 1791102: operating centres.}\quad
+\href{https://ptcog.online/facilities-under-construction/}{PTCOG, June 2026: construction list; room tally excludes carbon-only rooms.}\par
+\href{https://www.iba-worldwide.com/sites/default/files/2026-08/iba_h1_2026_results_presentation.pdf}{IBA H1 2026 presentation, 27 August, pp. 12--13: sites and room orders.}\quad
+\href{https://www.iba-worldwide.com/sites/default/files/2026-08/260827-iba-hyr26-results-en.pdf}{IBA H1 2026 results, p. 4: equipment backlog.}\par}
+\end{frame}

@@ -1,6 +1,6 @@
 # ARGOS cost model
 
-The four CSV files are the source of truth. Each maps to one Excel worksheet/named table and one presentation slide:
+The six CSV files are the source of truth. Each maps to one Excel worksheet/named table and one presentation slide:
 
 | CSV table | Financial slide |
 | --- | --- |
@@ -8,8 +8,10 @@ The four CSV files are the source of truth. Each maps to one Excel worksheet/nam
 | `installation_market.csv` | Bottom-up installation market |
 | `annual_service.csv` | Annual services: scope and economics |
 | `recurring_market.csv` | Recurring services: annual revenue potential |
+| `market_growth.csv` | Proton therapy: market growth |
+| `argos_market.csv` | Total potential market |
 
-All money is in EUR, excluding VAT. Rates are fractions (e.g. `0.05` means 5%). Each row has a stable `id`, label, unit, notes and **either** an input `value` **or** a derived `formula`. Formula identifiers can refer to rows in any of the four tables. Arithmetic, `round(value, digits)` and `ceil(value)` are supported; formulas are parsed without Python `eval`. Rounding uses Excel's half-away-from-zero convention.
+All money is in EUR, excluding VAT. Rates are fractions (e.g. `0.05` means 5%). Each row has a stable `id`, label, unit, notes and **either** an input `value` **or** a derived `formula`. Formula identifiers can refer to rows in any of the six tables. Arithmetic (including exponentiation `**`), `round(value, digits)` and `ceil(value)` are supported; formulas are parsed without Python `eval`. Rounding uses Excel's half-away-from-zero convention.
 
 ## Generate and verify
 
@@ -28,12 +30,12 @@ The script works from any current directory; paths for model files are resolved 
 
 Generated outputs:
 
-- `costs.xlsx`: four sheets with four filterable Excel tables. Blue values are editable inputs **for review experiments only**; derived cells have Excel formulas and cached Python-calculated values. Save lasting changes back to CSV and regenerate. Excel edits are not imported automatically.
+- `costs.xlsx`: six sheets with six filterable Excel tables. Blue values are editable inputs **for review experiments only**; derived cells have Excel formulas and cached Python-calculated values. Save lasting changes back to CSV and regenerate. Excel edits are not imported automatically.
 - `calculated.json`: full-precision values and slide-display metadata for Python consumers.
-- `slides.tex`: four financial frames included by `pbt_argos.tex`. Edit the corresponding `.tex.in` templates for wording/layout, not this generated file. Numeric placeholders such as `{{service_price|k}}` pull values from the model.
+- `slides.tex`: six financial frames included by `pbt_argos.tex`. Edit the corresponding `.tex.in` templates for wording/layout, not this generated file. Numeric placeholders such as `{{service_price|k}}` pull values from the model.
 - `consistency_report.md`: results for CSV calculations, workbook cached values/formulas, slide count, deck inclusion and optional rendered-PDF number checks. A run without `--pdf` explicitly reports the PDF as unchecked.
 
-`--check` refuses stale generated text/workbook values. It updates only the consistency report, not the model outputs or slides. PDF checks locate each financial slide by title and check all displayed model number strings; they are not a substitute for visual layout inspection. The audit covers these four financial slides, not unrelated epidemiology or third-party market-survey numbers elsewhere in the deck.
+`--check` refuses stale generated text/workbook values. It updates only the consistency report, not the model outputs or slides. PDF checks locate each financial slide by title and check all displayed model number strings; they are not a substitute for visual layout inspection. The audit covers these six financial slides, not unrelated epidemiology or third-party market-survey numbers elsewhere in the deck.
 
 ## Manipulate with Python
 
@@ -74,3 +76,5 @@ The country factor changes personnel cost only. Agreed selling prices are indepe
 - Recurring scenarios assume full-year active paying contracts after included installation warranty; no duplicate warranty billing. They are independent volume scenarios, not a forecast of customer acquisition or company share.
 - Global room orders are rounded to the nearest room before multiplication. Orders are not same-year installations. Eligible rooms and adoption are assumptions; one-time installed-base potential is not added to annual sales.
 - Installation and service margins are proposed commercial-model outcomes, not externally validated market benchmarks.
+
+The growth model uses a provisional 300-room baseline and assumed 3%, 5%, 7% annual net growth. ARGOS market values use the unrounded central projection and existing price inputs, in constant 2026 euros. Cumulative equipment potential covers net room expansion only; annual service potential covers the entire projected room base at full adoption and compatibility. These are total-market ceilings across all suppliers, not company sales forecasts. Construction lists and manufacturer backlogs overlap and are not added.

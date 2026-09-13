@@ -4,15 +4,17 @@
     "camera_raw": 100000.0,
     "raw_budget": 1000000.0,
     "other_raw": 160000.0,
-    "delivery_extra": 300000.0,
-    "delivered_cost": 1300000.0,
+    "delivery_extra": 200000.0,
+    "delivered_cost": 1200000.0,
     "installation_target_margin": 0.4,
-    "installation_target_price": 2166666.666666667,
-    "installation_price": 2200000.0,
-    "installation_profit": 900000.0,
-    "installation_margin": 0.4090909090909091,
+    "installation_target_price": 2000000.0,
+    "installation_price": 2500000.0,
+    "installation_profit": 1300000.0,
+    "installation_margin": 0.52,
     "installation_example_count": 10.0,
-    "installation_example_revenue": 22000000.0,
+    "installation_example_revenue": 25000000.0,
+    "installation_negotiated_price": 2200000.0,
+    "installation_negotiated_margin": 0.45454545454545453,
     "room_order_year": 2025.0,
     "iba_orders": 12.0,
     "iba_share": 0.63,
@@ -20,15 +22,15 @@
     "global_orders": 19.0,
     "new_adoption": 1.0,
     "new_systems": 19.0,
-    "market_ticket": 2200000.0,
-    "new_revenue": 41800000.0,
+    "market_ticket": 2500000.0,
+    "new_revenue": 47500000.0,
     "eligible_rooms": 300.0,
     "retrofit_adoption": 0.05,
     "retrofit_systems": 15.0,
-    "retrofit_revenue": 33000000.0,
+    "retrofit_revenue": 37500000.0,
     "annual_systems": 34.0,
-    "annual_market": 74800000.0,
-    "base_potential": 660000000.0,
+    "annual_market": 85000000.0,
+    "base_potential": 750000000.0,
     "cryocooler_service": 8000.0,
     "hardware_spares": 10000.0,
     "hardware_calibration": 7000.0,
@@ -52,24 +54,64 @@
     "service_cost": 115000.0,
     "service_target_margin": 0.4,
     "service_target_price": 191666.6666666667,
-    "service_price": 200000.0,
-    "service_profit": 85000.0,
-    "service_margin": 0.425,
-    "recurring_price": 200000.0,
+    "service_price": 250000.0,
+    "service_profit": 135000.0,
+    "service_margin": 0.54,
+    "service_price_ratio": 0.1,
+    "service_negotiated_price": 200000.0,
+    "service_negotiated_margin": 0.425,
+    "recurring_price": 250000.0,
     "recurring_cost": 115000.0,
-    "recurring_profit": 85000.0,
+    "recurring_profit": 135000.0,
     "small_contracts": 10.0,
-    "small_revenue": 2000000.0,
+    "small_revenue": 2500000.0,
     "small_cost": 1150000.0,
-    "small_profit": 850000.0,
+    "small_profit": 1350000.0,
     "medium_contracts": 100.0,
-    "medium_revenue": 20000000.0,
+    "medium_revenue": 25000000.0,
     "medium_cost": 11500000.0,
-    "medium_profit": 8500000.0,
+    "medium_profit": 13500000.0,
     "large_contracts": 300.0,
-    "large_revenue": 60000000.0,
+    "large_revenue": 75000000.0,
     "large_cost": 34500000.0,
-    "large_profit": 25500000.0
+    "large_profit": 40500000.0,
+    "growth_start_year": 2026.0,
+    "growth_base": 300.0,
+    "growth_short": 10.0,
+    "growth_long": 20.0,
+    "growth_short_year": 2036.0,
+    "growth_long_year": 2046.0,
+    "growth_slow": 0.03,
+    "slow_short": 403.1749138032367,
+    "slow_short_shown": 403.0,
+    "slow_long": 541.8333704008245,
+    "slow_long_shown": 542.0,
+    "growth_central": 0.05,
+    "central_short": 488.6683880332326,
+    "central_short_shown": 489.0,
+    "central_long": 795.9893115433266,
+    "central_long_shown": 796.0,
+    "growth_fast": 0.07,
+    "fast_short": 590.14540718687,
+    "fast_short_shown": 590.0,
+    "fast_long": 1160.905338745855,
+    "fast_long_shown": 1161.0,
+    "observed_centres": 128.0,
+    "construction_rooms": 57.0,
+    "recent_iba_orders": 5.0,
+    "recent_iba_share": 0.31,
+    "recent_global_orders": 16.0,
+    "recent_iba_backlog": 46.0,
+    "tam_price": 2500000.0,
+    "tam_fee": 250000.0,
+    "tam_short_added": 188.6683880332326,
+    "tam_short_added_shown": 189.0,
+    "tam_short_systems": 471670970.0830815,
+    "tam_short_services": 122167097.00830814,
+    "tam_long_added": 495.9893115433266,
+    "tam_long_added_shown": 496.0,
+    "tam_long_systems": 1239973278.8583164,
+    "tam_long_services": 198997327.88583165
   },
   "slides": {
     "installation": [
@@ -96,37 +138,27 @@
       {
         "id": "delivery_extra",
         "format": "k",
-        "display": "300"
+        "display": "200"
       },
       {
         "id": "delivered_cost",
         "format": "k",
-        "display": "1,300"
+        "display": "1,200"
       },
       {
         "id": "installation_price",
         "format": "m1",
-        "display": "2.2"
+        "display": "2.5"
       },
       {
         "id": "installation_profit",
         "format": "m1",
-        "display": "0.9"
+        "display": "1.3"
       },
       {
         "id": "installation_margin",
         "format": "p1",
-        "display": "40.9"
-      },
-      {
-        "id": "installation_target_margin",
-        "format": "p",
-        "display": "40"
-      },
-      {
-        "id": "installation_target_price",
-        "format": "m2",
-        "display": "2.17"
+        "display": "52.0"
       },
       {
         "id": "installation_example_count",
@@ -136,14 +168,14 @@
       {
         "id": "installation_example_revenue",
         "format": "m0",
-        "display": "22"
+        "display": "25"
       }
     ],
     "installation_market": [
       {
         "id": "market_ticket",
         "format": "m1",
-        "display": "2.2"
+        "display": "2.5"
       },
       {
         "id": "iba_orders",
@@ -178,7 +210,7 @@
       {
         "id": "new_revenue",
         "format": "m1",
-        "display": "41.8"
+        "display": "47.5"
       },
       {
         "id": "eligible_rooms",
@@ -196,29 +228,29 @@
         "display": "15"
       },
       {
-        "id": "retrofit_revenue",
+        "id": "market_ticket",
         "format": "m1",
-        "display": "33.0"
+        "display": "2.5"
       },
       {
-        "id": "annual_systems",
+        "id": "retrofit_revenue",
+        "format": "m1",
+        "display": "37.5"
+      },
+      {
+        "id": "new_systems",
         "format": "n",
-        "display": "34"
+        "display": "19"
+      },
+      {
+        "id": "retrofit_systems",
+        "format": "n",
+        "display": "15"
       },
       {
         "id": "annual_market",
-        "format": "m1",
-        "display": "74.8"
-      },
-      {
-        "id": "eligible_rooms",
-        "format": "n",
-        "display": "300"
-      },
-      {
-        "id": "base_potential",
         "format": "m0",
-        "display": "660"
+        "display": "85"
       },
       {
         "id": "room_order_year",
@@ -250,27 +282,17 @@
       {
         "id": "service_price",
         "format": "k",
-        "display": "200"
+        "display": "250"
       },
       {
         "id": "service_profit",
         "format": "k",
-        "display": "85"
+        "display": "135"
       },
       {
         "id": "service_margin",
         "format": "p1",
-        "display": "42.5"
-      },
-      {
-        "id": "service_target_margin",
-        "format": "p",
-        "display": "40"
-      },
-      {
-        "id": "service_target_price",
-        "format": "k1",
-        "display": "191.7"
+        "display": "54.0"
       },
       {
         "id": "salary",
@@ -296,23 +318,18 @@
         "id": "personnel_spain",
         "format": "k",
         "display": "80"
-      },
-      {
-        "id": "country_factor",
-        "format": "n",
-        "display": "1"
       }
     ],
     "recurring_market": [
       {
         "id": "recurring_price",
         "format": "k",
-        "display": "200"
+        "display": "250"
       },
       {
         "id": "recurring_profit",
         "format": "k",
-        "display": "85"
+        "display": "135"
       },
       {
         "id": "small_contracts",
@@ -322,7 +339,7 @@
       {
         "id": "small_revenue",
         "format": "m2",
-        "display": "2.00"
+        "display": "2.50"
       },
       {
         "id": "small_cost",
@@ -332,7 +349,7 @@
       {
         "id": "small_profit",
         "format": "m2",
-        "display": "0.85"
+        "display": "1.35"
       },
       {
         "id": "medium_contracts",
@@ -342,7 +359,7 @@
       {
         "id": "medium_revenue",
         "format": "m2",
-        "display": "20.00"
+        "display": "25.00"
       },
       {
         "id": "medium_cost",
@@ -352,7 +369,7 @@
       {
         "id": "medium_profit",
         "format": "m2",
-        "display": "8.50"
+        "display": "13.50"
       },
       {
         "id": "large_contracts",
@@ -362,7 +379,7 @@
       {
         "id": "large_revenue",
         "format": "m2",
-        "display": "60.00"
+        "display": "75.00"
       },
       {
         "id": "large_cost",
@@ -372,12 +389,181 @@
       {
         "id": "large_profit",
         "format": "m2",
-        "display": "25.50"
+        "display": "40.50"
+      }
+    ],
+    "market_growth": [
+      {
+        "id": "growth_base",
+        "format": "n",
+        "display": "300"
       },
       {
-        "id": "recurring_cost",
+        "id": "growth_start_year",
+        "format": "y",
+        "display": "2026"
+      },
+      {
+        "id": "growth_short_year",
+        "format": "y",
+        "display": "2036"
+      },
+      {
+        "id": "growth_long_year",
+        "format": "y",
+        "display": "2046"
+      },
+      {
+        "id": "growth_slow",
+        "format": "p",
+        "display": "3"
+      },
+      {
+        "id": "slow_short_shown",
+        "format": "n",
+        "display": "403"
+      },
+      {
+        "id": "slow_long_shown",
+        "format": "n",
+        "display": "542"
+      },
+      {
+        "id": "growth_central",
+        "format": "p",
+        "display": "5"
+      },
+      {
+        "id": "central_short_shown",
+        "format": "n",
+        "display": "489"
+      },
+      {
+        "id": "central_long_shown",
+        "format": "n",
+        "display": "796"
+      },
+      {
+        "id": "growth_fast",
+        "format": "p",
+        "display": "7"
+      },
+      {
+        "id": "fast_short_shown",
+        "format": "n",
+        "display": "590"
+      },
+      {
+        "id": "fast_long_shown",
+        "format": "n",
+        "display": "1,161"
+      },
+      {
+        "id": "observed_centres",
+        "format": "n",
+        "display": "128"
+      },
+      {
+        "id": "growth_start_year",
+        "format": "y",
+        "display": "2026"
+      },
+      {
+        "id": "construction_rooms",
+        "format": "n",
+        "display": "57"
+      },
+      {
+        "id": "growth_start_year",
+        "format": "y",
+        "display": "2026"
+      },
+      {
+        "id": "recent_iba_orders",
+        "format": "n",
+        "display": "5"
+      },
+      {
+        "id": "recent_iba_share",
+        "format": "p",
+        "display": "31"
+      },
+      {
+        "id": "recent_global_orders",
+        "format": "n",
+        "display": "16"
+      },
+      {
+        "id": "recent_iba_backlog",
+        "format": "n",
+        "display": "46"
+      }
+    ],
+    "argos_market": [
+      {
+        "id": "tam_price",
+        "format": "m1",
+        "display": "2.5"
+      },
+      {
+        "id": "tam_fee",
         "format": "k",
-        "display": "115"
+        "display": "250"
+      },
+      {
+        "id": "growth_short_year",
+        "format": "y",
+        "display": "2036"
+      },
+      {
+        "id": "growth_long_year",
+        "format": "y",
+        "display": "2046"
+      },
+      {
+        "id": "central_short_shown",
+        "format": "n",
+        "display": "489"
+      },
+      {
+        "id": "central_long_shown",
+        "format": "n",
+        "display": "796"
+      },
+      {
+        "id": "growth_start_year",
+        "format": "y",
+        "display": "2026"
+      },
+      {
+        "id": "tam_short_added_shown",
+        "format": "n",
+        "display": "189"
+      },
+      {
+        "id": "tam_long_added_shown",
+        "format": "n",
+        "display": "496"
+      },
+      {
+        "id": "tam_short_systems",
+        "format": "m0",
+        "display": "472"
+      },
+      {
+        "id": "tam_long_systems",
+        "format": "m0",
+        "display": "1,240"
+      },
+      {
+        "id": "tam_short_services",
+        "format": "m0",
+        "display": "122"
+      },
+      {
+        "id": "tam_long_services",
+        "format": "m0",
+        "display": "199"
       }
     ]
   }
