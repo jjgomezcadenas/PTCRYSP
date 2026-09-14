@@ -56,7 +56,7 @@ class CostModelTests(unittest.TestCase):
         self.assertEqual(v['startup_funding'], 4020000)
         self.assertEqual(v['team_software_total'], 360000)
         self.assertEqual(v['team_total'], 1750000)
-        self.assertEqual(v['programme_hardware_package'], 1440000)
+        self.assertEqual(v['programme_hardware_package'], 1600000)
 
     def test_growth_and_prices_flow_to_total_market(self):
         self.change('market_growth', 'growth_central', value='0')

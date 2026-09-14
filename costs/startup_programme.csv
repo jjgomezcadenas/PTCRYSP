@@ -1,6 +1,7 @@
 id,label,value,unit,formula,notes
 programme_pet,pet,,EUR,startup_pet,Linked to costs-reduced.csv.
 programme_camera,camera,,EUR,startup_camera,Linked to costs-reduced.csv.
+programme_cryo,cryogenic system,,EUR,startup_cryo,Linked to costs-reduced.csv.
 programme_other_hardware,other hardware,,EUR,startup_other_hardware,Linked to costs-reduced.csv.
 programme_external_work,external work,,EUR,startup_external_work,Linked to costs-reduced.csv.
 programme_device_reserve,device reserve,,EUR,startup_device_reserve,Linked to costs-reduced.csv.

@@ -216,6 +216,9 @@ def main():
     tex, expected = render(values)
     payload = json.dumps({'values': values, 'slides': expected}, indent=2) + '\n'
     outputs = {'slides.tex': tex, 'calculated.json': payload}
+    for name, slide in zip(TABLES, tex.split('\n% Generated from ')):
+        outputs[f'slides/{name}.tex'] = slide if slide.startswith('% Generated from ') else '% Generated from ' + slide
+    (ROOT / 'slides').mkdir(exist_ok=True)
     if args.check:
         for name, content in outputs.items():
             if (ROOT / name).read_text() != content:
@@ -225,7 +228,10 @@ def main():
         write_workbook(tables, values, cells)
     check_workbook(tables, values, cells)
     main_tex = (ROOT.parent / 'pbt_argos.tex').read_text()
-    assert main_tex.count(r'\input{costs/slides.tex}') == 1, 'Deck must include the model slides exactly once'
+    block = main_tex.count(r'\input{costs/slides.tex}')
+    per_slide = [main_tex.count('\\input{costs/slides/%s.tex}' % name) for name in TABLES]
+    assert (block == 1 and not any(per_slide)) or (block == 0 and all(n == 1 for n in per_slide)), \
+        'Deck must include the model slides exactly once: either costs/slides.tex or every costs/slides/<table>.tex'
     assert tex.count(r'\begin{frame}') == len(tables) == len(TABLES)
     pdf_pages = check_pdf(args.pdf, expected) if args.pdf else {}
     lines = ['# Cost model consistency report', '',

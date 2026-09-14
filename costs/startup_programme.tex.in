@@ -13,6 +13,7 @@
 \midrule
 PET materials & {{programme_pet|k}} \\
 Compton camera & {{programme_camera|k}} \\
+Cryogenic system & {{programme_cryo|k}} \\
 Computing and other hardware & {{programme_other_hardware|k}} \\
 Fabrication and test equipment & {{programme_external_work|k}} \\
 First-device contingency & {{programme_device_reserve|k}} \\
@@ -21,15 +22,15 @@ First-device contingency & {{programme_device_reserve|k}} \\
 \bottomrule
 \end{tabular}\par}
 \column{0.46\textwidth}
-{\footnotesize\bfseries\color{crBlue}Development with Donostia Hospital\par}
+{\footnotesize\bfseries\color{crBlue}Development with Onkologikoa and BioGipuzkoa\par}
 \vspace{0.14cm}
-{\small\textbf{Year {{programme_first|n}} --- Design}\par}
-{\footnotesize Procurement, software architecture, quality system and clinical protocol.\par}
+{\small\textbf{Year {{programme_first|n}} (2029) --- Medical-grade design}\par}
+{\footnotesize Design controls, quality system, software architecture and clinical protocol.\par}
 \vspace{0.15cm}
-{\small\textbf{Year {{programme_second|n}} --- Phantom tests}\par}
+{\small\textbf{Year {{programme_second|n}} (2030) --- System build and phantom tests}\par}
 {\footnotesize Assemble the system; test accuracy, reliability and service procedures.\par}
 \vspace{0.15cm}
-{\small\textbf{Years {{programme_clinical_start|n}}--{{programme_end|n}} --- Clinical validation}\par}
+{\small\textbf{Years {{programme_clinical_start|n}}--{{programme_end|n}} (2031--2032) --- Clinical validation}\par}
 {\footnotesize Clinical investigations, workflow validation and conformity assessment.\par}
 \end{columns}
 \vspace{0.20cm}

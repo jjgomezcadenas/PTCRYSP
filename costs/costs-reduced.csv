@@ -2,8 +2,9 @@ id,label,value,unit,formula,notes
 startup_years,Programme duration,4,years,,
 startup_pet,PET raw materials,740000,EUR,,
 startup_camera,Compton camera,100000,EUR,,
+startup_cryo,Cryogenic system,160000,EUR,,Same cryogenic system as the installed-system model (installation.csv); added 2026-09-14.
 startup_other_hardware,Computing and other hardware,100000,EUR,,User input for independent reduced estimate.
-startup_raw,Raw hardware total,,EUR,startup_pet+startup_camera+startup_other_hardware,
+startup_raw,Raw hardware total,,EUR,startup_pet+startup_camera+startup_cryo+startup_other_hardware,
 startup_external_work,Prototype fabrication and test equipment,200000,EUR,,External purchases and contracted work only; employee labour is in personnel.
 startup_device_reserve,First-device contingency,300000,EUR,,Fixed EUR 300000 first-device contingency; user revision.
 startup_hardware_package,Hardware and prototype package including contingency,,EUR,startup_raw+startup_external_work+startup_device_reserve,
@@ -56,7 +57,7 @@ startup_nonhardware,Programme expenditure outside hardware package,,EUR,startup_
 startup_planned,Planned expenditure including first-device contingency,,EUR,startup_hardware_package+startup_nonhardware,
 startup_reserve,Programme reserve,252000,EUR,,Fixed allowance: half the previous EUR 504000 reserve; no longer percentage-based.
 startup_working_capital,Working-capital buffer,0,EUR,,Removed from reduced budget by user; zero retained for editable formulas.
-startup_backup,Additional backup allowance,263000,EUR,,User-approved allowance bringing the current four-year budget to EUR 4000000; separate from programme reserve.
+startup_backup,Additional backup allowance,103000,EUR,,User-approved allowance bringing the four-year budget to EUR 4000000; reduced from 263000 when the cryogenic system was added to the hardware package (2026-09-14). Separate from programme reserve.
 startup_funding,Total funding requirement,,EUR,startup_planned+startup_reserve+startup_working_capital+startup_backup,
 startup_rounding,Funding display rounding increment,100000,EUR,,
 startup_funding_rounded,Funding requirement rounded up,,EUR,ceil(startup_funding/startup_rounding)*startup_rounding,

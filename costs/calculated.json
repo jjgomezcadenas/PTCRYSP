@@ -137,11 +137,12 @@
     "startup_years": 4.0,
     "startup_pet": 740000.0,
     "startup_camera": 100000.0,
+    "startup_cryo": 160000.0,
     "startup_other_hardware": 100000.0,
-    "startup_raw": 940000.0,
+    "startup_raw": 1100000.0,
     "startup_external_work": 200000.0,
     "startup_device_reserve": 300000.0,
-    "startup_hardware_package": 1440000.0,
+    "startup_hardware_package": 1600000.0,
     "startup_ceo_fte": 1.0,
     "startup_ceo_annual": 100000.0,
     "startup_ceo_years": 4.0,
@@ -188,10 +189,10 @@
     "startup_travel_annual": 30000.0,
     "startup_travel_total": 120000.0,
     "startup_nonhardware": 2045000.0,
-    "startup_planned": 3485000.0,
+    "startup_planned": 3645000.0,
     "startup_reserve": 252000.0,
     "startup_working_capital": 0.0,
-    "startup_backup": 263000.0,
+    "startup_backup": 103000.0,
     "startup_funding": 4000000.0,
     "startup_rounding": 100000.0,
     "startup_funding_rounded": 4000000.0,
@@ -223,10 +224,11 @@
     "team_total": 1730000.0,
     "programme_pet": 740000.0,
     "programme_camera": 100000.0,
+    "programme_cryo": 160000.0,
     "programme_other_hardware": 100000.0,
     "programme_external_work": 200000.0,
     "programme_device_reserve": 300000.0,
-    "programme_hardware_package": 1440000.0,
+    "programme_hardware_package": 1600000.0,
     "programme_clinical": 50000.0,
     "programme_regulatory": 25000.0,
     "programme_first": 1.0,
@@ -788,7 +790,7 @@
       {
         "id": "startup_hardware_package",
         "format": "k",
-        "display": "1,440"
+        "display": "1,600"
       },
       {
         "id": "startup_personnel",
@@ -808,7 +810,7 @@
       {
         "id": "startup_backup",
         "format": "k",
-        "display": "263"
+        "display": "103"
       },
       {
         "id": "startup_funding",
@@ -1005,6 +1007,11 @@
         "display": "100"
       },
       {
+        "id": "programme_cryo",
+        "format": "k",
+        "display": "160"
+      },
+      {
         "id": "programme_other_hardware",
         "format": "k",
         "display": "100"
@@ -1022,7 +1029,7 @@
       {
         "id": "programme_hardware_package",
         "format": "k",
-        "display": "1,440"
+        "display": "1,600"
       },
       {
         "id": "programme_first",

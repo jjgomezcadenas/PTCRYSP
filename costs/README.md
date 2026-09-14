@@ -55,7 +55,7 @@ Generated outputs:
 
 - `costs.xlsx`: nine sheets with nine filterable Excel tables. Blue values are editable inputs **for review experiments only**; derived cells have Excel formulas and cached Python-calculated values. Save lasting changes back to CSV and regenerate. Excel edits are not imported automatically.
 - `calculated.json`: full-precision values and slide-display metadata for Python consumers.
-- `slides.tex`: nine financial frames included by `pbt_argos.tex`. Edit the corresponding `.tex.in` templates for wording/layout, not this generated file. Numeric placeholders such as `{{service_price|k}}` pull values from the model.
+- `slides.tex` and `slides/<table>.tex`: the nine financial frames, as one block and as one file per frame so the deck can interleave them with other slides; `pbt_argos.tex` includes each `slides/<table>.tex` exactly once. Edit the corresponding `.tex.in` templates for wording/layout, not this generated file. Numeric placeholders such as `{{service_price|k}}` pull values from the model.
 - `consistency_report.md`: results for CSV calculations, workbook cached values/formulas, slide count, deck inclusion and optional rendered-PDF number checks. A run without `--pdf` explicitly reports the PDF as unchecked.
 
 `--check` refuses stale generated text/workbook values. It updates only the consistency report, not the model outputs or slides. PDF checks locate each financial slide by title and check all displayed model number strings; they are not a substitute for visual layout inspection. The audit covers these nine financial slides, not unrelated epidemiology or third-party market-survey numbers elsewhere in the deck.

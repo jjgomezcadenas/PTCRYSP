@@ -3,12 +3,16 @@
 \documentclass[aspectratio=169,11pt]{beamer}
 %%%FLG%%%
 \usepackage{tikz}
-\usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta,positioning}
 \usepackage{hyperref}
 \usepackage{ragged2e}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 % Optional palette
+\definecolor{timelineblue}{RGB}{16,91,137}
+\definecolor{timelinered}{RGB}{165,35,25}
+\definecolor{timelinegray}{RGB}{145,145,145}
+\definecolor{gridgray}{RGB}{195,200,205}
 \definecolor{darkred}{RGB}{145,35,45}
 \definecolor{axisgray}{RGB}{80,80,80}
 \definecolor{gridgray}{RGB}{215,220,225}
@@ -79,24 +83,6 @@
 \begin{frame}[plain,noframenumbering]
 \titlepage
 \end{frame}}
-
-% Colours used by the market and clinical-evidence slides (defined once).
-\definecolor{PTblue}{RGB}{25,78,125}
-\definecolor{PTred}{RGB}{145,45,55}
-\definecolor{PTgray}{RGB}{80,90,105}
-
-%============================================================================
-%% PART I: Proton therapy and the range problem
-%============================================================================
-\begin{frame}[plain,noframenumbering]
-\centering
-\vspace{1.6cm}
-{\color{crBlue}\rule{0.55\textwidth}{1.1pt}}\\[6mm]
-{\Large\color{crGrey} I}\\[4mm]
-{\Huge\bfseries\color{crBlue} Proton therapy and the range problem}\\[6mm]
-{\color{crBlue}\rule{0.55\textwidth}{1.1pt}}
-\end{frame}
-
 \begin{frame}{What is proton therapy?}
   \small
   \begin{columns}[T]
@@ -126,6 +112,7 @@
   \end{columns}
 \end{frame}
 
+
 \begin{frame}{Example: Brain tumours}
 \small
 \begin{columns}[T,onlytextwidth]
@@ -148,6 +135,8 @@
 \end{column}
 \end{columns}
 \end{frame}
+
+
 
 \begin{frame}{From treatment planning to delivery}
 \small
@@ -174,6 +163,8 @@ The plan delivers a \hi{prediction} of proton range. \hi{How to check it?}
 \end{columns}
 \end{frame}
 
+
+
 \begin{frame}{Why range uncertainty matters}
 \small
 \centering
@@ -197,6 +188,1062 @@ The plan delivers a \hi{prediction} of proton range. \hi{How to check it?}
 \end{columns}
 \source{https://doi.org/10.1088/0031-9155/57/11/R99}{Range uncertainty: Paganetti, Phys. Med. Biol. 57, R99 (2012). OAR = organ at risk.}
 \end{frame}
+
+
+
+\begin{frame}{What could better range verification change?}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.53\textwidth}
+\begin{itemize}
+\item With less range uncertainty, planners can reduce dose to \hi{healthy tissue near the tumour}.
+\item They may also use \hi{beam directions otherwise avoided} because a critical organ lies near the stopping point.
+\item Verification must show that the uncertainty is sufficiently small before these changes can be adopted.
+\end{itemize}
+\end{column}
+\begin{column}{0.43\textwidth}
+\begin{beamercolorbox}[sep=3mm,wd=\linewidth]{block body}
+\textbf{A planning study: 27 brain-tumour patients}
+\par\vspace{3mm}
+Range uncertainty reduced from \hi{3\% to 2\%}.
+\par\vspace{3mm}
+\hi{24 of 27 patients (89\%)} had a relevant dose reduction to at least one organ at risk.
+\end{beamercolorbox}
+\end{column}
+\end{columns}
+\par\vspace{3mm}
+In brain tumours, proton range uncertainties of \hi{1\,mm or less} can in principle be achieved.$^{*}$
+\source{https://doi.org/10.1259/bjr.20230110}{Taasti et al., British Journal of Radiology 96, 20230110 (2023).}
+\source{https://doi.org/10.1002/mp.15644}{Beam-direction benefit: Tattenberg et al., Medical Physics (2022).}
+\par\vspace{1mm}{\scriptsize\color{crGrey}$^{*}$J.J. G\'omez-Cadenas et al., \emph{A High-Sensitivity In-Room CRYSP Scanner for Distal-Edge Verification in Proton Therapy}, paper in preparation, available upon request.}
+\end{frame}
+
+
+\begin{frame}{Complementary imaging for proton therapy}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.48\textwidth}
+\centering
+\textbf{Compton camera}\\
+In-beam: prompt $\gamma$ rays
+\par\vspace{1mm}
+\includegraphics[height=0.40\textheight,keepaspectratio]{argos_compton_illustration.png}
+\end{column}
+\begin{column}{0.48\textwidth}
+\centering
+\textbf{PET}\\
+In-room, post-treatment: $\beta^+$ activity
+\par\vspace{1mm}
+\includegraphics[height=0.40\textheight,keepaspectratio]{argos_pet_illustration.png}
+\end{column}
+\end{columns}
+\par\vspace{2mm}
+R\&D studies support Compton cameras and PET for \hi{proton range verification}. No dedicated commercial solution identified.
+\par\vspace{2mm}
+% References transcribed from ARGOS slide 12; bibliographic details need verification.
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.48\textwidth}
+{\scriptsize\color{crGrey}
+Safavi et al., Nat. Commun. 17, 206 (2026).\par\vspace{1mm}
+Sharma et al., Med. Phys. 52, 1123 (2025).}
+\end{column}
+\begin{column}{0.48\textwidth}
+{\scriptsize\color{crGrey}
+Parodi et al., Eur. J. Nucl. Med. Mol. Imaging 51, 183 (2024).\par\vspace{1mm}
+Zhu et al., Phys. Med. Biol. 56, 6425 (2011).}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{PET: an \emph{in vivo} probe of where the beam stopped}
+  \small
+  \begin{columns}[T]
+    \begin{column}{0.54\textwidth}
+      \begin{itemize}
+        \item Above the nuclear-reaction threshold, protons create
+          \hi{$\beta^+$ emitters} along their path --- mainly \OT\ and \CE.
+        \item Their annihilation $\gamma$'s are imaged in coincidence: a PET
+          image of the \hi{induced activity}.
+        \item The activity falloff sits just upstream of the dose edge; its
+          \hi{distal edge tracks the range}.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{dose_activity.png}\\
+      {\scriptsize\color{crGrey} Illustrative dose and $\beta^+$ activity profiles.\\[2mm]
+       The activity edge is compared with a prediction to estimate the range.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{PET range verification: offline, in-beam and in-room}
+  \centering
+  \includegraphics[width=0.94\textwidth,height=0.80\textheight,keepaspectratio]{in-room.png}
+\end{frame}
+
+\begin{frame}{PET range verification: offline, in-beam and in-room}
+  \centering
+  \begin{tikzpicture}[font=\small, node distance=6mm]
+    % offline
+    \node[draw=crGrey, rounded corners, minimum width=3.1cm, minimum height=2.3cm,
+          align=center, thick] (off) at (0,0)
+      {\textbf{Offline}\\[1mm] patient moved to\\ a nearby PET/CT\\[1mm]
+       \textcolor{crRed}{15--30 min later}};
+    % in-beam
+    \node[draw=crGrey, rounded corners, minimum width=3.1cm, minimum height=2.3cm,
+          align=center, thick] (ib) at (4.7,0)
+      {\textbf{In-beam}\\[1mm] two planar heads\\ at the treatment\\ position\\[1mm]
+       \textcolor{crBlue}{$\sim$ zero delay}};
+    % in-room
+    \node[draw=crBlue, fill=crBlue!8, rounded corners, minimum width=3.1cm,
+          minimum height=2.3cm, align=center, very thick] (ir) at (9.4,0)
+      {\textbf{In-room}\\[1mm] full ring, next\\ to the treatment\\ room\\[1mm]
+       \textcolor{crBlue}{$\sim$ 2 min delay}};
+    \node[below=1mm of off, text width=3.1cm, align=center, crGrey]
+      {\scriptsize washout, \OT\ gone,\\ co-registration};
+    \node[below=1mm of ib, text width=3.1cm, align=center, crGrey]
+      {\scriptsize limited angular\\ coverage};
+    \node[below=1mm of ir, text width=3.1cm, align=center, crGrey]
+      {\scriptsize full coverage,\\ high sensitivity};
+  \end{tikzpicture}
+  \vspace{2mm}
+
+  {\color{crGrey}\small The trade-off is \textbf{delay} vs.\ \textbf{angular
+   coverage / scanner quality}.}
+\end{frame}
+
+\begin{frame}{Offline results in large uncertainties}
+  \begin{columns}[T]
+    \begin{column}{0.56\textwidth}
+      A delay of 15--30 minutes costs on three fronts:
+      \begin{itemize}
+        \item \hi{Sensitivity}: the abundant \OT\ (2\,min) has vanished --- only
+          the sparse \CE\ tail remains.
+        \item \hi{Biological washout}: perfusion clears the emitters; hard to
+          model, patient-dependent.
+        \item \hi{Co-registration}: the patient is set up afresh on a separate
+          scanner --- a few-mm misalignment maps straight into an apparent
+          range shift.
+      \end{itemize}
+      \vspace{1mm}
+%      {\small\color{crGrey} Literature: offline accuracy a few mm at best
+%       (Knopf 2009; Parodi).}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{activity.png}\\
+      {\scriptsize\color{crGrey} \OT\ dominates the first minutes, then decays;
+       \CE\ carries the late, weak signal.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Online/In-room tradeoffs}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \textbf{\color{crBlue}In-beam} (short delay, same bed)
+      \begin{itemize}
+        \item Retains the short-lived \OT, essentially no delay.
+        \item But the beam must pass: only \hi{two planar heads} fit.
+        \item Reduced angular coverage $\Rightarrow$ \hi{low sensitivity} and
+          limited-angle image artefacts.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \textbf{\color{crBlue}In-room} (just after, full ring)
+      \begin{itemize}
+        \item A \hi{full closed ring} $\Rightarrow$ full coverage, high
+          sensitivity, clean image.
+        \item Same couch $\Rightarrow$ a known rigid transform and a short
+          transfer, without separate-scanner repositioning.
+        \item The $\sim$2-min delay is \hi{bought back} by sensitivity and a
+          \hi{better scanner}.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{2mm}
+  \begin{center}
+    \fbox{\parbox{0.9\textwidth}{\centering
+      A \hi{high-sensitivity in-room ring} combines short transfer time with
+      complete angular coverage and high sensitivity.}}
+  \end{center}
+\end{frame}
+
+% ===========================================================================
+
+\begin{frame}{Prompt gammas: tracking the proton range during irradiation}
+  \small
+  \begin{columns}[T]
+    \begin{column}{0.54\textwidth}
+      \begin{itemize}
+        \item Nuclear reactions along the proton path leave excited nuclei
+          in the tissue. Their de-excitation emits \hi{prompt $\gamma$ rays}
+          with energies of several MeV.
+        \item Emission occurs \hi{during irradiation}. Its distal falloff
+          tracks the proton range; the relation depends on tissue
+          composition and the selected $\gamma$ energies.
+        \item The measured \hi{4.4\,MeV $\gamma$ profile} shown here
+          concentrates near the Bragg peak and follows the proton range.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \centering
+      \includegraphics[width=\linewidth,height=0.53\textheight,keepaspectratio]
+        {prompt_gamma_compton_koide2018.jpg}\\[1mm]
+      {\scriptsize\color{crGrey} Measured prompt-$\gamma$ profile and simulated
+       proton energy deposition. 70\,MeV protons; spaced PMMA slabs.}\\[2mm]
+      {\tiny\color{crGrey}
+       \href{https://doi.org/10.1038/s41598-018-26591-2}
+       {Koide et al., Scientific Reports 8, 8116 (2018), Fig.\ 2. CC BY 4.0.}}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Imaging prompt gammas with a Compton camera}
+  \small
+  \begin{columns}[T]
+    \begin{column}{0.54\textwidth}
+      \begin{itemize}
+        \item A \hi{Compton camera} measures the positions and energies
+          of successive interactions of the \hi{same $\gamma$ ray}.
+        \item The photon scatters in the first detector and is absorbed
+          in the second. The deposited energies determine the
+          \hi{Compton scattering angle}.
+        \item The two interaction positions define the cone axis;
+          the scattering angle defines its opening. The emission point
+          lies on this \hi{cone of possible origins}.
+        \item Combining many events reconstructs the
+          \hi{emission profile and its distal edge}.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \centering
+      \resizebox{\linewidth}{!}{%
+      \begin{tikzpicture}[font=\small, >=Stealth]
+        \filldraw[fill=crBlue!5,draw=crGrey,rounded corners]
+          (0,0) rectangle (5.8,1.25);
+        \node[crGrey] at (1.0,0.25) {Tissue};
+        \draw[->,very thick,crBlue] (-0.2,0.75) -- (4.6,0.75);
+        \node[above,crBlue] at (0.7,0.8) {Protons};
+        \node[below,crGrey,font=\scriptsize] at (4.15,0.7) {Range};
+        \fill[crRed] (1.4,0.75) circle (0.07);
+        \draw[->,very thick,crRed] (1.4,0.75) -- (3.05,2.4);
+        \node[rotate=45,above,crRed] at (2.05,1.5) {Prompt $\gamma$};
+        \filldraw[fill=crBlue!15,draw=crBlue,thick]
+          (2.85,2.0) rectangle (3.25,2.8);
+        \filldraw[fill=crRed!15,draw=crRed,thick]
+          (5.0,1.8) rectangle (5.65,3.0);
+        \fill (3.05,2.4) circle (0.045);
+        \fill (5.3,2.4) circle (0.045);
+        \draw[->,thick,crRed] (3.05,2.4) -- (5.3,2.4);
+        \draw[dashed,crGrey] (3.05,2.4) -- (4.05,3.4);
+        \draw[crGrey] (3.7,2.4) arc[start angle=0,end angle=45,radius=0.65];
+        \node at (3.92,2.72) {$\theta$};
+        \node[above,align=center] at (2.9,3.45) {Scatterer};
+        \node[above,align=center] at (5.3,3.45) {Absorber};
+        \node[below,font=\scriptsize] at (3.05,2.0) {$E_1,\,\mathbf{x}_1$};
+        \node[below,font=\scriptsize] at (5.3,1.8) {$E_2,\,\mathbf{x}_2$};
+      \end{tikzpicture}}\\[2mm]
+      {\scriptsize\color{crGrey} One photon, two detector interactions:
+       Compton scattering followed by absorption.}\\[3mm]
+      {\tiny\color{crGrey}
+       \href{https://doi.org/10.3389/fonc.2016.00080}
+       {Hueso-Gonz\'alez et al., Front. Oncol. 6:80 (2016).}\\
+       \href{https://arxiv.org/abs/2202.06556}
+       {Hybrid in-beam PET and Compton imaging (2022).}}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{PET and Compton imaging: complementary measurements}
+\small
+\renewcommand{\arraystretch}{1.22}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.16\textwidth}>{\raggedright\arraybackslash}p{0.38\textwidth}>{\raggedright\arraybackslash}p{0.38\textwidth}@{}}
+\toprule
+ & \textbf{Prompt gammas / Compton} & \textbf{Induced activity / PET}\\
+\midrule
+Signal & Single prompt $\gamma$ rays, several MeV & Pairs of 511\,keV annihilation photons\\
+Timing & During beam delivery & In the proposed in-room scheme, shortly after irradiation\\
+Information & Emission profile along the beam; comparison with expected range & Activity distribution; comparison with expected distal edge\\
+Main limitation & Few useful multi-interaction events and beam-related background & Decay, biological washout and patient registration\\
+\bottomrule
+\end{tabular}
+\par\vspace{5mm}
+\textbf{DIPC proposed strategy:} Compton imaging for monitoring during irradiation, followed by an in-room PET measurement within minutes of beam stop. Combine both results to minimize systematic errors.
+\end{frame}
+
+\begin{frame}{CRYSP: PET with cryogenic cesium iodide}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.31\textwidth}
+\centering
+\textbf{Pure CsI at $\sim$100 K}
+\par\vspace{2mm}
+\includegraphics[height=0.27\textheight]{crysp_crystal.png}
+\par\vspace{2mm}
+\raggedright
+\hi{$\sim10^5$ photons/MeV}.\\[2mm]
+Abundant material; lower crystal cost than rare-earth scintillators.
+\end{column}
+\begin{column}{0.31\textwidth}
+\centering
+\textbf{Monolithic 3D detection}
+\par\vspace{2mm}
+\includegraphics[height=0.27\textheight]{crysp_monolithic.png}
+\par\vspace{2mm}
+\raggedright
+Large crystals read out by silicon photomultipliers (SiPMs).\\[2mm]
+\hi{Millimetre-scale 3D resolution} in simulation; measured energy resolution \hi{below 7\%} at 511\,keV.
+\end{column}
+\begin{column}{0.31\textwidth}
+\centering
+\textbf{Full-ring PET}
+\par\vspace{2mm}
+\includegraphics[height=0.27\textheight]{crysp_ring.png}
+\par\vspace{2mm}
+\raggedright
+Total-body PET design based on these crystals.\\[2mm]
+\hi{High sensitivity at lower detector cost} is the design goal.
+\end{column}
+\end{columns}
+\source{https://doi.org/10.1088/1361-6560/ae35c8}{R. Soleti, J.J. Gomez-Cadenas et al., Phys. Med. Biol. 71, 025001 (2026).}
+\end{frame}
+
+\begin{frame}{COCOA: a compact Compton camera for MeV gamma rays}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.31\textwidth}
+\centering
+\textbf{LiquidO scatterer}
+\par\vspace{2mm}
+\includegraphics[width=\linewidth,height=0.27\textheight,keepaspectratio]{cocoa_scatterer.png}
+\par\vspace{2mm}
+\raggedright
+Opaque liquid scintillator with a 3D grid of wavelength-shifting fibres.\\[2mm]
+Reconstructs the \hi{position and energy} of the first interaction.
+\end{column}
+\begin{column}{0.31\textwidth}
+\centering
+\textbf{Crystal absorber}
+\par\vspace{2mm}
+\includegraphics[width=\linewidth,height=0.27\textheight,keepaspectratio]{cocoa_absorber.png}
+\par\vspace{2mm}
+\raggedright
+Monolithic scintillator blocks read out by SiPM arrays.\\[2mm]
+Measures the scattered photon: \hi{3D position and energy}, including depth of interaction.
+\end{column}
+\begin{column}{0.31\textwidth}
+\centering
+\textbf{Space application}
+\par\vspace{2mm}
+\includegraphics[width=\linewidth,height=0.27\textheight,keepaspectratio]{cocoa_satellite.png}
+\par\vspace{2mm}
+\raggedright
+Designed for \hi{MeV gamma-ray astronomy}.\\[2mm]
+Compact geometry for microsatellites or high-altitude balloons; proposed LUR-50 integration shown.
+\end{column}
+\end{columns}
+\source{https://doi.org/10.1016/j.astropartphys.2025.103135}{R. Soleti, J.J. Gomez-Cadenas et al., Astropart. Phys. 172, 103135 (2025).}
+\end{frame}
+
+\begin{frame}{COCOA: demonstrated 
+scalability and efficiency}
+  \begin{columns}[T]
+    \begin{column}{0.58\textwidth}
+      \begin{itemize}
+        \item \hi{Scalability}: the scatterer is an opaque liquid scintillator
+          read by a lattice of WLS fibres, so the sensitive volume scales with
+          the cost of liquid and fibres, not with crystal growth. Inorganic
+          crystals and CZT are limited to cm-scale units that must be tiled
+          at high cost.
+        \item \hi{Efficiency}: stochastic light confinement resolves multiple
+          Compton vertices inside a single monolithic volume, allowing a thick,
+          large-acceptance scatterer.
+        \item Gamma-ray imaging has already been \hi{demonstrated} in a
+          benchtop experiment.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \includegraphics[width=0.78\linewidth]{figs/benchtop.png}\\
+      {\scriptsize\color{crGrey} Benchtop setup and reconstructed $^{60}$Co image.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{CRYSP: \emph{CRYogenic Sensitive PET}}
+  \begin{columns}[T]
+    \begin{column}{0.6\textwidth}
+      \begin{itemize}
+        \item Scintillators \hi{CsI and BGO} gain dramatically in light yield
+          when cooled --- at 77 K, CsI reaches $\sim$100 photons/keV and BGO
+          $\sim$29 photons/keV.
+            \item In both cases, high yields translate into excellent energy resolution
+              (6\% CsI, 10\% BGO),
+              which in turn is essential for efficient scatter rejection.
+        \item Monolithic crystals + SiPMs permit 3D position reconstruction using neural
+              networks with high accuracy and no parallax error.
+      \end{itemize}
+
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{3D.png}\\
+      {\scriptsize\color{crGrey} 3D reconstruction in a monolithic crystal.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Scanner cost breakdown}
+  \centering
+  \includegraphics[width=0.94\textwidth,height=0.80\textheight,keepaspectratio]{cost_breakdown.png}
+\end{frame}
+
+\begin{frame}{Total scanner cost}
+  \centering
+  \includegraphics[width=0.94\textwidth,height=0.72\textheight,keepaspectratio]{scanner_totals.png}
+  \par\vspace{1mm}
+  {\scriptsize\color{crGrey} ARGOS baseline: BGO, 600\,mm bore, 300\,mm length, 0.74\,M\EUR{} in crystal, SiPMs and electronics.
+  Backup: CsI(Tl) at room temperature, 0.60\,M\EUR.}
+\end{frame}
+
+\begin{frame}{Reference protocol: all scanner configurations are sub-mm}
+  \begin{columns}[T]
+    \begin{column}{0.44\textwidth}
+      \begin{itemize}
+        \item \hi{Protocol:} 1\,Gy, 300\,s acquisition, starting 120\,s after
+          beam-off; washout included.
+        \item BGO: \hi{0.101--0.127\,mm}; CsI: \hi{0.146--0.155\,mm}.
+        \item BGO is more precise through higher sensitivity; CsI remains a
+          competitive, lower-cost option.
+        \item These values are the \hi{statistical precision of the fitted
+          activity edge}.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.56\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{statproc_washed_grid.png}\\
+      {\scriptsize\color{crGrey} Finite-pool-corrected $\sigma_R$ for the
+       reference protocol ($N=100$).}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% \begin{frame}{Summary}
+%   \begin{itemize}
+%     \item Proton-therapy range verification needs an \hi{in vivo}, online/in-room,
+%       high-sensitivity probe
+%     \item \hi{CRYSP in-room PET} exploits cryogenic CsI/BGO for excellent energy
+%       and spatial resolution at a \hi{competitive cost}.
+%     \item For the reference protocol, the fitted activity edge has
+%       \hi{0.101--0.155\,mm statistical precision} across all BGO and CsI
+%       geometries; the tested CsI timing grid remains below 0.35\,mm.
+%     \item CsI offers a very good, low-cost, supply-secure option; BGO offers
+%       the best statistical precision.
+%   \end{itemize}
+%   \vspace{3mm}
+% \end{frame}
+
+
+
+\begin{frame}{Clinical evidence for proton therapy}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\includegraphics[width=\linewidth]{proton_trials_indications.png}
+\end{column}
+\begin{column}{0.49\textwidth}
+\includegraphics[width=\linewidth]{proton_trials_phase3.png}
+\end{column}
+\end{columns}
+\par\vspace{5mm}
+\raggedright
+Phase III trials are building the \hi{clinical evidence} for wider use of proton therapy, particularly to \hi{reduce side effects}.
+\par\vspace{1mm}
+{\tiny\color{crGrey} Supplied charts cite trial.gov (phase III chart: July 2026). Trial counts and projected completion dates require registry verification.}
+\end{frame}
+
+\begin{frame}{Boosting proton therapy}
+\small
+\begin{enumerate}
+\item Proton beam dose monitoring \hi{in real time} is a real need that will become more pressing as the number of centres grows and the number of treated patients increases.
+\item R\&D on monitoring techniques has been going on for about 20 years. PET and gamma cameras offer the potential for \hi{day-by-day, case-by-case monitoring} and distal-edge measurements that could reduce underdose while minimising the risk of overdose.
+\item However, these systems have \hi{not yet become standard medical practice}.
+\end{enumerate}
+\source{https://doi.org/10.3389/fonc.2025.1660605}{Clinical status: Current status and upcoming developments for online adaptive proton therapy, Front. Oncol. (2025).}
+\end{frame}
+
+\begin{frame}{The DIPC group}
+\small
+The DIPC group is a leading neutrino physics group in Spain, with extensive expertise in \hi{nuclear instrumentation}.
+\par\vspace{2mm}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Scientific leadership and concepts}
+\begin{itemize}
+\item Led by \hi{J.J. Gomez-Cadenas}: co-recipient of the \hi{2016 Breakthrough Prize in Fundamental Physics} as a member of K2K and T2K, with group leadership roles in neutrino physics.
+\item Two ERC grants: \hi{AdG-2013 and SyG-2020}.
+\item \hi{CRYSP}: Gomez-Cadenas, Soleti, Lopez-Guejo, Pelegrin.\\
+\hi{COCOA}: Soleti, Gomez-Cadenas.
+\end{itemize}
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Team, engineering and management}
+\begin{itemize}
+\item Four faculty, two engineers, two postdocs, and graduate and undergraduate students.
+\item Substantial experience in mechanical engineering and cryogenics.
+\item Strong Basque industry connections and established management: Lopez-Guejo and Pelegrin.
+\item Well funded by the ERC and Basque Government; additional positions planned for CRYSP and COCOA.
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{CRYSP and COCOA for proton beam monitoring}
+\small
+\begin{itemize}
+\item The CRYSP and COCOA concepts can be applied as \hi{high-performance, low-cost solutions} for proton beam monitoring. Our recent study shows the potential of in-room CRYSP PET.
+\item We have \hi{operating prototypes of both systems} and are moving towards the construction of larger apparatus.
+\item The group is establishing a close collaboration with \hi{Biogipuzkoa} and the medical staff of the forthcoming proton beam therapy centre in \hi{Donostia}.
+\end{itemize}
+\par\vspace{3mm}
+{\scriptsize\color{crGrey} J.J. Gomez-Cadenas et al., \emph{A High-Sensitivity In-Room CRYSP Scanner for Distal-Edge Verification in Proton Therapy}, paper in preparation, available upon request.}
+\end{frame}
+
+\begin{frame}{Our vision: an integrated monitoring service}
+\small
+\begin{itemize}
+\item Optimised, \hi{high-precision, low-cost apparatus}, combined with fast and efficient software using \hi{AI-enabled technologies}, to provide real-time monitoring and support treatment correction in cooperation with doctors.
+\item A potential spin-off, \hi{ARGOS}, would offer an integrated solution to proton therapy centres:
+\end{itemize}
+\par\vspace{2mm}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.31\textwidth}
+\centering\textbf{Hardware}\\[2mm]
+Installation and maintenance
+\end{column}
+\begin{column}{0.31\textwidth}
+\centering\textbf{Software}\\[2mm]
+Full development and integration
+\end{column}
+\begin{column}{0.31\textwidth}
+\centering\textbf{Day-by-day service}\\[2mm]
+Close cooperation with doctors
+\end{column}
+\end{columns}
+\par\vspace{5mm}
+The model could be extensively tested and optimised in \hi{Donostia}, then expanded to new proton beam centres.
+\end{frame}
+
+\begin{frame}{Development programme and investment}
+\small
+\textbf{Foreseen development cycle: \hi{4 years}.}
+\par\vspace{3mm}
+\textbf{Investment: approximately \hi{\euro1 million per year}, or \hi{\euro3--4 million in total}.}
+\par\vspace{5mm}
+\begin{enumerate}
+\item Validation of prototypes.
+\item Preclinical demonstrators.
+\item Clinical trials and medical validation.
+\item Construction of medical-grade apparatus.
+\item Initial operation.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}{Market Size: The Vision of Independent Consultants}
+
+\centering
+
+\renewcommand{\arraystretch}{1.18}
+\setlength{\tabcolsep}{4pt}
+
+\footnotesize
+
+\begin{tabular}{@{}p{4.0cm} c c c c@{}}
+\toprule
+\textbf{Source} &
+\textbf{Base year} &
+\textbf{Market size} &
+\textbf{Forecast} &
+\textbf{CAGR} \\
+\midrule
+
+\href{https://www.grandviewresearch.com/industry-analysis/proton-therapy-systems-market}
+{Grand View Research}
+& 2023
+& \$749.5 M
+& \$1.22 B in 2030
+& 7.3\% \\
+
+\href{https://www.researchandmarkets.com/reports/6091787/proton-therapy-market-forecasts}
+{Knowledge Sourcing Intelligence}
+& 2025
+& \$959 M
+& \$1.27 B in 2030
+& 5.84\% \\
+
+\href{https://www.fundamentalbusinessinsights.com/industry-report/proton-therapy-systems-market-8081}
+{Fundamental Business Insights}
+& 2025
+& \$849 M
+& \$1.73 B in 2035
+& 7.4\% \\
+
+\href{https://www.6wresearch.com/industry-report/global-proton-therapy-systems-market}
+{6Wresearch}
+& 2024
+& \$1.30 B
+& \$2.40 B in 2031
+& 8.4\% \\
+
+\href{https://www.thebusinessresearchcompany.com/report/proton-therapy-systems-global-market-report}
+{The Business Research Company}
+& 2025
+& \$1.43 B
+& \$1.58 B in 2026
+& 10.5\% \\
+
+\href{https://www.researchandmarkets.com/reports/5954217/proton-therapy-systems-market}
+{The Insight Partners}
+& 2024
+& \$1.56 B
+& \$3.27 B in 2031
+& 11.2\% \\
+
+\href{https://www.researchandmarkets.com/reports/5309802/proton-therapy-global-strategic-business-report}
+{Market Glass}
+& 2024
+& \$696 M
+& \$1.50 B in 2030
+& 13.5\% \\
+
+\bottomrule
+\end{tabular}
+
+\vspace{0.35cm}
+
+\tiny
+Market definitions and scopes differ across reports. Differences may reflect the inclusion or exclusion
+of products and services.
+
+\vspace{0.3cm}
+
+\normalsize
+\centering
+\textbf{
+Independent estimates consistently place the current global
+proton-therapy market in the order of \$1 billion per year.
+}
+\end{frame}
+
+\begin{frame}{Proton therapy: worldwide deployment.}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.59\textwidth}
+\centering
+\includegraphics[width=\linewidth]{proton_facilities_world_2021.png}
+\par\vspace{2mm}
+\raggedright
+Over the last two decades, proton therapy has evolved from a highly specialised treatment into a \hi{globally deployed clinical technology}.
+\end{column}
+\begin{column}{0.38\textwidth}
+\centering
+\includegraphics[height=0.45\textheight,keepaspectratio]{proton_facilities_europe.png}
+\par\vspace{2mm}
+\includegraphics[width=\linewidth,height=0.33\textheight,keepaspectratio]{proton_patients_europe.png}
+\end{column}
+\end{columns}
+\par\vspace{2mm}
+{\tiny\color{crGrey} World map: April 2021. European patient chart: PTCOG.}
+\end{frame}
+
+\begin{frame}{Market Share}
+
+\vspace{0.1cm}
+
+\begin{columns}[T,onlytextwidth]
+
+%================================================
+% LEFT COLUMN
+%================================================
+\column{0.42\textwidth}
+
+
+{\small
+IBA originated in Belgium in the early 1980s as a university-led effort to develop medical cyclotrons, and evolved into the world's leading provider of proton-therapy systems and particle-accelerator technology.
+}
+
+\vspace{0.50cm}
+
+\small{
+We will analyse several elements of information provided by this actor in the newest Financial Reports (FY2025).}
+\vspace{0.50cm}
+
+{\scriptsize
+Source:
+\href{https://www.iba-worldwide.com/sites/default/files/2026-03/iba-fy25-results-presentation-en.pdf}
+{IBA FY2025 Results Presentation}.
+}
+
+%================================================
+% RIGHT COLUMN
+%================================================
+\column{0.56\textwidth}
+
+\centering
+
+{\large\bfseries Total market share in PT rooms}
+
+\vspace{0.18cm}
+
+\begin{tikzpicture}[scale=0.88]
+
+\def\radius{2.45}
+
+%------------------------------------------------
+% PIE CHART
+%------------------------------------------------
+
+% IBA: 42% = 151.2 degrees
+\fill[IBAgreen]
+(0,0) -- (90:\radius)
+arc[start angle=90,end angle=-61.2,radius=\radius]
+-- cycle;
+
+% Varian: 21% = 75.6 degrees
+\fill[grayA]
+(0,0) -- (-61.2:\radius)
+arc[start angle=-61.2,end angle=-136.8,radius=\radius]
+-- cycle;
+
+% Hitachi: 19% = 68.4 degrees
+\fill[grayB]
+(0,0) -- (-136.8:\radius)
+arc[start angle=-136.8,end angle=-205.2,radius=\radius]
+-- cycle;
+
+% Mevion: 9% = 32.4 degrees
+\fill[grayC]
+(0,0) -- (-205.2:\radius)
+arc[start angle=-205.2,end angle=-237.6,radius=\radius]
+-- cycle;
+
+% Others: 9% = 32.4 degrees
+\fill[grayD]
+(0,0) -- (-237.6:\radius)
+arc[start angle=-237.6,end angle=-270,radius=\radius]
+-- cycle;
+
+%------------------------------------------------
+% LABELS
+%------------------------------------------------
+
+% IBA
+\node[
+    align=center,
+    text=white,
+    font=\bfseries\footnotesize
+]
+at (14:1.62)
+{IBA\\42\%};
+
+% Varian
+\node[
+    align=center,
+    text=black,
+    font=\bfseries\scriptsize
+]
+at (-99:1.68)
+{Varian\\Siemens\\21\%};
+
+% Hitachi
+\node[
+    align=center,
+    text=black,
+    font=\bfseries\scriptsize
+]
+at (-171:1.68)
+{Hitachi\\19\%};
+
+% Mevion
+\node[
+    align=center,
+    text=white,
+    font=\bfseries\scriptsize
+]
+at (-221:1.78)
+{Mevion\\9\%};
+
+% Others
+\node[
+    align=center,
+    text=black,
+    font=\bfseries\scriptsize
+]
+at (111:1.78)
+{Others\\9\%};
+
+\end{tikzpicture}
+
+\vspace{0.02cm}
+
+{\tiny
+Research centres and Rutherford Cancer Centres excluded.//
+Competitors' room counts are restated by IBA to include
+previously unpublished or unconfirmed orders.
+}
+
+\end{columns}
+
+\vfill
+
+\end{frame}
+
+
+
+\begin{frame}{Proton therapy adoption}
+
+\begin{columns}[T,onlytextwidth]
+
+% =========================================================
+% LEFT COLUMN — ORIGINAL GRAPH
+% =========================================================
+\column{0.62\textwidth}
+
+\centering
+
+\includegraphics[width=\linewidth,keepaspectratio]{figs/ptcog_patients.png}
+
+\vspace{0.15cm}
+
+{\scriptsize
+Source:
+\href{https://ptcog.online/past-conferences/statistics-of-patients-treated-in-particle-therapy-facilities-worldwide/}
+{PTCOG Patient Statistics}.
+}
+
+
+% =========================================================
+% RIGHT COLUMN — TEXT
+% =========================================================
+\column{0.34\textwidth}
+
+\vspace{0.35cm}
+
+\vspace{0.35cm}
+
+{\small
+The number of patients treated with proton therapy has increased steadily at exponential pace
+}
+
+\vspace{0.45cm}
+
+{\tiny
+\begin{itemize}
+    \item \textbf{Expanding installed base}\\
+More centres and treatment rooms.
+\item\textbf{Technology maturation}\\
+More compact and standardised proton delivery systems.
+\item \textbf{Growing clinical evidence}\\
+Supporting wider adoption.
+\end{itemize}
+
+}
+
+\vspace{0.50cm}
+
+{\small\bfseries
+Proton therapy is becoming an established clinical technology.
+}
+
+\end{columns}
+
+\end{frame}
+
+% Required packages in the preamble:
+% \usepackage{graphicx}
+% \usepackage{hyperref}
+% \usepackage{xcolor}
+
+\definecolor{PTblue}{RGB}{27,84,130}
+\definecolor{PTred}{RGB}{145,45,55}
+\definecolor{PTgray}{RGB}{85,95,110}
+
+\begin{frame}{Market dynamics and Prospectives}
+
+\vspace{0.10cm}
+
+\begin{columns}[T,onlytextwidth]
+
+% =========================================================
+% LEFT COLUMN — IBA FIGURE
+% =========================================================
+\column{0.60\textwidth}
+
+\centering
+
+\includegraphics[
+    width=\linewidth,
+    keepaspectratio
+]{figs/iba_sites.png}
+
+\vspace{0.15cm}
+
+{\small\color{PTgray}
+Source:
+\href{https://www.iba-worldwide.com/sites/default/files/2025-08/iba-hy25-results_presentation.pdf}
+{IBA Half-Year Results 2025}.
+}
+
+
+% =========================================================
+% RIGHT COLUMN — INTERPRETATION
+% =========================================================
+\column{0.35\textwidth}
+
+\vspace{0.30cm}
+
+{\Large\bfseries\color{PTblue}
+A market still expanding
+}
+
+\vspace{0.40cm}
+
+{\small\color{PTgray}
+IBA, the global market leader, reports:
+}
+
+\vspace{0.45cm}
+
+
+
+% ---------------------------------------------------------
+% MAIN TAKEAWAY
+% ---------------------------------------------------------
+
+
+{\LARGE
+\bfseries
+\color{PTred}
+45\%
+}
+
+\vspace{0.08cm}
+\begin{center}
+{\normalsize\bfseries
+of IBA's current portfolio
+}
+
+\vspace{0.05cm}
+
+{\small
+is still to become operational
+}
+{\small \color{PTgray}
+This indicates substantial near-term growth
+of the installed base.
+}
+\end{center}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Clinical evidence approaching an inflection point}
+
+\begin{columns}[T,onlytextwidth]
+
+% =========================================================
+% LEFT COLUMN
+% =========================================================
+\column{0.63\textwidth}
+
+{\scriptsize
+\textbf{Historically, proton therapy faced an evidence gap:}
+its dosimetric advantages were clear, but randomized clinical evidence
+of superiority over modern photon radiotherapy remained limited.
+}
+
+\vspace{0.25cm}
+
+\centering
+
+\includegraphics[
+    width=\linewidth,
+    keepaspectratio
+]{figs/proton_trials_phase3.png}
+
+\vspace{0.10cm}
+
+{\tiny
+Source:
+\href{https://www.iba-worldwide.com/financial-presentations}
+{IBA investor presentation, 2026};
+trial data from ClinicalTrials.gov.
+}
+
+% =========================================================
+% RIGHT COLUMN
+% =========================================================
+\column{0.33\textwidth}
+
+{\large\bfseries
+The evidence base is changing
+}
+
+\vspace{0.35cm}
+
+{\LARGE\bfseries\color{PTred}
+35+
+}
+
+{\small
+major Phase III trials
+}
+
+
+{\tiny
+\emph{A large concentration of trial readouts is expected between \textbf{2026 and 2030}.}
+}
+
+\vspace{0.45cm}
+
+{\scriptsize\bfseries
+Early Phase III results:
+}
+\begin{itemize}
+    \item {\tiny
+\textbf{Oropharyngeal cancer:}
+IMPT showed non-inferior disease control and lower severe toxicity than IMRT. Frank et al.,
+\href{https://doi.org/10.1016/S0140-6736(25)01962-2}
+{\textit{The Lancet}, 2025}.
+}
+\item {\tiny
+\textbf{TORPEdO} IMPT and IMRT showed similar quality of life and disease control. Thomson et al.,
+\href{https://doi.org/10.1016/S0140-6736(26)00314-4}
+{\textit{The Lancet}, 2026}.
+}
+
+\end{itemize}
+
+
+
+
+\end{columns}
+
+\end{frame}
+
+% Required packages:
+% \usepackage{graphicx}
+% \usepackage{xcolor}
+% \usepackage{hyperref}
+
+\definecolor{PTblue}{RGB}{25,78,125}
+\definecolor{PTred}{RGB}{145,45,55}
+\definecolor{PTgray}{RGB}{80,90,105}
 
 \begin{frame}{The Proton Therapy Paradox}
 
@@ -399,305 +1446,147 @@ Range errors can cause target undershoot or distal overshoot into normal tissue,
 \end{columns}
 \end{frame}
 
-\begin{frame}{What could better range verification change?}
-\small
+
+\begin{frame}{Reaction from the Industry}
+\begin{center}
+{\small\bfseries\color{darkred}
+The major players already recognise the significance of the issue and are adapting their strategies accordingly.
+}
+
+
+\vspace{0.10cm}
+\includegraphics[width=0.8\linewidth]{figs/iba_strat.png}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}{In-vivo verification: towards intervention}
+
+{\small
+The next step is to turn patient-specific verification into a decision:
+\hi{does this fraction require additional attention?}\par
+}
+
+\vspace{0.25cm}
 \begin{columns}[T,onlytextwidth]
-\begin{column}{0.53\textwidth}
+\column{0.46\textwidth}
+{\footnotesize\bfseries\color{PTblue}What should trigger a review?\par}
+\vspace{0.08cm}
+{\small
 \begin{itemize}
-\item With less range uncertainty, planners can reduce dose to \hi{healthy tissue near the tumour}.
-\item They may also use \hi{beam directions otherwise avoided} because a critical organ lies near the stopping point.
-\item Verification must show that the uncertainty is sufficiently small before these changes can be adopted.
+  \setlength{\itemsep}{0.10cm}
+  \item Unexpected range shifts.
+  \item Changes consistent with altered anatomy.
+  \item Possible setup or modelling errors.
 \end{itemize}
-\end{column}
-\begin{column}{0.43\textwidth}
-\begin{beamercolorbox}[sep=3mm,wd=\linewidth]{block body}
-\textbf{A planning study: 27 brain-tumour patients}
-\par\vspace{3mm}
-Range uncertainty reduced from \hi{3\% to 2\%}.
-\par\vspace{3mm}
-\hi{24 of 27 patients (89\%)} had a relevant dose reduction to at least one organ at risk.
-\end{beamercolorbox}
-\end{column}
-\end{columns}
-\par\vspace{3mm}
-In brain tumours, proton range uncertainties of \hi{1\,mm or less} can in principle be achieved.$^{*}$
-\source{https://doi.org/10.1259/bjr.20230110}{Taasti et al., British Journal of Radiology 96, 20230110 (2023).}
-\source{https://doi.org/10.1002/mp.15644}{Beam-direction benefit: Tattenberg et al., Medical Physics (2022).}
-\par\vspace{1mm}{\scriptsize\color{crGrey}$^{*}$J.J. G\'omez-Cadenas et al., \emph{A High-Sensitivity In-Room CRYSP Scanner for Distal-Edge Verification in Proton Therapy}, paper in preparation, available upon request.}
-\end{frame}
+}
 
-%============================================================================
-%% PART II: In-vivo range verification
-%============================================================================
-\begin{frame}[plain,noframenumbering]
-\centering
-\vspace{1.6cm}
-{\color{crBlue}\rule{0.55\textwidth}{1.1pt}}\\[6mm]
-{\Large\color{crGrey} II}\\[4mm]
-{\Huge\bfseries\color{crBlue} In-vivo range verification}\\[6mm]
-{\color{crBlue}\rule{0.55\textwidth}{1.1pt}}
-\end{frame}
-
-\begin{frame}{Boosting proton therapy}
-\small
+\column{0.50\textwidth}
+{\footnotesize\bfseries\color{PTblue}Towards an intervention workflow\par}
+\vspace{0.08cm}
+{\small
 \begin{enumerate}
-\item Proton beam dose monitoring \hi{in real time} is a real need that will become more pressing as the number of centres grows and the number of treated patients increases.
-\item R\&D on monitoring techniques has been going on for about 20 years. PET and gamma cameras offer the potential for \hi{day-by-day, case-by-case monitoring} and distal-edge measurements that could reduce underdose while minimising the risk of overdose.
-\item However, these systems have \hi{not yet become standard medical practice}.
+  \setlength{\itemsep}{0.08cm}
+  \item \textbf{Detect} a deviation from expectation.
+  \item \textbf{Review} its cause and clinical relevance.
+  \item \textbf{Act}: additional imaging or replanning when warranted.
 \end{enumerate}
-\source{https://doi.org/10.3389/fonc.2025.1660605}{Clinical status: Current status and upcoming developments for online adaptive proton therapy, Front. Oncol. (2025).}
-\end{frame}
-
-\begin{frame}{Complementary imaging for proton therapy}
-\small
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.48\textwidth}
-\centering
-\textbf{Compton camera}\\
-In-beam: prompt $\gamma$ rays
-\par\vspace{1mm}
-\includegraphics[height=0.40\textheight,keepaspectratio]{argos_compton_illustration.png}
-\end{column}
-\begin{column}{0.48\textwidth}
-\centering
-\textbf{PET}\\
-In-room, post-treatment: $\beta^+$ activity
-\par\vspace{1mm}
-\includegraphics[height=0.40\textheight,keepaspectratio]{argos_pet_illustration.png}
-\end{column}
+}
 \end{columns}
-\par\vspace{2mm}
-R\&D studies support Compton cameras and PET for \hi{proton range verification}. No dedicated commercial solution identified.
-\par\vspace{2mm}
-% References transcribed from ARGOS slide 12; bibliographic details need verification.
+
+\vspace{0.18cm}
+{\footnotesize\bfseries\color{darkred}
+A detected deviation is a trigger for review; a validated workflow must determine
+when intervention is needed.\par
+}
+
+\vfill
+{\fontsize{6}{7}\selectfont\color{crGrey}\raggedright
+\textbf{References}\par
+\href{https://doi.org/10.3389/fonc.2022.929949}
+{Moglioni et al., \textit{Front. Oncol.} 12 (2022) 929949 --- in-beam PET and inter-fractional changes.}\par
+\href{https://pubmed.ncbi.nlm.nih.gov/28816148/}
+{Xie et al., \textit{Int. J. Radiat. Oncol. Biol. Phys.} 99 (2017) --- clinical prompt-gamma verification.}\par
+\href{https://doi.org/10.1002/mp.70142}
+{Bertschi et al., \textit{Med. Phys.} 52 (2025) e70142 --- verification towards adaptive workflows.}\par
+}
+\end{frame}
+
+\begin{frame}{Why has in-vivo verification not become routine?}
+
+{\small Clinical feasibility is established; routine use requires a reliable,
+actionable result within the treatment workflow.\par}
+\vspace{0.18cm}
+
+\setbeamercolor{adoptionpanel}{bg=crBlue!5,fg=black}
 \begin{columns}[T,onlytextwidth]
-\begin{column}{0.48\textwidth}
-{\scriptsize\color{crGrey}
-Safavi et al., Nat. Commun. 17, 206 (2026).\par\vspace{1mm}
-Sharma et al., Med. Phys. 52, 1123 (2025).}
-\end{column}
-\begin{column}{0.48\textwidth}
-{\scriptsize\color{crGrey}
-Parodi et al., Eur. J. Nucl. Med. Mol. Imaging 51, 183 (2024).\par\vspace{1mm}
-Zhu et al., Phys. Med. Biol. 56, 6425 (2011).}
-\end{column}
+\column{0.485\textwidth}
+\begin{beamercolorbox}[sep=6pt,wd=\linewidth]{adoptionpanel}
+\begin{minipage}[t][1.65cm][t]{\linewidth}\raggedright
+{\footnotesize\bfseries\color{crBlue}1. Reliable measurement\par}
+\vspace{0.07cm}
+{\scriptsize
+Precision depends on signal statistics, background, anatomy and detector geometry.\par
+\vspace{0.08cm}
+\textbf{Need:} quantified uncertainty at clinical beam rates.\par}
+\end{minipage}
+\end{beamercolorbox}
+
+\column{0.485\textwidth}
+\begin{beamercolorbox}[sep=6pt,wd=\linewidth]{adoptionpanel}
+\begin{minipage}[t][1.65cm][t]{\linewidth}\raggedright
+{\footnotesize\bfseries\color{crBlue}2. Clinical interpretation\par}
+\vspace{0.07cm}
+{\scriptsize
+A range shift alone does not establish the effect on target coverage or healthy tissue.\par
+\vspace{0.08cm}
+\textbf{Need:} validated action thresholds linked to dose impact.\par}
+\end{minipage}
+\end{beamercolorbox}
 \end{columns}
-\end{frame}
 
-\begin{frame}{PET: an \emph{in vivo} probe of where the beam stopped}
-  \small
-  \begin{columns}[T]
-    \begin{column}{0.54\textwidth}
-      \begin{itemize}
-        \item Above the nuclear-reaction threshold, protons create
-          \hi{$\beta^+$ emitters} along their path --- mainly \OT\ and \CE.
-        \item Their annihilation $\gamma$'s are imaged in coincidence: a PET
-          image of the \hi{induced activity}.
-        \item The activity falloff sits just upstream of the dose edge; its
-          \hi{distal edge tracks the range}.
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.46\textwidth}
-      \centering
-      \includegraphics[width=\linewidth]{dose_activity.png}\\
-      {\scriptsize\color{crGrey} Illustrative dose and $\beta^+$ activity profiles.\\[2mm]
-       The activity edge is compared with a prediction to estimate the range.}
-    \end{column}
-  \end{columns}
-\end{frame}
+\par\vspace{0.22cm}
+\begin{columns}[T,onlytextwidth]
+\column{0.485\textwidth}
+\begin{beamercolorbox}[sep=6pt,wd=\linewidth]{adoptionpanel}
+\begin{minipage}[t][1.65cm][t]{\linewidth}\raggedright
+{\footnotesize\bfseries\color{crBlue}3. Workflow integration\par}
+\vspace{0.07cm}
+{\scriptsize
+Positioning, calibration, analysis and review all compete with treatment time.\par
+\vspace{0.08cm}
+\textbf{Need:} automated checks, rapid feedback and a defined response.\par}
+\end{minipage}
+\end{beamercolorbox}
 
-\begin{frame}{PET range verification: offline, in-beam and in-room}
-  \centering
-  \includegraphics[width=0.94\textwidth,height=0.80\textheight,keepaspectratio]{in-room.png}
-\end{frame}
+\column{0.485\textwidth}
+\begin{beamercolorbox}[sep=6pt,wd=\linewidth]{adoptionpanel}
+\begin{minipage}[t][1.65cm][t]{\linewidth}\raggedright
+{\footnotesize\bfseries\color{crBlue}4. Evidence and value\par}
+\vspace{0.07cm}
+{\scriptsize
+Detecting a deviation is only one part of demonstrating a useful clinical service.\par
+\vspace{0.08cm}
+\textbf{Need:} evidence that decisions improve care and justify time and cost.\par}
+\end{minipage}
+\end{beamercolorbox}
+\end{columns}
 
-\begin{frame}{PET range verification: offline, in-beam and in-room}
-  \centering
-  \begin{tikzpicture}[font=\small, node distance=6mm]
-    % offline
-    \node[draw=crGrey, rounded corners, minimum width=3.1cm, minimum height=2.3cm,
-          align=center, thick] (off) at (0,0)
-      {\textbf{Offline}\\[1mm] patient moved to\\ a nearby PET/CT\\[1mm]
-       \textcolor{crRed}{15--30 min later}};
-    % in-beam
-    \node[draw=crGrey, rounded corners, minimum width=3.1cm, minimum height=2.3cm,
-          align=center, thick] (ib) at (4.7,0)
-      {\textbf{In-beam}\\[1mm] two planar heads\\ at the treatment\\ position\\[1mm]
-       \textcolor{crBlue}{$\sim$ zero delay}};
-    % in-room
-    \node[draw=crBlue, fill=crBlue!8, rounded corners, minimum width=3.1cm,
-          minimum height=2.3cm, align=center, very thick] (ir) at (9.4,0)
-      {\textbf{In-room}\\[1mm] full ring, next\\ to the treatment\\ room\\[1mm]
-       \textcolor{crBlue}{$\sim$ 2 min delay}};
-    \node[below=1mm of off, text width=3.1cm, align=center, crGrey]
-      {\scriptsize washout, \OT\ gone,\\ co-registration};
-    \node[below=1mm of ib, text width=3.1cm, align=center, crGrey]
-      {\scriptsize limited angular\\ coverage};
-    \node[below=1mm of ir, text width=3.1cm, align=center, crGrey]
-      {\scriptsize full coverage,\\ high sensitivity};
-  \end{tikzpicture}
-  \vspace{2mm}
+\vspace{0.16cm}
+{\footnotesize\bfseries\color{darkred}
+Adoption requires the full chain: reliable measurement, justified action and practical delivery.\par}
 
-  {\color{crGrey}\small The trade-off is \textbf{delay} vs.\ \textbf{angular
-   coverage / scanner quality}.}
-\end{frame}
-
-\begin{frame}{Offline results in large uncertainties}
-  \begin{columns}[T]
-    \begin{column}{0.56\textwidth}
-      A delay of 15--30 minutes costs on three fronts:
-      \begin{itemize}
-        \item \hi{Sensitivity}: the abundant \OT\ (2\,min) has vanished --- only
-          the sparse \CE\ tail remains.
-        \item \hi{Biological washout}: perfusion clears the emitters; hard to
-          model, patient-dependent.
-        \item \hi{Co-registration}: the patient is set up afresh on a separate
-          scanner --- a few-mm misalignment maps straight into an apparent
-          range shift.
-      \end{itemize}
-      \vspace{1mm}
-%      {\small\color{crGrey} Literature: offline accuracy a few mm at best
-%       (Knopf 2009; Parodi).}
-    \end{column}
-    \begin{column}{0.44\textwidth}
-      \centering
-      \includegraphics[width=\linewidth]{activity.png}\\
-      {\scriptsize\color{crGrey} \OT\ dominates the first minutes, then decays;
-       \CE\ carries the late, weak signal.}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-\begin{frame}{Online/In-room tradeoffs}
-  \begin{columns}[T]
-    \begin{column}{0.5\textwidth}
-      \textbf{\color{crBlue}In-beam} (short delay, same bed)
-      \begin{itemize}
-        \item Retains the short-lived \OT, essentially no delay.
-        \item But the beam must pass: only \hi{two planar heads} fit.
-        \item Reduced angular coverage $\Rightarrow$ \hi{low sensitivity} and
-          limited-angle image artefacts.
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.5\textwidth}
-      \textbf{\color{crBlue}In-room} (just after, full ring)
-      \begin{itemize}
-        \item A \hi{full closed ring} $\Rightarrow$ full coverage, high
-          sensitivity, clean image.
-        \item Same couch $\Rightarrow$ a known rigid transform and a short
-          transfer, without separate-scanner repositioning.
-        \item The $\sim$2-min delay is \hi{bought back} by sensitivity and a
-          \hi{better scanner}.
-      \end{itemize}
-    \end{column}
-  \end{columns}
-  \vspace{2mm}
-  \begin{center}
-    \fbox{\parbox{0.9\textwidth}{\centering
-      A \hi{high-sensitivity in-room ring} combines short transfer time with
-      complete angular coverage and high sensitivity.}}
-  \end{center}
-\end{frame}
-
-\begin{frame}{Prompt gammas: tracking the proton range during irradiation}
-  \small
-  \begin{columns}[T]
-    \begin{column}{0.54\textwidth}
-      \begin{itemize}
-        \item Nuclear reactions along the proton path leave excited nuclei
-          in the tissue. Their de-excitation emits \hi{prompt $\gamma$ rays}
-          with energies of several MeV.
-        \item Emission occurs \hi{during irradiation}. Its distal falloff
-          tracks the proton range; the relation depends on tissue
-          composition and the selected $\gamma$ energies.
-        \item The measured \hi{4.4\,MeV $\gamma$ profile} shown here
-          concentrates near the Bragg peak and follows the proton range.
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.46\textwidth}
-      \centering
-      \includegraphics[width=\linewidth,height=0.53\textheight,keepaspectratio]
-        {prompt_gamma_compton_koide2018.jpg}\\[1mm]
-      {\scriptsize\color{crGrey} Measured prompt-$\gamma$ profile and simulated
-       proton energy deposition. 70\,MeV protons; spaced PMMA slabs.}\\[2mm]
-      {\tiny\color{crGrey}
-       \href{https://doi.org/10.1038/s41598-018-26591-2}
-       {Koide et al., Scientific Reports 8, 8116 (2018), Fig.\ 2. CC BY 4.0.}}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-\begin{frame}{Imaging prompt gammas with a Compton camera}
-  \small
-  \begin{columns}[T]
-    \begin{column}{0.54\textwidth}
-      \begin{itemize}
-        \item A \hi{Compton camera} measures the positions and energies
-          of successive interactions of the \hi{same $\gamma$ ray}.
-        \item The photon scatters in the first detector and is absorbed
-          in the second. The deposited energies determine the
-          \hi{Compton scattering angle}.
-        \item The two interaction positions define the cone axis;
-          the scattering angle defines its opening. The emission point
-          lies on this \hi{cone of possible origins}.
-        \item Combining many events reconstructs the
-          \hi{emission profile and its distal edge}.
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.46\textwidth}
-      \centering
-      \resizebox{\linewidth}{!}{%
-      \begin{tikzpicture}[font=\small, >=Stealth]
-        \filldraw[fill=crBlue!5,draw=crGrey,rounded corners]
-          (0,0) rectangle (5.8,1.25);
-        \node[crGrey] at (1.0,0.25) {Tissue};
-        \draw[->,very thick,crBlue] (-0.2,0.75) -- (4.6,0.75);
-        \node[above,crBlue] at (0.7,0.8) {Protons};
-        \node[below,crGrey,font=\scriptsize] at (4.15,0.7) {Range};
-        \fill[crRed] (1.4,0.75) circle (0.07);
-        \draw[->,very thick,crRed] (1.4,0.75) -- (3.05,2.4);
-        \node[rotate=45,above,crRed] at (2.05,1.5) {Prompt $\gamma$};
-        \filldraw[fill=crBlue!15,draw=crBlue,thick]
-          (2.85,2.0) rectangle (3.25,2.8);
-        \filldraw[fill=crRed!15,draw=crRed,thick]
-          (5.0,1.8) rectangle (5.65,3.0);
-        \fill (3.05,2.4) circle (0.045);
-        \fill (5.3,2.4) circle (0.045);
-        \draw[->,thick,crRed] (3.05,2.4) -- (5.3,2.4);
-        \draw[dashed,crGrey] (3.05,2.4) -- (4.05,3.4);
-        \draw[crGrey] (3.7,2.4) arc[start angle=0,end angle=45,radius=0.65];
-        \node at (3.92,2.72) {$\theta$};
-        \node[above,align=center] at (2.9,3.45) {Scatterer};
-        \node[above,align=center] at (5.3,3.45) {Absorber};
-        \node[below,font=\scriptsize] at (3.05,2.0) {$E_1,\,\mathbf{x}_1$};
-        \node[below,font=\scriptsize] at (5.3,1.8) {$E_2,\,\mathbf{x}_2$};
-      \end{tikzpicture}}\\[2mm]
-      {\scriptsize\color{crGrey} One photon, two detector interactions:
-       Compton scattering followed by absorption.}\\[3mm]
-      {\tiny\color{crGrey}
-       \href{https://doi.org/10.3389/fonc.2016.00080}
-       {Hueso-Gonz\'alez et al., Front. Oncol. 6:80 (2016).}\\
-       \href{https://arxiv.org/abs/2202.06556}
-       {Hybrid in-beam PET and Compton imaging (2022).}}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-\begin{frame}{PET and Compton imaging: complementary measurements}
-\small
-\renewcommand{\arraystretch}{1.22}
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.16\textwidth}>{\raggedright\arraybackslash}p{0.38\textwidth}>{\raggedright\arraybackslash}p{0.38\textwidth}@{}}
-\toprule
- & \textbf{Prompt gammas / Compton} & \textbf{Induced activity / PET}\\
-\midrule
-Signal & Single prompt $\gamma$ rays, several MeV & Pairs of 511\,keV annihilation photons\\
-Timing & During beam delivery & In the proposed in-room scheme, shortly after irradiation\\
-Information & Emission profile along the beam; comparison with expected range & Activity distribution; comparison with expected distal edge\\
-Main limitation & Few useful multi-interaction events and beam-related background & Decay, biological washout and patient registration\\
-\bottomrule
-\end{tabular}
-\par\vspace{5mm}
-\textbf{DIPC proposed strategy:} Compton imaging for monitoring during irradiation, followed by an in-room PET measurement within minutes of beam stop. Combine both results to minimize systematic errors.
+\vfill
+{\fontsize{6}{7}\selectfont\color{crGrey}\raggedright
+\textbf{Selected evidence}\quad
+\href{https://doi.org/10.1088/1361-6560/aad513}
+{Hueso-Gonz\'alez et al., PMB 63 (2018) 185019: clinical-scale prototype.}\par
+\href{https://doi.org/10.1016/j.radonc.2016.01.004}
+{Richter et al., Radiother. Oncol. 118 (2016): first clinical PGI application.}\quad
+\href{https://doi.org/10.1016/j.phro.2025.100778}
+{Bertschi et al., PhiRO 34 (2025) 100778: adaptive-workflow feasibility.}\par
+}
 \end{frame}
 
 \begin{frame}{Two decades of in-vivo verification: what have we learned?}
@@ -818,890 +1707,6 @@ that converts a detected deviation into an immediate clinical action.
 
 \end{frame}
 
-\begin{frame}{Why has in-vivo verification not become routine?}
-
-{\small Clinical feasibility is established; routine use requires a reliable,
-actionable result within the treatment workflow.\par}
-\vspace{0.18cm}
-
-\setbeamercolor{adoptionpanel}{bg=crBlue!5,fg=black}
-\begin{columns}[T,onlytextwidth]
-\column{0.485\textwidth}
-\begin{beamercolorbox}[sep=6pt,wd=\linewidth]{adoptionpanel}
-\begin{minipage}[t][1.65cm][t]{\linewidth}\raggedright
-{\footnotesize\bfseries\color{crBlue}1. Reliable measurement\par}
-\vspace{0.07cm}
-{\scriptsize
-Precision depends on signal statistics, background, anatomy and detector geometry.\par
-\vspace{0.08cm}
-\textbf{Need:} quantified uncertainty at clinical beam rates.\par}
-\end{minipage}
-\end{beamercolorbox}
-
-\column{0.485\textwidth}
-\begin{beamercolorbox}[sep=6pt,wd=\linewidth]{adoptionpanel}
-\begin{minipage}[t][1.65cm][t]{\linewidth}\raggedright
-{\footnotesize\bfseries\color{crBlue}2. Clinical interpretation\par}
-\vspace{0.07cm}
-{\scriptsize
-A range shift alone does not establish the effect on target coverage or healthy tissue.\par
-\vspace{0.08cm}
-\textbf{Need:} validated action thresholds linked to dose impact.\par}
-\end{minipage}
-\end{beamercolorbox}
-\end{columns}
-
-\par\vspace{0.22cm}
-\begin{columns}[T,onlytextwidth]
-\column{0.485\textwidth}
-\begin{beamercolorbox}[sep=6pt,wd=\linewidth]{adoptionpanel}
-\begin{minipage}[t][1.65cm][t]{\linewidth}\raggedright
-{\footnotesize\bfseries\color{crBlue}3. Workflow integration\par}
-\vspace{0.07cm}
-{\scriptsize
-Positioning, calibration, analysis and review all compete with treatment time.\par
-\vspace{0.08cm}
-\textbf{Need:} automated checks, rapid feedback and a defined response.\par}
-\end{minipage}
-\end{beamercolorbox}
-
-\column{0.485\textwidth}
-\begin{beamercolorbox}[sep=6pt,wd=\linewidth]{adoptionpanel}
-\begin{minipage}[t][1.65cm][t]{\linewidth}\raggedright
-{\footnotesize\bfseries\color{crBlue}4. Evidence and value\par}
-\vspace{0.07cm}
-{\scriptsize
-Detecting a deviation is only one part of demonstrating a useful clinical service.\par
-\vspace{0.08cm}
-\textbf{Need:} evidence that decisions improve care and justify time and cost.\par}
-\end{minipage}
-\end{beamercolorbox}
-\end{columns}
-
-\vspace{0.16cm}
-{\footnotesize\bfseries\color{darkred}
-Adoption requires the full chain: reliable measurement, justified action and practical delivery.\par}
-
-\vfill
-{\fontsize{6}{7}\selectfont\color{crGrey}\raggedright
-\textbf{Selected evidence}\quad
-\href{https://doi.org/10.1088/1361-6560/aad513}
-{Hueso-Gonz\'alez et al., PMB 63 (2018) 185019: clinical-scale prototype.}\par
-\href{https://doi.org/10.1016/j.radonc.2016.01.004}
-{Richter et al., Radiother. Oncol. 118 (2016): first clinical PGI application.}\quad
-\href{https://doi.org/10.1016/j.phro.2025.100778}
-{Bertschi et al., PhiRO 34 (2025) 100778: adaptive-workflow feasibility.}\par
-}
-\end{frame}
-
-\begin{frame}{In-vivo verification: towards intervention}
-
-{\small
-The next step is to turn patient-specific verification into a decision:
-\hi{does this fraction require additional attention?}\par
-}
-
-\vspace{0.25cm}
-\begin{columns}[T,onlytextwidth]
-\column{0.46\textwidth}
-{\footnotesize\bfseries\color{PTblue}What should trigger a review?\par}
-\vspace{0.08cm}
-{\small
-\begin{itemize}
-  \setlength{\itemsep}{0.10cm}
-  \item Unexpected range shifts.
-  \item Changes consistent with altered anatomy.
-  \item Possible setup or modelling errors.
-\end{itemize}
-}
-
-\column{0.50\textwidth}
-{\footnotesize\bfseries\color{PTblue}Towards an intervention workflow\par}
-\vspace{0.08cm}
-{\small
-\begin{enumerate}
-  \setlength{\itemsep}{0.08cm}
-  \item \textbf{Detect} a deviation from expectation.
-  \item \textbf{Review} its cause and clinical relevance.
-  \item \textbf{Act}: additional imaging or replanning when warranted.
-\end{enumerate}
-}
-\end{columns}
-
-\vspace{0.18cm}
-{\footnotesize\bfseries\color{darkred}
-A detected deviation is a trigger for review; a validated workflow must determine
-when intervention is needed.\par
-}
-
-\vfill
-{\fontsize{6}{7}\selectfont\color{crGrey}\raggedright
-\textbf{References}\par
-\href{https://doi.org/10.3389/fonc.2022.929949}
-{Moglioni et al., \textit{Front. Oncol.} 12 (2022) 929949 --- in-beam PET and inter-fractional changes.}\par
-\href{https://pubmed.ncbi.nlm.nih.gov/28816148/}
-{Xie et al., \textit{Int. J. Radiat. Oncol. Biol. Phys.} 99 (2017) --- clinical prompt-gamma verification.}\par
-\href{https://doi.org/10.1002/mp.70142}
-{Bertschi et al., \textit{Med. Phys.} 52 (2025) e70142 --- verification towards adaptive workflows.}\par
-}
-\end{frame}
-
-\begin{frame}{Reaction from the Industry}
-\begin{center}
-{\small\bfseries\color{darkred}
-The major players already recognise the significance of the issue and are adapting their strategies accordingly.
-}
-
-
-\vspace{0.10cm}
-\includegraphics[width=0.8\linewidth]{figs/iba_strat.png}
-\end{center}
-\end{frame}
-
-%============================================================================
-%% PART III: CRYSP and COCOA
-%============================================================================
-\begin{frame}[plain,noframenumbering]
-\centering
-\vspace{1.6cm}
-{\color{crBlue}\rule{0.55\textwidth}{1.1pt}}\\[6mm]
-{\Large\color{crGrey} III}\\[4mm]
-{\Huge\bfseries\color{crBlue} CRYSP and COCOA}\\[6mm]
-{\color{crBlue}\rule{0.55\textwidth}{1.1pt}}
-\end{frame}
-
-\begin{frame}{CRYSP: PET with cryogenic cesium iodide}
-\small
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.31\textwidth}
-\centering
-\textbf{Pure CsI at $\sim$100 K}
-\par\vspace{2mm}
-\includegraphics[height=0.27\textheight]{crysp_crystal.png}
-\par\vspace{2mm}
-\raggedright
-\hi{$\sim10^5$ photons/MeV}.\\[2mm]
-Abundant material; lower crystal cost than rare-earth scintillators.
-\end{column}
-\begin{column}{0.31\textwidth}
-\centering
-\textbf{Monolithic 3D detection}
-\par\vspace{2mm}
-\includegraphics[height=0.27\textheight]{crysp_monolithic.png}
-\par\vspace{2mm}
-\raggedright
-Large crystals read out by silicon photomultipliers (SiPMs).\\[2mm]
-\hi{Millimetre-scale 3D resolution} in simulation; measured energy resolution \hi{below 7\%} at 511\,keV.
-\end{column}
-\begin{column}{0.31\textwidth}
-\centering
-\textbf{Full-ring PET}
-\par\vspace{2mm}
-\includegraphics[height=0.27\textheight]{crysp_ring.png}
-\par\vspace{2mm}
-\raggedright
-Total-body PET design based on these crystals.\\[2mm]
-\hi{High sensitivity at lower detector cost} is the design goal.
-\end{column}
-\end{columns}
-\source{https://doi.org/10.1088/1361-6560/ae35c8}{R. Soleti, J.J. Gomez-Cadenas et al., Phys. Med. Biol. 71, 025001 (2026).}
-\end{frame}
-
-\begin{frame}{CRYSP: \emph{CRYogenic Sensitive PET}}
-  \begin{columns}[T]
-    \begin{column}{0.6\textwidth}
-      \begin{itemize}
-        \item Scintillators \hi{CsI and BGO} gain dramatically in light yield
-          when cooled --- at 77 K, CsI reaches $\sim$100 photons/keV and BGO
-          $\sim$29 photons/keV.
-            \item In both cases, high yields translate into excellent energy resolution
-              (6\% CsI, 10\% BGO),
-              which in turn is essential for efficient scatter rejection.
-        \item Monolithic crystals + SiPMs permit 3D position reconstruction using neural
-              networks with high accuracy and no parallax error.
-      \end{itemize}
-
-    \end{column}
-    \begin{column}{0.4\textwidth}
-      \centering
-      \includegraphics[width=\linewidth]{3D.png}\\
-      {\scriptsize\color{crGrey} 3D reconstruction in a monolithic crystal.}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-\begin{frame}{COCOA: a compact Compton camera for MeV gamma rays}
-\small
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.31\textwidth}
-\centering
-\textbf{LiquidO scatterer}
-\par\vspace{2mm}
-\includegraphics[width=\linewidth,height=0.27\textheight,keepaspectratio]{cocoa_scatterer.png}
-\par\vspace{2mm}
-\raggedright
-Opaque liquid scintillator with a 3D grid of wavelength-shifting fibres.\\[2mm]
-Reconstructs the \hi{position and energy} of the first interaction.
-\end{column}
-\begin{column}{0.31\textwidth}
-\centering
-\textbf{Crystal absorber}
-\par\vspace{2mm}
-\includegraphics[width=\linewidth,height=0.27\textheight,keepaspectratio]{cocoa_absorber.png}
-\par\vspace{2mm}
-\raggedright
-Monolithic scintillator blocks read out by SiPM arrays.\\[2mm]
-Measures the scattered photon: \hi{3D position and energy}, including depth of interaction.
-\end{column}
-\begin{column}{0.31\textwidth}
-\centering
-\textbf{Space application}
-\par\vspace{2mm}
-\includegraphics[width=\linewidth,height=0.27\textheight,keepaspectratio]{cocoa_satellite.png}
-\par\vspace{2mm}
-\raggedright
-Designed for \hi{MeV gamma-ray astronomy}.\\[2mm]
-Compact geometry for microsatellites or high-altitude balloons; proposed LUR-50 integration shown.
-\end{column}
-\end{columns}
-\source{https://doi.org/10.1016/j.astropartphys.2025.103135}{R. Soleti, J.J. Gomez-Cadenas et al., Astropart. Phys. 172, 103135 (2025).}
-\end{frame}
-
-\begin{frame}{COCOA: demonstrated 
-scalability and efficiency}
-  \begin{columns}[T]
-    \begin{column}{0.58\textwidth}
-      \begin{itemize}
-        \item \hi{Scalability}: the scatterer is an opaque liquid scintillator
-          read by a lattice of WLS fibres, so the sensitive volume scales with
-          the cost of liquid and fibres, not with crystal growth. Inorganic
-          crystals and CZT are limited to cm-scale units that must be tiled
-          at high cost.
-        \item \hi{Efficiency}: stochastic light confinement resolves multiple
-          Compton vertices inside a single monolithic volume, allowing a thick,
-          large-acceptance scatterer.
-        \item Gamma-ray imaging has already been \hi{demonstrated} in a
-          benchtop experiment.
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.42\textwidth}
-      \centering
-      \includegraphics[width=0.78\linewidth]{figs/benchtop.png}\\
-      {\scriptsize\color{crGrey} Benchtop setup and reconstructed $^{60}$Co image.}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-\begin{frame}{Reference protocol: all scanner configurations are sub-mm}
-  \begin{columns}[T]
-    \begin{column}{0.44\textwidth}
-      \begin{itemize}
-        \item \hi{Protocol:} 1\,Gy, 300\,s acquisition, starting 120\,s after
-          beam-off; washout included.
-        \item BGO: \hi{0.101--0.127\,mm}; CsI: \hi{0.146--0.155\,mm}.
-        \item BGO is more precise through higher sensitivity; CsI remains a
-          competitive, lower-cost option.
-        \item These values are the \hi{statistical precision of the fitted
-          activity edge}.
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.56\textwidth}
-      \centering
-      \includegraphics[width=\linewidth]{statproc_washed_grid.png}\\
-      {\scriptsize\color{crGrey} Finite-pool-corrected $\sigma_R$ for the
-       reference protocol ($N=100$).}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-\begin{frame}{Scanner cost breakdown}
-  \centering
-  \includegraphics[width=0.94\textwidth,height=0.80\textheight,keepaspectratio]{cost_breakdown.png}
-\end{frame}
-
-\begin{frame}{Total scanner cost}
-  \centering
-  \includegraphics[width=0.94\textwidth,height=0.72\textheight,keepaspectratio]{scanner_totals.png}
-  \par\vspace{1mm}
-  {\scriptsize\color{crGrey} ARGOS baseline: BGO, 600\,mm bore, 300\,mm length, 0.74\,M\EUR{} in crystal, SiPMs and electronics.
-  Backup: CsI(Tl) at room temperature, 0.60\,M\EUR.}
-\end{frame}
-
-%============================================================================
-%% PART IV: The proton-therapy market
-%============================================================================
-\begin{frame}[plain,noframenumbering]
-\centering
-\vspace{1.6cm}
-{\color{crBlue}\rule{0.55\textwidth}{1.1pt}}\\[6mm]
-{\Large\color{crGrey} IV}\\[4mm]
-{\Huge\bfseries\color{crBlue} The proton-therapy market}\\[6mm]
-{\color{crBlue}\rule{0.55\textwidth}{1.1pt}}
-\end{frame}
-
-\begin{frame}{Proton therapy: worldwide deployment and growth in Europe}
-\small
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.59\textwidth}
-\centering
-\includegraphics[width=\linewidth]{proton_facilities_world_2021.png}
-\par\vspace{2mm}
-\raggedright
-Over the last two decades, proton therapy has evolved from a highly specialised treatment into a \hi{globally deployed clinical technology}.
-\end{column}
-\begin{column}{0.38\textwidth}
-\centering
-\includegraphics[height=0.33\textheight,keepaspectratio]{proton_facilities_europe.png}
-\par\vspace{2mm}
-\includegraphics[width=\linewidth,height=0.33\textheight,keepaspectratio]{proton_patients_europe.png}
-\end{column}
-\end{columns}
-\par\vspace{2mm}
-{\tiny\color{crGrey} World map: April 2021. European patient chart: PTCOG attribution in the supplied figure; numerical series not independently verified.}
-\end{frame}
-
-\begin{frame}{Proton therapy adoption}
-
-\begin{columns}[T,onlytextwidth]
-
-% =========================================================
-% LEFT COLUMN — ORIGINAL GRAPH
-% =========================================================
-\column{0.62\textwidth}
-
-\centering
-
-\includegraphics[width=\linewidth,keepaspectratio]{figs/ptcog_patients.png}
-
-\vspace{0.15cm}
-
-{\scriptsize
-Source:
-\href{https://ptcog.online/past-conferences/statistics-of-patients-treated-in-particle-therapy-facilities-worldwide/}
-{PTCOG Patient Statistics}.
-}
-
-
-% =========================================================
-% RIGHT COLUMN — TEXT
-% =========================================================
-\column{0.34\textwidth}
-
-\vspace{0.35cm}
-
-\vspace{0.35cm}
-
-{\small
-The number of patients treated with proton therapy has increased steadily at exponential pace
-}
-
-\vspace{0.45cm}
-
-{\tiny
-\begin{itemize}
-    \item \textbf{Expanding installed base}\\
-More centres and treatment rooms.
-\item\textbf{Technology maturation}\\
-More compact and standardised proton delivery systems.
-\item \textbf{Growing clinical evidence}\\
-Supporting wider adoption.
-\end{itemize}
-
-}
-
-\vspace{0.50cm}
-
-{\small\bfseries
-Proton therapy is becoming an established clinical technology.
-}
-
-\end{columns}
-
-\end{frame}
-
-\begin{frame}{Clinical evidence for proton therapy}
-\small
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.49\textwidth}
-\includegraphics[width=\linewidth]{proton_trials_indications.png}
-\end{column}
-\begin{column}{0.49\textwidth}
-\includegraphics[width=\linewidth]{proton_trials_phase3.png}
-\end{column}
-\end{columns}
-\par\vspace{5mm}
-\raggedright
-Phase III trials are building the \hi{clinical evidence} for wider use of proton therapy, particularly to \hi{reduce side effects}.
-\par\vspace{1mm}
-{\tiny\color{crGrey} Supplied charts cite trial.gov (phase III chart: July 2026). Trial counts and projected completion dates require registry verification.}
-\end{frame}
-
-\begin{frame}{Clinical evidence approaching an inflection point}
-
-\begin{columns}[T,onlytextwidth]
-
-% =========================================================
-% LEFT COLUMN
-% =========================================================
-\column{0.63\textwidth}
-
-{\scriptsize
-\textbf{Historically, proton therapy faced an evidence gap:}
-its dosimetric advantages were clear, but randomized clinical evidence
-of superiority over modern photon radiotherapy remained limited.
-}
-
-\vspace{0.25cm}
-
-\centering
-
-\includegraphics[
-    width=\linewidth,
-    keepaspectratio
-]{figs/proton_trials_phase3.png}
-
-\vspace{0.10cm}
-
-{\tiny
-Source:
-\href{https://www.iba-worldwide.com/financial-presentations}
-{IBA investor presentation, 2026};
-trial data from ClinicalTrials.gov.
-}
-
-% =========================================================
-% RIGHT COLUMN
-% =========================================================
-\column{0.33\textwidth}
-
-{\large\bfseries
-The evidence base is changing
-}
-
-\vspace{0.35cm}
-
-{\LARGE\bfseries\color{PTred}
-35+
-}
-
-{\small
-major Phase III trials
-}
-
-
-{\tiny
-\emph{A large concentration of trial readouts is expected between \textbf{2026 and 2030}.}
-}
-
-\vspace{0.45cm}
-
-{\scriptsize\bfseries
-Early Phase III results:
-}
-\begin{itemize}
-    \item {\tiny
-\textbf{Oropharyngeal cancer:}
-IMPT showed non-inferior disease control and lower severe toxicity than IMRT. Frank et al.,
-\href{https://doi.org/10.1016/S0140-6736(25)01962-2}
-{\textit{The Lancet}, 2025}.
-}
-\item {\tiny
-\textbf{TORPEdO} IMPT and IMRT showed similar quality of life and disease control. Thomson et al.,
-\href{https://doi.org/10.1016/S0140-6736(26)00314-4}
-{\textit{The Lancet}, 2026}.
-}
-
-\end{itemize}
-
-
-
-
-\end{columns}
-
-\end{frame}
-
-\begin{frame}{Market Size: The Vision of Independent Consultants}
-
-\centering
-
-\renewcommand{\arraystretch}{1.18}
-\setlength{\tabcolsep}{4pt}
-
-\footnotesize
-
-\begin{tabular}{@{}p{4.0cm} c c c c@{}}
-\toprule
-\textbf{Source} &
-\textbf{Base year} &
-\textbf{Market size} &
-\textbf{Forecast} &
-\textbf{CAGR} \\
-\midrule
-
-\href{https://www.grandviewresearch.com/industry-analysis/proton-therapy-systems-market}
-{Grand View Research}
-& 2023
-& \$749.5 M
-& \$1.22 B in 2030
-& 7.3\% \\
-
-\href{https://www.researchandmarkets.com/reports/6091787/proton-therapy-market-forecasts}
-{Knowledge Sourcing Intelligence}
-& 2025
-& \$959 M
-& \$1.27 B in 2030
-& 5.84\% \\
-
-\href{https://www.fundamentalbusinessinsights.com/industry-report/proton-therapy-systems-market-8081}
-{Fundamental Business Insights}
-& 2025
-& \$849 M
-& \$1.73 B in 2035
-& 7.4\% \\
-
-\href{https://www.6wresearch.com/industry-report/global-proton-therapy-systems-market}
-{6Wresearch}
-& 2024
-& \$1.30 B
-& \$2.40 B in 2031
-& 8.4\% \\
-
-\href{https://www.thebusinessresearchcompany.com/report/proton-therapy-systems-global-market-report}
-{The Business Research Company}
-& 2025
-& \$1.43 B
-& \$1.58 B in 2026
-& 10.5\% \\
-
-\href{https://www.researchandmarkets.com/reports/5954217/proton-therapy-systems-market}
-{The Insight Partners}
-& 2024
-& \$1.56 B
-& \$3.27 B in 2031
-& 11.2\% \\
-
-\href{https://www.researchandmarkets.com/reports/5309802/proton-therapy-global-strategic-business-report}
-{Market Glass}
-& 2024
-& \$696 M
-& \$1.50 B in 2030
-& 13.5\% \\
-
-\bottomrule
-\end{tabular}
-
-\vspace{0.35cm}
-
-\tiny
-Market definitions and scopes differ across reports. Differences may reflect the inclusion or exclusion
-of products and services.
-
-\vspace{0.3cm}
-
-\normalsize
-\centering
-\textbf{
-Independent estimates consistently place the current global
-proton-therapy market in the order of \$1 billion per year.
-}
-\end{frame}
-
-\begin{frame}{Market Share}
-
-\vspace{0.1cm}
-
-\begin{columns}[T,onlytextwidth]
-
-%================================================
-% LEFT COLUMN
-%================================================
-\column{0.42\textwidth}
-
-
-{\small
-IBA originated in Belgium in the early 1980s as a university-led effort to develop medical cyclotrons, and evolved into the world's leading provider of proton-therapy systems and particle-accelerator technology.
-}
-
-\vspace{0.50cm}
-
-\small{
-We will analyse several elements of information provided by this actor in the newest Financial Reports (FY2025).}
-\vspace{0.50cm}
-
-{\scriptsize
-Source:
-\href{https://www.iba-worldwide.com/sites/default/files/2026-03/iba-fy25-results-presentation-en.pdf}
-{IBA FY2025 Results Presentation}.
-}
-
-%================================================
-% RIGHT COLUMN
-%================================================
-\column{0.56\textwidth}
-
-\centering
-
-{\large\bfseries Total market share in PT rooms}
-
-\vspace{0.18cm}
-
-\begin{tikzpicture}[scale=0.88]
-
-\def\radius{2.45}
-
-%------------------------------------------------
-% PIE CHART
-%------------------------------------------------
-
-% IBA: 42% = 151.2 degrees
-\fill[IBAgreen]
-(0,0) -- (90:\radius)
-arc[start angle=90,end angle=-61.2,radius=\radius]
--- cycle;
-
-% Varian: 21% = 75.6 degrees
-\fill[grayA]
-(0,0) -- (-61.2:\radius)
-arc[start angle=-61.2,end angle=-136.8,radius=\radius]
--- cycle;
-
-% Hitachi: 19% = 68.4 degrees
-\fill[grayB]
-(0,0) -- (-136.8:\radius)
-arc[start angle=-136.8,end angle=-205.2,radius=\radius]
--- cycle;
-
-% Mevion: 9% = 32.4 degrees
-\fill[grayC]
-(0,0) -- (-205.2:\radius)
-arc[start angle=-205.2,end angle=-237.6,radius=\radius]
--- cycle;
-
-% Others: 9% = 32.4 degrees
-\fill[grayD]
-(0,0) -- (-237.6:\radius)
-arc[start angle=-237.6,end angle=-270,radius=\radius]
--- cycle;
-
-%------------------------------------------------
-% LABELS
-%------------------------------------------------
-
-% IBA
-\node[
-    align=center,
-    text=white,
-    font=\bfseries\footnotesize
-]
-at (14:1.62)
-{IBA\\42\%};
-
-% Varian
-\node[
-    align=center,
-    text=black,
-    font=\bfseries\scriptsize
-]
-at (-99:1.68)
-{Varian\\Siemens\\21\%};
-
-% Hitachi
-\node[
-    align=center,
-    text=black,
-    font=\bfseries\scriptsize
-]
-at (-171:1.68)
-{Hitachi\\19\%};
-
-% Mevion
-\node[
-    align=center,
-    text=white,
-    font=\bfseries\scriptsize
-]
-at (-221:1.78)
-{Mevion\\9\%};
-
-% Others
-\node[
-    align=center,
-    text=black,
-    font=\bfseries\scriptsize
-]
-at (111:1.78)
-{Others\\9\%};
-
-\end{tikzpicture}
-
-\vspace{0.02cm}
-
-{\tiny
-Research centres and Rutherford Cancer Centres excluded.\\
-Competitors' room counts are restated by IBA to include
-previously unpublished or unconfirmed orders.
-}
-
-\end{columns}
-
-\vfill
-
-\end{frame}
-
-\begin{frame}{Market dynamics and Prospectives}
-
-\vspace{0.10cm}
-
-\begin{columns}[T,onlytextwidth]
-
-% =========================================================
-% LEFT COLUMN — IBA FIGURE
-% =========================================================
-\column{0.60\textwidth}
-
-\centering
-
-\includegraphics[
-    width=\linewidth,
-    keepaspectratio
-]{figs/iba_sites.png}
-
-\vspace{0.15cm}
-
-{\small\color{PTgray}
-Source:
-\href{https://www.iba-worldwide.com/sites/default/files/2025-08/iba-hy25-results_presentation.pdf}
-{IBA Half-Year Results 2025}.
-}
-
-
-% =========================================================
-% RIGHT COLUMN — INTERPRETATION
-% =========================================================
-\column{0.35\textwidth}
-
-\vspace{0.30cm}
-
-{\Large\bfseries\color{PTblue}
-A market still expanding
-}
-
-\vspace{0.40cm}
-
-{\small\color{PTgray}
-IBA, the global market leader, reports:
-}
-
-\vspace{0.45cm}
-
-
-
-% ---------------------------------------------------------
-% MAIN TAKEAWAY
-% ---------------------------------------------------------
-
-
-{\LARGE
-\bfseries
-\color{PTred}
-45\%
-}
-
-\vspace{0.08cm}
-\begin{center}
-{\normalsize\bfseries
-of IBA's current portfolio
-}
-
-\vspace{0.05cm}
-
-{\small
-is still to become operational
-}
-{\small \color{PTgray}
-This indicates substantial near-term growth
-of the installed base.
-}
-\end{center}
-
-\end{columns}
-
-\end{frame}
-
-%============================================================================
-%% PART V: ARGOS
-%============================================================================
-\begin{frame}[plain,noframenumbering]
-\centering
-\vspace{1.6cm}
-{\color{crBlue}\rule{0.55\textwidth}{1.1pt}}\\[6mm]
-{\Large\color{crGrey} V}\\[4mm]
-{\Huge\bfseries\color{crBlue} ARGOS}\\[6mm]
-{\color{crBlue}\rule{0.55\textwidth}{1.1pt}}
-\end{frame}
-
-\begin{frame}{The DIPC group}
-\small
-The DIPC group is a leading neutrino physics group in Spain, with extensive expertise in \hi{nuclear instrumentation}.
-\par\vspace{2mm}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.49\textwidth}
-\textbf{Scientific leadership and concepts}
-\begin{itemize}
-\item Led by \hi{J.J. Gomez-Cadenas}: co-recipient of the \hi{2016 Breakthrough Prize in Fundamental Physics} as a member of K2K and T2K, with group leadership roles in neutrino physics.
-\item Two ERC grants: \hi{AdG-2013 and SyG-2020}.
-\item \hi{CRYSP}: Gomez-Cadenas, Soleti, Lopez-Guejo, Pelegrin.\\
-\hi{COCOA}: Soleti, Gomez-Cadenas.
-\end{itemize}
-\end{column}
-\begin{column}{0.49\textwidth}
-\textbf{Team, engineering and management}
-\begin{itemize}
-\item Four faculty, two engineers, two postdocs, and graduate and undergraduate students.
-\item Substantial experience in mechanical engineering and cryogenics.
-\item Strong Basque industry connections and established management: Lopez-Guejo and Pelegrin.
-\item Well funded by the ERC and Basque Government; additional positions planned for CRYSP and COCOA.
-\end{itemize}
-\end{column}
-\end{columns}
-\end{frame}
-
-\begin{frame}{CRYSP and COCOA for proton beam monitoring}
-\small
-\begin{itemize}
-\item The CRYSP and COCOA concepts can be applied as \hi{high-performance, low-cost solutions} for proton beam monitoring. Our recent study shows the potential of in-room CRYSP PET.
-\item We have \hi{operating prototypes of both systems} and are moving towards the construction of larger apparatus.
-\item The group is establishing a close collaboration with \hi{Biogipuzkoa} and the medical staff of the forthcoming proton beam therapy centre in \hi{Donostia}.
-\end{itemize}
-\par\vspace{3mm}
-{\scriptsize\color{crGrey} J.J. Gomez-Cadenas et al., \emph{A High-Sensitivity In-Room CRYSP Scanner for Distal-Edge Verification in Proton Therapy}, paper in preparation, available upon request.}
-\end{frame}
-
-\begin{frame}{Our vision: an integrated monitoring service}
-\small
-\begin{itemize}
-\item Optimised, \hi{high-precision, low-cost apparatus}, combined with fast and efficient software using \hi{AI-enabled technologies}, to provide real-time monitoring and support treatment correction in cooperation with doctors.
-\item A potential spin-off, \hi{ARGOS}, would offer an integrated solution to proton therapy centres:
-\end{itemize}
-\par\vspace{2mm}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.31\textwidth}
-\centering\textbf{Hardware}\\[2mm]
-Installation and maintenance
-\end{column}
-\begin{column}{0.31\textwidth}
-\centering\textbf{Software}\\[2mm]
-Full development and integration
-\end{column}
-\begin{column}{0.31\textwidth}
-\centering\textbf{Day-by-day service}\\[2mm]
-Close cooperation with doctors
-\end{column}
-\end{columns}
-\par\vspace{5mm}
-The model could be extensively tested and optimised in \hi{Donostia}, then expanded to new proton beam centres.
-\end{frame}
-
 \begin{frame}{Main Challenges Ahead}
 
 {\small Development priorities: demonstrate that the system can fit the room,
@@ -1761,20 +1766,866 @@ Success means a validated clinical service, with hardware, software and response
 }
 \end{frame}
 
-\begin{frame}{Development programme}
-\small
-\textbf{Foreseen development cycle: \hi{4 years}.}
-\par\vspace{3mm}
-\begin{enumerate}
-\item Validation of prototypes.
-\item Preclinical demonstrators.
-\item Clinical trials and medical validation.
-\item Construction of medical-grade apparatus.
-\item Initial operation.
-\end{enumerate}
+\begin{frame}{Strategy to overcome the translation barriers}
+
+\vspace{0.05cm}
+
+\begin{center}
+{\small\bfseries
+Develop the technology, clinical use case and regulatory pathway in parallel ---
+not sequentially.
+}
+\end{center}
+
+\vspace{0.22cm}
+
+\begin{columns}[T,onlytextwidth]
+
+% ============================================================
+% LEFT COLUMN
+% ============================================================
+\column{0.48\textwidth}
+
+% ------------------------------------------------------------
+% 1. PLATFORM
+% ------------------------------------------------------------
+\colorbox{blue!4}{
+\begin{minipage}[t][2.55cm][t]{0.94\linewidth}
+
+{\scriptsize\bfseries\color{PTblue}
+1. Build on a common detector platform
+}
+
+\vspace{0.10cm}
+
+{\tiny
+\textbf{CRYSP} can support both \textbf{PET} and
+\textbf{Compton-camera} architectures, allowing the technology
+to address complementary in-vivo verification approaches.
+
+\vspace{0.10cm}
+
+The detector concept is based on \textbf{non-strategic materials},
+avoiding rare-earth supply dependence, while retaining a
+\textbf{competitive detector cost}.
+}
+
+\end{minipage}
+}
+
+\vspace{0.18cm}
+
+% ------------------------------------------------------------
+% 3. REGULATORY
+% ------------------------------------------------------------
+\colorbox{blue!4}{
+\begin{minipage}[t][2.55cm][t]{0.94\linewidth}
+
+{\scriptsize\bfseries\color{PTblue}
+3. Design for certification from day one
+}
+
+\vspace{0.10cm}
+
+{\tiny
+Implement an \textbf{ISO 13485-compliant quality management system}
+from the beginning of development.
+
+\vspace{0.10cm}
+
+Integrate design controls, traceability, risk management,
+verification and validation into the R\&D process rather than
+retrofitting them after the prototype stage.
+
+\vspace{0.10cm}
+
+\textbf{Objective:} reduce redesign and shorten the path
+from research prototype to medical device.
+}
+
+\end{minipage}
+}
+
+
+% ============================================================
+% RIGHT COLUMN
+% ============================================================
+\column{0.48\textwidth}
+
+% ------------------------------------------------------------
+% 2. CLINICAL CO-DEVELOPMENT
+% ------------------------------------------------------------
+\colorbox{blue!4}{
+\begin{minipage}[t][2.55cm][t]{0.94\linewidth}
+
+{\scriptsize\bfseries\color{PTblue}
+2. Co-develop the clinical use case
+}
+
+\vspace{0.10cm}
+
+{\tiny
+Work with \textbf{BioGipuzkoa} and the clinical teams at
+\textbf{Onkologikoa} from the development phase.
+
+\vspace{0.10cm}
+
+Use the new proton-therapy facility, expected to enter operation
+in \textbf{2027}, to define realistic treatment geometries,
+validation protocols and prospective clinical studies.
+
+\vspace{0.10cm}
+
+\textbf{Key question:} what measured deviation should trigger
+review, additional imaging or replanning?
+}
+
+\end{minipage}
+}
+
+\vspace{0.18cm}
+
+% ------------------------------------------------------------
+% 4. VALIDATION
+% ------------------------------------------------------------
+\colorbox{blue!4}{
+\begin{minipage}[t][2.55cm][t]{0.94\linewidth}
+
+{\scriptsize\bfseries\color{PTblue}
+4. Validate towards clinical action
+}
+
+\vspace{0.10cm}
+
+{\tiny
+Progress through a staged validation programme:
+
+\vspace{0.06cm}
+
+\textbf{detector performance}
+$\rightarrow$
+\textbf{beam/phantom validation}
+$\rightarrow$
+\textbf{treatment-room integration}
+$\rightarrow$
+\textbf{clinical validation}
+
+\vspace{0.10cm}
+
+Define quantitative go/no-go criteria for sensitivity,
+false alerts, acquisition time and decision relevance.
+
+\vspace{0.10cm}
+
+The endpoint is not simply a better image, but a
+\textbf{trustworthy clinical decision tool}.
+}
+
+\end{minipage}
+}
+
+\end{columns}
+
+\vspace{0.30cm}
+
+\begin{center}
+{\small\bfseries\color{darkred}
+Technology platform + clinical co-development + regulatory-by-design
+$\;\Rightarrow\;$ shorter and lower-risk path to adoption.
+}
+\end{center}
+
 \end{frame}
 
-% Six economics and market slides generated from the CSV models in costs/.
+\begin{frame}{Potential Strategic Buyers and Exit Routes}
+
+\vspace{0.05cm}
+
+\begin{center}
+\scriptsize\bfseries
+A successful in-vivo verification platform could be strategically valuable
+to companies controlling proton delivery, radiotherapy workflow or treatment QA.
+\end{center}
+
+\vspace{0.25cm}
+
+\begin{columns}[T,onlytextwidth]
+
+% ============================================================
+% COLUMN 1
+% ============================================================
+\column{0.31\textwidth}
+
+\scriptsize\bfseries\color{PTblue}
+Proton-therapy OEMs
+
+\vspace{0.12cm}
+
+\tiny\color{black}
+
+\textbf{IBA}\\
+
+Global PT market leader, with a large installed base,
+service business and direct interest in treatment verification.
+
+\vspace{0.15cm}
+
+\textbf{Siemens Healthineers / Varian}\\
+Strong fit with integrated imaging, treatment delivery,
+adaptive radiotherapy and precision-therapy workflows.
+
+\vspace{0.15cm}
+
+\textbf{Hitachi}\\
+Major global proton-therapy supplier with direct access
+to treatment systems and clinical sites.
+
+\vspace{0.25cm}
+
+\textbf{Strategic rationale}\\
+Integrate in-vivo verification directly into the treatment platform
+and differentiate the next generation of proton-therapy systems.
+
+
+% ============================================================
+% COLUMN 2
+% ============================================================
+\column{0.31\textwidth}
+
+\scriptsize\bfseries\color{PTblue}
+{QA and dosimetry players}3
+
+\vspace{0.12cm}
+
+\tiny
+
+\textbf{Sun Nuclear / Mirion}\\
+Established radiotherapy QA portfolio and demonstrated
+interest in expanding towards digital treatment QA.
+
+\vspace{0.15cm}
+
+\textbf{PTW}\\
+Strong position in radiation dosimetry and patient/machine QA;
+in-vivo verification is a natural adjacent market.
+
+\vspace{0.15cm}
+
+\textbf{Specialised QA vendors}\\
+Potential buyers if the product develops as an independent
+verification layer rather than an accelerator subsystem.
+
+\vspace{0.25cm}
+
+\textbf{Strategic rationale}\\
+Extend QA from verification before treatment to verification
+of what was actually delivered.
+
+
+% ============================================================
+% COLUMN 3
+% ============================================================
+\column{0.31\textwidth}
+
+\scriptsize\bfseries\color{PTblue}
+Workflow and software players
+
+\vspace{0.12cm}
+
+\tiny\color{black}
+
+\textbf{RaySearch Laboratories}\\
+Relevant if measured range information becomes integrated
+with adaptive planning and clinical decision support.
+
+\vspace{0.15cm}
+
+\textbf{Broader oncology-platform companies}\\
+Potential interest increases if the project evolves from
+detector hardware into a verification and decision-support platform.
+
+\vspace{0.30cm}
+
+\scriptsize\bfseries\color{darkred}
+Most likely exit route
+
+\vspace{0.10cm}
+
+\tiny\color{black}
+
+Strategic acquisition by a proton-therapy OEM or a radiotherapy
+QA company after clinical validation and early market deployment.
+
+\end{columns}
+
+\vspace{0.30cm}
+
+\begin{center}
+\small\bfseries\color{darkred}
+The strategic value is not only the detector:
+it is the ability to connect beam delivery, verification and clinical action.
+\end{center}
+
+\end{frame}
+
+
+% ============================================================
+% PREAMBLE
+% ============================================================
+
+
+
+% ============================================================
+% SLIDE
+% ============================================================
+
+\begin{frame}{Development Roadmap}
+
+\vspace{0.10cm}
+
+\begin{center}
+{\scriptsize
+Illustrative roadmap --- activities and milestones to be refined
+}
+\end{center}
+
+\vspace{0.15cm}
+
+\centering
+
+\begin{tikzpicture}[
+    x=1.65cm,
+    y=0.72cm,
+    font=\scriptsize
+]
+
+% ============================================================
+% YEAR GRID
+% ============================================================
+
+% Vertical year divisions
+\foreach \x in {0,1,2,3,4,5,6}{
+    \draw[
+        gridgray,
+        densely dotted,
+        line width=0.7pt
+    ]
+    (\x,0) -- (\x,7.3);
+}
+
+% Year labels
+\node[font=\bfseries\scriptsize] at (0.5,7.55) {2027};
+\node[font=\bfseries\scriptsize] at (1.5,7.55) {2028};
+\node[font=\bfseries\scriptsize] at (2.5,7.55) {2029};
+\node[font=\bfseries\scriptsize] at (3.5,7.55) {2030};
+\node[font=\bfseries\scriptsize] at (4.5,7.55) {2031};
+\node[font=\bfseries\scriptsize] at (5.5,7.55) {2032};
+
+
+% ============================================================
+% PREPARATION
+% ============================================================
+
+\fill[timelinegray]
+(0.05,6.35) rectangle (0.70,6.85);
+
+\node[
+    anchor=west,
+    text=white,
+    font=\tiny\bfseries
+]
+at (0.12,6.60)
+{Preparation};
+
+\node[
+    anchor=west,
+    text=timelinegray,
+    font=\tiny,
+    align=left
+]
+at (0.05,6.08)
+{QMS setup, specifications,\\clinical requirements};
+
+
+% ============================================================
+% ACTIVITY 1
+% ============================================================
+
+\fill[timelinered]
+(0.75,5.55) rectangle (2.35,6.05);
+
+\node[
+    anchor=west,
+    text=white,
+    font=\tiny\bfseries
+]
+at (0.85,5.80)
+{Detector platform development};
+
+\node[
+    anchor=west,
+    text=timelinered,
+    font=\tiny
+]
+at (2.43,5.80)
+{PET / Compton architectures};
+
+
+% ============================================================
+% ACTIVITY 2
+% ============================================================
+
+\fill[timelineblue]
+(1.20,4.65) rectangle (3.10,5.15);
+
+\node[
+    anchor=west,
+    text=white,
+    font=\tiny\bfseries
+]
+at (1.30,4.90)
+{Laboratory validation};
+
+\node[
+    anchor=west,
+    text=timelineblue,
+    font=\tiny
+]
+at (3.18,4.90)
+{Performance validated};
+
+
+% ============================================================
+% ACTIVITY 3
+% ============================================================
+
+\fill[timelinered]
+(2.30,3.75) rectangle (4.30,4.25);
+
+\node[
+    anchor=west,
+    text=white,
+    font=\tiny\bfseries
+]
+at (2.40,4.00)
+{Treatment-room integration};
+
+\node[
+    anchor=west,
+    text=timelinered,
+    font=\tiny
+]
+at (4.38,4.00)
+{Clinical geometry};
+
+
+% ============================================================
+% ACTIVITY 4
+% ============================================================
+
+\fill[timelineblue]
+(3.55,2.85) rectangle (5.15,3.35);
+
+\node[
+    anchor=west,
+    text=white,
+    font=\tiny\bfseries
+]
+at (3.65,3.10)
+{Clinical validation};
+
+\node[
+    anchor=west,
+    text=timelineblue,
+    font=\tiny
+]
+at (5.23,3.10)
+{Prospective studies};
+
+
+% ============================================================
+% ACTIVITY 5
+% ============================================================
+
+\fill[timelinered]
+(4.45,1.95) rectangle (5.95,2.45);
+
+\node[
+    anchor=west,
+    text=white,
+    font=\tiny\bfseries
+]
+at (4.55,2.20)
+{Industrialisation};
+
+\node[
+    anchor=east,
+    text=timelinered,
+    font=\tiny
+]
+at (5.95,1.65)
+{Market-ready system};
+
+
+% ============================================================
+% MILESTONES
+% ============================================================
+
+% M1
+\draw[
+    timelinered,
+    densely dotted,
+    line width=1pt
+]
+(2.30,0.55) -- (2.30,3.55);
+
+\node[
+    anchor=north,
+    text=timelinered,
+    font=\tiny\bfseries,
+    align=center
+]
+at (2.30,0.45)
+{M1\\Detector frozen};
+
+
+% M2
+\draw[
+    timelineblue,
+    densely dotted,
+    line width=1pt
+]
+(3.55,0.55) -- (3.55,2.65);
+
+\node[
+    anchor=north,
+    text=timelineblue,
+    font=\tiny\bfseries,
+    align=center
+]
+at (3.55,0.45)
+{M2\\Room validation};
+
+
+% M3
+\draw[
+    timelinered,
+    densely dotted,
+    line width=1pt
+]
+(5.15,0.55) -- (5.15,2.65);
+
+\node[
+    anchor=north,
+    text=timelinered,
+    font=\tiny\bfseries,
+    align=center
+]
+at (5.15,0.45)
+{M3\\Clinical evidence};
+
+
+% ============================================================
+% FINAL TARGET
+% ============================================================
+
+\draw[
+    timelineblue,
+    densely dotted,
+    line width=1.2pt
+]
+(5.95,0.55) -- (5.95,1.75);
+
+\node[
+    anchor=north east,
+    text=timelineblue,
+    font=\tiny\bfseries,
+    align=right
+]
+at (5.95,0.45)
+{Market\\launch};
+
+\end{tikzpicture}
+
+\end{frame}
+
+\begin{frame}{Founding Team}
+\linespread{0.70}\selectfont  
+
+\vspace{-0.05cm}
+
+\begin{center}
+{\scriptsize\bfseries
+Complementary expertise from detector R\&D to industrialisation.
+}
+\end{center}
+
+\vspace{0.10cm}
+
+% ============================================================
+% JUAN JOSE
+% ============================================================
+
+{\scriptsize\bfseries\color{PTblue}
+Juan José Gómez-Cadenas
+\hfill
+{\tiny\bfseries\color{black}
+Scientific leadership}
+}
+
+\vspace{0.03cm}
+
+{\tiny 
+Ikerbasque Research Professor at DIPC with an international career at
+Stanford/SLAC, CERN, Harvard, UMass, CSIC and the University of Valencia.
+An expert in particle physics and nuclear instrumentation, he leads NEXT
+and has received ERC Advanced and Synergy Grants. He brings extensive
+experience in detector development and medical-imaging technologies,
+including PETALO and CRYSP.
+}
+
+{\color{gray!35}\rule{\textwidth}{0.35pt}}
+
+% ============================================================
+% FRANCISCO
+% ============================================================
+
+{\scriptsize\bfseries\color{PTblue}
+Francisco López Gejo
+\hfill
+{\tiny\bfseries\color{black}
+Industrialisation \& Business Development}
+}
+
+\vspace{0.03cm}
+
+{\tiny
+Physicist whose career has combined academic research and industry,
+with experience in medical technology development, R\&D management and
+entrepreneurship. He was co-founder and General Manager of BihurCrystal,
+a Deep Tech venture focused on transferring technologies from fundamental
+research to industry. At DIPC, he works at the interface between research,
+technology transfer and project development.
+}
+
+{\color{gray!35}\rule{\textwidth}{0.35pt}}
+
+% ============================================================
+% VICENTE
+% ============================================================
+
+{\scriptsize\bfseries\color{PTblue}
+Vicente Herrero Bosch
+\hfill
+{\tiny\bfseries\color{black}
+Electronics, DAQ \& System Integration}
+}
+
+
+
+{\tiny
+Researcher at the Institute for Instrumentation in Molecular Imaging
+(I3M, CSIC--UPV), specialising in front-end electronics, SiPM readout
+and high-performance DAQ for particle detectors and molecular imaging.
+He has contributed to NEXT, PETALO and CRYSP, bringing expertise in
+electronics, data acquisition and scalable detector integration.
+}
+
+
+{\color{gray!35}\rule{\textwidth}{0.35pt}}
+
+
+% ============================================================
+% ROBERTO
+% ============================================================
+
+{\scriptsize\bfseries\color{PTblue}
+Stefano Roberto Soleti
+\hfill
+{\tiny\bfseries\color{black}
+Detector Technology \& Experimental Development}
+}
+
+
+
+{\tiny
+Ikerbasque Research Fellow at DIPC and PhD in Particle Physics from
+the University of Oxford, with previous experience at Berkeley Lab,
+Harvard, INFN Frascati and Fermilab. Co-author of the CRYSP and COCOA
+concepts, his work focuses on cryogenic scintillators, SiPM readout,
+monolithic PET detectors and compact Compton cameras.
+}
+
+\vfill
+%\end{center}
+
+\end{frame}
+
+\begin{frame}[t]{Funding Strategy}
+
+\begin{center}
+{\scriptsize\bfseries\color{darkred}
+Our funding strategy aims to leverage public funding wherever possible to cover a significant share of the technical and clinical de-risking, thereby reducing the private capital required before market entry.
+}
+
+\end{center}
+
+
+
+% ============================================================
+% STAGE 1
+% ============================================================
+
+{\scriptsize\bfseries\color{PTblue}
+1. Functional prototypes — already funded
+}
+
+{\tiny
+\textbf{Basque Government ESS funding} — already allocated to DIPC.\\
+\textbf{\EUR\,1.0 M over 2027--2028} to develop functional prototypes of both
+the \textbf{Compton camera} and the \textbf{PET scanner}.
+}
+
+{\color{gray!35}\rule{\textwidth}{0.35pt}}
+
+% ============================================================
+% STAGE 2
+% ============================================================
+
+{\scriptsize\bfseries\color{PTblue}
+2. Validation in a relevant environment
+}
+
+{\tiny
+\textbf{ELKARTEK 2027} — collaborative project with \textbf{BioGipuzkoa}. {\emph Currently under preparation}\\
+Target budget: \textbf{\EUR\,1.5 M over two years} for validation of the detector
+technologies in a clinically relevant environment.
+}
+
+{\color{gray!35}\rule{\textwidth}{0.35pt}}
+
+% ============================================================
+% STAGE 3
+% ============================================================
+
+{\scriptsize\bfseries\color{PTblue}
+3. Medical-device development
+}
+
+{\tiny
+\textbf{CDTI NEOTEC} — proposed funding route for development of a
+\textbf{medical-grade Compton camera}, supporting engineering,
+industrialisation and regulatory preparation after company incorporation.
+}
+
+{\color{gray!35}\rule{\textwidth}{0.35pt}}
+
+% ============================================================
+% STAGE 4
+% ============================================================
+
+{\scriptsize\bfseries\color{PTblue}
+4. PET industrialisation requires a larger investment
+}
+
+{\tiny
+The PET system requires substantially higher capital investment than the
+Compton-camera programme. Its development could therefore combine
+\textbf{private investment} with public co-funding programmes such as
+\textbf{ELKARTEK}, once the company has been incorporated.
+}
+
+
+
+\end{frame}
+
+\begin{frame}{Development Roadmap}
+  \centering
+  \includegraphics[width=0.94\textwidth,height=0.80\textheight,keepaspectratio]{roadmap.png}
+\end{frame}
+
+\begin{frame}{Vision \& Mission}
+
+\vspace{0.15cm}
+
+% ============================================================
+% VISION
+% ============================================================
+
+{\large\bfseries\color{PTblue}
+VISION
+}
+
+\vspace{0.10cm}
+
+{\LARGE\bfseries
+Make in-vivo verification a routine component of proton therapy.
+}
+
+\vspace{0.18cm}
+
+{\small\color{gray!70!black}
+Treatment decisions should rely not only on what was planned,
+but also on evidence of what was actually delivered.
+}
+
+\vspace{0.35cm}
+
+{\color{gray!30}\rule{\textwidth}{0.5pt}}
+
+\vspace{0.28cm}
+
+% ============================================================
+% MISSION
+% ============================================================
+
+{\large\bfseries\color{darkred}
+MISSION
+}
+
+\vspace{0.10cm}
+
+{\Large\bfseries
+Develop affordable, clinically deployable PET and Compton systems
+for proton-therapy verification.
+}
+
+\vspace{0.18cm}
+
+{\small\color{gray!70!black}
+Built around a common detector platform and designed from the outset
+for clinical integration and medical-device translation.
+}
+
+\vfill
+
+% ============================================================
+% BOTTOM STRIP
+% ============================================================
+
+\begin{center}
+{\scriptsize\bfseries\color{PTblue}
+Affordable detectors
+\quad $\cdot$ \quad
+Clinical integration
+\quad $\cdot$ \quad
+Medical-device development
+}
+\end{center}
+
+\vspace{0.08cm}
+
+\begin{center}
+{\small\bfseries\color{darkred}
+From treatment planning to treatment evidence.
+}
+\end{center}
+
+\end{frame}
+
+% Nine economics, market and funding slides generated from the CSV models in costs/.
 \input{costs/slides.tex}
+
+
 
 \end{document}

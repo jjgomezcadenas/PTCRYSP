@@ -1,7 +1,7 @@
 # Cost model consistency report
 
 - PASS: 9 CSV tables, Excel sheets/named tables and generated slides.
-- PASS: all 235 input/derived values match Excel cached values; formulas match Python expressions.
+- PASS: all 237 input/derived values match Excel cached values; formulas match Python expressions.
 - PASS: all displayed model numbers are generated from the CSV calculation model.
 - PASS: deck includes the generated slides exactly once.
 - Scope: the generated economics and market slides; unrelated clinical and market-survey slides are outside this audit.
@@ -11,7 +11,7 @@
 - PASS: recurring_market: rendered PDF page 45; all model number strings found.
 - PASS: market_growth: rendered PDF page 46; all model number strings found.
 - PASS: argos_market: rendered PDF page 47; all model number strings found.
-- PASS: costs-reduced: rendered PDF page 48; all model number strings found.
-- PASS: startup_team: rendered PDF page 49; all model number strings found.
-- PASS: startup_programme: rendered PDF page 50; all model number strings found.
+- PASS: costs-reduced: rendered PDF page 54; all model number strings found.
+- PASS: startup_team: rendered PDF page 52; all model number strings found.
+- PASS: startup_programme: rendered PDF page 49; all model number strings found.
 - PDF matching checks displayed numbers and titles, not layout; visual review remains a separate step.
