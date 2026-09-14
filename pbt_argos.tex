@@ -3,12 +3,16 @@
 \documentclass[aspectratio=169,11pt]{beamer}
 %%%FLG%%%
 \usepackage{tikz}
-\usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta,positioning}
 \usepackage{hyperref}
 \usepackage{ragged2e}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 % Optional palette
+\definecolor{timelineblue}{RGB}{16,91,137}
+\definecolor{timelinered}{RGB}{165,35,25}
+\definecolor{timelinegray}{RGB}{145,145,145}
+\definecolor{gridgray}{RGB}{195,200,205}
 \definecolor{darkred}{RGB}{145,35,45}
 \definecolor{axisgray}{RGB}{80,80,80}
 \definecolor{gridgray}{RGB}{215,220,225}
@@ -642,26 +646,7 @@ scalability and efficiency}
 %   \vspace{3mm}
 % \end{frame}
 
-\begin{frame}{Proton therapy: worldwide deployment and growth in Europe}
-\small
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.59\textwidth}
-\centering
-\includegraphics[width=\linewidth]{proton_facilities_world_2021.png}
-\par\vspace{2mm}
-\raggedright
-Over the last two decades, proton therapy has evolved from a highly specialised treatment into a \hi{globally deployed clinical technology}.
-\end{column}
-\begin{column}{0.38\textwidth}
-\centering
-\includegraphics[height=0.33\textheight,keepaspectratio]{proton_facilities_europe.png}
-\par\vspace{2mm}
-\includegraphics[width=\linewidth,height=0.33\textheight,keepaspectratio]{proton_patients_europe.png}
-\end{column}
-\end{columns}
-\par\vspace{2mm}
-{\tiny\color{crGrey} World map: April 2021. European patient chart: PTCOG attribution in the supplied figure; numerical series not independently verified.}
-\end{frame}
+
 
 \begin{frame}{Clinical evidence for proton therapy}
 \small
@@ -852,6 +837,27 @@ of products and services.
 Independent estimates consistently place the current global
 proton-therapy market in the order of \$1 billion per year.
 }
+\end{frame}
+
+\begin{frame}{Proton therapy: worldwide deployment.}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.59\textwidth}
+\centering
+\includegraphics[width=\linewidth]{proton_facilities_world_2021.png}
+\par\vspace{2mm}
+\raggedright
+Over the last two decades, proton therapy has evolved from a highly specialised treatment into a \hi{globally deployed clinical technology}.
+\end{column}
+\begin{column}{0.38\textwidth}
+\centering
+\includegraphics[height=0.45\textheight,keepaspectratio]{proton_facilities_europe.png}
+\par\vspace{2mm}
+\includegraphics[width=\linewidth,height=0.33\textheight,keepaspectratio]{proton_patients_europe.png}
+\end{column}
+\end{columns}
+\par\vspace{2mm}
+{\tiny\color{crGrey} World map: April 2021. European patient chart: PTCOG.}
 \end{frame}
 
 \begin{frame}{Market Share}
@@ -1758,6 +1764,863 @@ Success means a validated clinical service, with hardware, software and response
 \href{https://doi.org/10.1016/j.phro.2025.100778}
 {Bertschi et al., PhiRO 34 (2025) 100778.}\par
 }
+\end{frame}
+
+\begin{frame}{Strategy to overcome the translation barriers}
+
+\vspace{0.05cm}
+
+\begin{center}
+{\small\bfseries
+Develop the technology, clinical use case and regulatory pathway in parallel ---
+not sequentially.
+}
+\end{center}
+
+\vspace{0.22cm}
+
+\begin{columns}[T,onlytextwidth]
+
+% ============================================================
+% LEFT COLUMN
+% ============================================================
+\column{0.48\textwidth}
+
+% ------------------------------------------------------------
+% 1. PLATFORM
+% ------------------------------------------------------------
+\colorbox{blue!4}{
+\begin{minipage}[t][2.55cm][t]{0.94\linewidth}
+
+{\scriptsize\bfseries\color{PTblue}
+1. Build on a common detector platform
+}
+
+\vspace{0.10cm}
+
+{\tiny
+\textbf{CRYSP} can support both \textbf{PET} and
+\textbf{Compton-camera} architectures, allowing the technology
+to address complementary in-vivo verification approaches.
+
+\vspace{0.10cm}
+
+The detector concept is based on \textbf{non-strategic materials},
+avoiding rare-earth supply dependence, while retaining a
+\textbf{competitive detector cost}.
+}
+
+\end{minipage}
+}
+
+\vspace{0.18cm}
+
+% ------------------------------------------------------------
+% 3. REGULATORY
+% ------------------------------------------------------------
+\colorbox{blue!4}{
+\begin{minipage}[t][2.55cm][t]{0.94\linewidth}
+
+{\scriptsize\bfseries\color{PTblue}
+3. Design for certification from day one
+}
+
+\vspace{0.10cm}
+
+{\tiny
+Implement an \textbf{ISO 13485-compliant quality management system}
+from the beginning of development.
+
+\vspace{0.10cm}
+
+Integrate design controls, traceability, risk management,
+verification and validation into the R\&D process rather than
+retrofitting them after the prototype stage.
+
+\vspace{0.10cm}
+
+\textbf{Objective:} reduce redesign and shorten the path
+from research prototype to medical device.
+}
+
+\end{minipage}
+}
+
+
+% ============================================================
+% RIGHT COLUMN
+% ============================================================
+\column{0.48\textwidth}
+
+% ------------------------------------------------------------
+% 2. CLINICAL CO-DEVELOPMENT
+% ------------------------------------------------------------
+\colorbox{blue!4}{
+\begin{minipage}[t][2.55cm][t]{0.94\linewidth}
+
+{\scriptsize\bfseries\color{PTblue}
+2. Co-develop the clinical use case
+}
+
+\vspace{0.10cm}
+
+{\tiny
+Work with \textbf{BioGipuzkoa} and the clinical teams at
+\textbf{Onkologikoa} from the development phase.
+
+\vspace{0.10cm}
+
+Use the new proton-therapy facility, expected to enter operation
+in \textbf{2027}, to define realistic treatment geometries,
+validation protocols and prospective clinical studies.
+
+\vspace{0.10cm}
+
+\textbf{Key question:} what measured deviation should trigger
+review, additional imaging or replanning?
+}
+
+\end{minipage}
+}
+
+\vspace{0.18cm}
+
+% ------------------------------------------------------------
+% 4. VALIDATION
+% ------------------------------------------------------------
+\colorbox{blue!4}{
+\begin{minipage}[t][2.55cm][t]{0.94\linewidth}
+
+{\scriptsize\bfseries\color{PTblue}
+4. Validate towards clinical action
+}
+
+\vspace{0.10cm}
+
+{\tiny
+Progress through a staged validation programme:
+
+\vspace{0.06cm}
+
+\textbf{detector performance}
+$\rightarrow$
+\textbf{beam/phantom validation}
+$\rightarrow$
+\textbf{treatment-room integration}
+$\rightarrow$
+\textbf{clinical validation}
+
+\vspace{0.10cm}
+
+Define quantitative go/no-go criteria for sensitivity,
+false alerts, acquisition time and decision relevance.
+
+\vspace{0.10cm}
+
+The endpoint is not simply a better image, but a
+\textbf{trustworthy clinical decision tool}.
+}
+
+\end{minipage}
+}
+
+\end{columns}
+
+\vspace{0.30cm}
+
+\begin{center}
+{\small\bfseries\color{darkred}
+Technology platform + clinical co-development + regulatory-by-design
+$\;\Rightarrow\;$ shorter and lower-risk path to adoption.
+}
+\end{center}
+
+\end{frame}
+
+\begin{frame}{Potential Strategic Buyers and Exit Routes}
+
+\vspace{0.05cm}
+
+\begin{center}
+\scriptsize\bfseries
+A successful in-vivo verification platform could be strategically valuable
+to companies controlling proton delivery, radiotherapy workflow or treatment QA.
+\end{center}
+
+\vspace{0.25cm}
+
+\begin{columns}[T,onlytextwidth]
+
+% ============================================================
+% COLUMN 1
+% ============================================================
+\column{0.31\textwidth}
+
+\scriptsize\bfseries\color{PTblue}
+Proton-therapy OEMs
+
+\vspace{0.12cm}
+
+\tiny\color{black}
+
+\textbf{IBA}\\
+
+Global PT market leader, with a large installed base,
+service business and direct interest in treatment verification.
+
+\vspace{0.15cm}
+
+\textbf{Siemens Healthineers / Varian}\\
+Strong fit with integrated imaging, treatment delivery,
+adaptive radiotherapy and precision-therapy workflows.
+
+\vspace{0.15cm}
+
+\textbf{Hitachi}\\
+Major global proton-therapy supplier with direct access
+to treatment systems and clinical sites.
+
+\vspace{0.25cm}
+
+\textbf{Strategic rationale}\\
+Integrate in-vivo verification directly into the treatment platform
+and differentiate the next generation of proton-therapy systems.
+
+
+% ============================================================
+% COLUMN 2
+% ============================================================
+\column{0.31\textwidth}
+
+\scriptsize\bfseries\color{PTblue}
+{QA and dosimetry players}3
+
+\vspace{0.12cm}
+
+\tiny
+
+\textbf{Sun Nuclear / Mirion}\\
+Established radiotherapy QA portfolio and demonstrated
+interest in expanding towards digital treatment QA.
+
+\vspace{0.15cm}
+
+\textbf{PTW}\\
+Strong position in radiation dosimetry and patient/machine QA;
+in-vivo verification is a natural adjacent market.
+
+\vspace{0.15cm}
+
+\textbf{Specialised QA vendors}\\
+Potential buyers if the product develops as an independent
+verification layer rather than an accelerator subsystem.
+
+\vspace{0.25cm}
+
+\textbf{Strategic rationale}\\
+Extend QA from verification before treatment to verification
+of what was actually delivered.
+
+
+% ============================================================
+% COLUMN 3
+% ============================================================
+\column{0.31\textwidth}
+
+\scriptsize\bfseries\color{PTblue}
+Workflow and software players
+
+\vspace{0.12cm}
+
+\tiny\color{black}
+
+\textbf{RaySearch Laboratories}\\
+Relevant if measured range information becomes integrated
+with adaptive planning and clinical decision support.
+
+\vspace{0.15cm}
+
+\textbf{Broader oncology-platform companies}\\
+Potential interest increases if the project evolves from
+detector hardware into a verification and decision-support platform.
+
+\vspace{0.30cm}
+
+\scriptsize\bfseries\color{darkred}
+Most likely exit route
+
+\vspace{0.10cm}
+
+\tiny\color{black}
+
+Strategic acquisition by a proton-therapy OEM or a radiotherapy
+QA company after clinical validation and early market deployment.
+
+\end{columns}
+
+\vspace{0.30cm}
+
+\begin{center}
+\small\bfseries\color{darkred}
+The strategic value is not only the detector:
+it is the ability to connect beam delivery, verification and clinical action.
+\end{center}
+
+\end{frame}
+
+
+% ============================================================
+% PREAMBLE
+% ============================================================
+
+
+
+% ============================================================
+% SLIDE
+% ============================================================
+
+\begin{frame}{Development Roadmap}
+
+\vspace{0.10cm}
+
+\begin{center}
+{\scriptsize
+Illustrative roadmap --- activities and milestones to be refined
+}
+\end{center}
+
+\vspace{0.15cm}
+
+\centering
+
+\begin{tikzpicture}[
+    x=1.65cm,
+    y=0.72cm,
+    font=\scriptsize
+]
+
+% ============================================================
+% YEAR GRID
+% ============================================================
+
+% Vertical year divisions
+\foreach \x in {0,1,2,3,4,5,6}{
+    \draw[
+        gridgray,
+        densely dotted,
+        line width=0.7pt
+    ]
+    (\x,0) -- (\x,7.3);
+}
+
+% Year labels
+\node[font=\bfseries\scriptsize] at (0.5,7.55) {2027};
+\node[font=\bfseries\scriptsize] at (1.5,7.55) {2028};
+\node[font=\bfseries\scriptsize] at (2.5,7.55) {2029};
+\node[font=\bfseries\scriptsize] at (3.5,7.55) {2030};
+\node[font=\bfseries\scriptsize] at (4.5,7.55) {2031};
+\node[font=\bfseries\scriptsize] at (5.5,7.55) {2032};
+
+
+% ============================================================
+% PREPARATION
+% ============================================================
+
+\fill[timelinegray]
+(0.05,6.35) rectangle (0.70,6.85);
+
+\node[
+    anchor=west,
+    text=white,
+    font=\tiny\bfseries
+]
+at (0.12,6.60)
+{Preparation};
+
+\node[
+    anchor=west,
+    text=timelinegray,
+    font=\tiny,
+    align=left
+]
+at (0.05,6.08)
+{QMS setup, specifications,\\clinical requirements};
+
+
+% ============================================================
+% ACTIVITY 1
+% ============================================================
+
+\fill[timelinered]
+(0.75,5.55) rectangle (2.35,6.05);
+
+\node[
+    anchor=west,
+    text=white,
+    font=\tiny\bfseries
+]
+at (0.85,5.80)
+{Detector platform development};
+
+\node[
+    anchor=west,
+    text=timelinered,
+    font=\tiny
+]
+at (2.43,5.80)
+{PET / Compton architectures};
+
+
+% ============================================================
+% ACTIVITY 2
+% ============================================================
+
+\fill[timelineblue]
+(1.20,4.65) rectangle (3.10,5.15);
+
+\node[
+    anchor=west,
+    text=white,
+    font=\tiny\bfseries
+]
+at (1.30,4.90)
+{Laboratory validation};
+
+\node[
+    anchor=west,
+    text=timelineblue,
+    font=\tiny
+]
+at (3.18,4.90)
+{Performance validated};
+
+
+% ============================================================
+% ACTIVITY 3
+% ============================================================
+
+\fill[timelinered]
+(2.30,3.75) rectangle (4.30,4.25);
+
+\node[
+    anchor=west,
+    text=white,
+    font=\tiny\bfseries
+]
+at (2.40,4.00)
+{Treatment-room integration};
+
+\node[
+    anchor=west,
+    text=timelinered,
+    font=\tiny
+]
+at (4.38,4.00)
+{Clinical geometry};
+
+
+% ============================================================
+% ACTIVITY 4
+% ============================================================
+
+\fill[timelineblue]
+(3.55,2.85) rectangle (5.15,3.35);
+
+\node[
+    anchor=west,
+    text=white,
+    font=\tiny\bfseries
+]
+at (3.65,3.10)
+{Clinical validation};
+
+\node[
+    anchor=west,
+    text=timelineblue,
+    font=\tiny
+]
+at (5.23,3.10)
+{Prospective studies};
+
+
+% ============================================================
+% ACTIVITY 5
+% ============================================================
+
+\fill[timelinered]
+(4.45,1.95) rectangle (5.95,2.45);
+
+\node[
+    anchor=west,
+    text=white,
+    font=\tiny\bfseries
+]
+at (4.55,2.20)
+{Industrialisation};
+
+\node[
+    anchor=east,
+    text=timelinered,
+    font=\tiny
+]
+at (5.95,1.65)
+{Market-ready system};
+
+
+% ============================================================
+% MILESTONES
+% ============================================================
+
+% M1
+\draw[
+    timelinered,
+    densely dotted,
+    line width=1pt
+]
+(2.30,0.55) -- (2.30,3.55);
+
+\node[
+    anchor=north,
+    text=timelinered,
+    font=\tiny\bfseries,
+    align=center
+]
+at (2.30,0.45)
+{M1\\Detector frozen};
+
+
+% M2
+\draw[
+    timelineblue,
+    densely dotted,
+    line width=1pt
+]
+(3.55,0.55) -- (3.55,2.65);
+
+\node[
+    anchor=north,
+    text=timelineblue,
+    font=\tiny\bfseries,
+    align=center
+]
+at (3.55,0.45)
+{M2\\Room validation};
+
+
+% M3
+\draw[
+    timelinered,
+    densely dotted,
+    line width=1pt
+]
+(5.15,0.55) -- (5.15,2.65);
+
+\node[
+    anchor=north,
+    text=timelinered,
+    font=\tiny\bfseries,
+    align=center
+]
+at (5.15,0.45)
+{M3\\Clinical evidence};
+
+
+% ============================================================
+% FINAL TARGET
+% ============================================================
+
+\draw[
+    timelineblue,
+    densely dotted,
+    line width=1.2pt
+]
+(5.95,0.55) -- (5.95,1.75);
+
+\node[
+    anchor=north east,
+    text=timelineblue,
+    font=\tiny\bfseries,
+    align=right
+]
+at (5.95,0.45)
+{Market\\launch};
+
+\end{tikzpicture}
+
+\end{frame}
+
+\begin{frame}{Founding Team}
+\linespread{0.70}\selectfont  
+
+\vspace{-0.05cm}
+
+\begin{center}
+{\scriptsize\bfseries
+Complementary expertise from detector R\&D to industrialisation.
+}
+\end{center}
+
+\vspace{0.10cm}
+
+% ============================================================
+% JUAN JOSE
+% ============================================================
+
+{\scriptsize\bfseries\color{PTblue}
+Juan José Gómez-Cadenas
+\hfill
+{\tiny\bfseries\color{black}
+Scientific leadership}
+}
+
+\vspace{0.03cm}
+
+{\tiny 
+Ikerbasque Research Professor at DIPC with an international career at
+Stanford/SLAC, CERN, Harvard, UMass, CSIC and the University of Valencia.
+An expert in particle physics and nuclear instrumentation, he leads NEXT
+and has received ERC Advanced and Synergy Grants. He brings extensive
+experience in detector development and medical-imaging technologies,
+including PETALO and CRYSP.
+}
+
+{\color{gray!35}\rule{\textwidth}{0.35pt}}
+
+% ============================================================
+% FRANCISCO
+% ============================================================
+
+{\scriptsize\bfseries\color{PTblue}
+Francisco López Gejo
+\hfill
+{\tiny\bfseries\color{black}
+Industrialisation \& Business Development}
+}
+
+\vspace{0.03cm}
+
+{\tiny
+Physicist whose career has combined academic research and industry,
+with experience in medical technology development, R\&D management and
+entrepreneurship. He was co-founder and General Manager of BihurCrystal,
+a Deep Tech venture focused on transferring technologies from fundamental
+research to industry. At DIPC, he works at the interface between research,
+technology transfer and project development.
+}
+
+{\color{gray!35}\rule{\textwidth}{0.35pt}}
+
+% ============================================================
+% VICENTE
+% ============================================================
+
+{\scriptsize\bfseries\color{PTblue}
+Vicente Herrero Bosch
+\hfill
+{\tiny\bfseries\color{black}
+Electronics, DAQ \& System Integration}
+}
+
+
+
+{\tiny
+Researcher at the Institute for Instrumentation in Molecular Imaging
+(I3M, CSIC--UPV), specialising in front-end electronics, SiPM readout
+and high-performance DAQ for particle detectors and molecular imaging.
+He has contributed to NEXT, PETALO and CRYSP, bringing expertise in
+electronics, data acquisition and scalable detector integration.
+}
+
+
+{\color{gray!35}\rule{\textwidth}{0.35pt}}
+
+
+% ============================================================
+% ROBERTO
+% ============================================================
+
+{\scriptsize\bfseries\color{PTblue}
+Stefano Roberto Soleti
+\hfill
+{\tiny\bfseries\color{black}
+Detector Technology \& Experimental Development}
+}
+
+
+
+{\tiny
+Ikerbasque Research Fellow at DIPC and PhD in Particle Physics from
+the University of Oxford, with previous experience at Berkeley Lab,
+Harvard, INFN Frascati and Fermilab. Co-author of the CRYSP and COCOA
+concepts, his work focuses on cryogenic scintillators, SiPM readout,
+monolithic PET detectors and compact Compton cameras.
+}
+
+\vfill
+%\end{center}
+
+\end{frame}
+
+\begin{frame}[t]{Funding Strategy}
+
+\begin{center}
+{\scriptsize\bfseries\color{darkred}
+Our funding strategy aims to leverage public funding wherever possible to cover a significant share of the technical and clinical de-risking, thereby reducing the private capital required before market entry.
+}
+
+\end{center}
+
+
+
+% ============================================================
+% STAGE 1
+% ============================================================
+
+{\scriptsize\bfseries\color{PTblue}
+1. Functional prototypes — already funded
+}
+
+{\tiny
+\textbf{Basque Government ESS funding} — already allocated to DIPC.\\
+\textbf{\EUR\,1.0 M over 2027--2028} to develop functional prototypes of both
+the \textbf{Compton camera} and the \textbf{PET scanner}.
+}
+
+{\color{gray!35}\rule{\textwidth}{0.35pt}}
+
+% ============================================================
+% STAGE 2
+% ============================================================
+
+{\scriptsize\bfseries\color{PTblue}
+2. Validation in a relevant environment
+}
+
+{\tiny
+\textbf{ELKARTEK 2027} — collaborative project with \textbf{BioGipuzkoa}. {\emph Currently under preparation}\\
+Target budget: \textbf{\EUR\,1.5 M over two years} for validation of the detector
+technologies in a clinically relevant environment.
+}
+
+{\color{gray!35}\rule{\textwidth}{0.35pt}}
+
+% ============================================================
+% STAGE 3
+% ============================================================
+
+{\scriptsize\bfseries\color{PTblue}
+3. Medical-device development
+}
+
+{\tiny
+\textbf{CDTI NEOTEC} — proposed funding route for development of a
+\textbf{medical-grade Compton camera}, supporting engineering,
+industrialisation and regulatory preparation after company incorporation.
+}
+
+{\color{gray!35}\rule{\textwidth}{0.35pt}}
+
+% ============================================================
+% STAGE 4
+% ============================================================
+
+{\scriptsize\bfseries\color{PTblue}
+4. PET industrialisation requires a larger investment
+}
+
+{\tiny
+The PET system requires substantially higher capital investment than the
+Compton-camera programme. Its development could therefore combine
+\textbf{private investment} with public co-funding programmes such as
+\textbf{ELKARTEK}, once the company has been incorporated.
+}
+
+
+
+\end{frame}
+
+\begin{frame}{Development Roadmap}
+  \centering
+  \includegraphics[width=0.94\textwidth,height=0.80\textheight,keepaspectratio]{roadmap.png}
+\end{frame}
+
+\begin{frame}{Vision \& Mission}
+
+\vspace{0.15cm}
+
+% ============================================================
+% VISION
+% ============================================================
+
+{\large\bfseries\color{PTblue}
+VISION
+}
+
+\vspace{0.10cm}
+
+{\LARGE\bfseries
+Make in-vivo verification a routine component of proton therapy.
+}
+
+\vspace{0.18cm}
+
+{\small\color{gray!70!black}
+Treatment decisions should rely not only on what was planned,
+but also on evidence of what was actually delivered.
+}
+
+\vspace{0.35cm}
+
+{\color{gray!30}\rule{\textwidth}{0.5pt}}
+
+\vspace{0.28cm}
+
+% ============================================================
+% MISSION
+% ============================================================
+
+{\large\bfseries\color{darkred}
+MISSION
+}
+
+\vspace{0.10cm}
+
+{\Large\bfseries
+Develop affordable, clinically deployable PET and Compton systems
+for proton-therapy verification.
+}
+
+\vspace{0.18cm}
+
+{\small\color{gray!70!black}
+Built around a common detector platform and designed from the outset
+for clinical integration and medical-device translation.
+}
+
+\vfill
+
+% ============================================================
+% BOTTOM STRIP
+% ============================================================
+
+\begin{center}
+{\scriptsize\bfseries\color{PTblue}
+Affordable detectors
+\quad $\cdot$ \quad
+Clinical integration
+\quad $\cdot$ \quad
+Medical-device development
+}
+\end{center}
+
+\vspace{0.08cm}
+
+\begin{center}
+{\small\bfseries\color{darkred}
+From treatment planning to treatment evidence.
+}
+\end{center}
+
 \end{frame}
 
 % Nine economics, market and funding slides generated from the CSV models in costs/.
