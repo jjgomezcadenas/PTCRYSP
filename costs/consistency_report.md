@@ -1,7 +1,7 @@
 # Cost model consistency report
 
 - PASS: 9 CSV tables, Excel sheets/named tables and generated slides.
-- PASS: all 237 input/derived values match Excel cached values; formulas match Python expressions.
+- PASS: all 236 input/derived values match Excel cached values; formulas match Python expressions.
 - PASS: all displayed model numbers are generated from the CSV calculation model.
 - PASS: deck includes the generated slides exactly once.
 - Scope: the generated economics and market slides; unrelated clinical and market-survey slides are outside this audit.

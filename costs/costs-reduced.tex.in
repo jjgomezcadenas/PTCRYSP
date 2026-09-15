@@ -13,7 +13,6 @@ Hardware and prototype & {{startup_hardware_package|k}} \\
 Personnel & {{startup_personnel|k}} \\
 Clinical, regulatory and operations & {{startup_operating|k}} \\
 Programme reserve & {{startup_reserve|k}} \\
-Backup & {{startup_backup|k}} \\
 \midrule
 \textbf{Total} & \textbf{ {{startup_funding|k}} } \\
 \bottomrule

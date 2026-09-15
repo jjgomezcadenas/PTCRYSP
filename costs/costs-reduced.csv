@@ -46,7 +46,7 @@ startup_admin_clerk_years,Administrative clerk: funded years,,years,startup_year
 startup_admin_clerk_total,Administrative clerk: programme cost,,EUR,startup_admin_clerk_fte*startup_admin_clerk_annual*startup_admin_clerk_years,
 startup_personnel,Total personnel,,EUR,startup_ceo_total+startup_architect_total+startup_hardware_engineer_total+startup_software_total+startup_physicist_total+startup_technician_total+startup_quality_total+startup_monitor_total + startup_admin_clerk_total,
 startup_clinical,Hospital and clinical programme,50000,EUR,,Reduced to half the previous amount by user.
-startup_regulatory,External regulatory and conformity work,25000,EUR,,Reduced to half the previous amount by user.
+startup_regulatory,External regulatory and conformity work,125000,EUR,,Notified-body conformity assessment and external regulatory support; raised from 25000 on 2026-09-15.
 startup_space_annual,Office and laboratory space: annual cost,10000,EUR/year,,User input for independent reduced estimate.
 startup_space_total,Office and laboratory space: programme cost,,EUR,startup_space_annual*startup_years,
 startup_it_annual,Software tools and IT operations: annual cost,20000,EUR/year,,User input for independent reduced estimate.
@@ -55,10 +55,9 @@ startup_travel_annual,Travel and transport: annual cost,30000,EUR/year,,
 startup_travel_total,Travel and transport: programme cost,,EUR,startup_travel_annual*startup_years,
 startup_nonhardware,Programme expenditure outside hardware package,,EUR,startup_personnel+startup_clinical+startup_regulatory+startup_space_total+startup_it_total+startup_travel_total,
 startup_planned,Planned expenditure including first-device contingency,,EUR,startup_hardware_package+startup_nonhardware,
-startup_reserve,Programme reserve,252000,EUR,,Fixed allowance: half the previous EUR 504000 reserve; no longer percentage-based.
+startup_reserve,Programme reserve,255000,EUR,,"Fixed allowance; adjusted by +3000 on 2026-09-15 when the backup row was removed, keeping the four-year budget at EUR 4000000."
 startup_working_capital,Working-capital buffer,0,EUR,,Removed from reduced budget by user; zero retained for editable formulas.
-startup_backup,Additional backup allowance,103000,EUR,,User-approved allowance bringing the four-year budget to EUR 4000000; reduced from 263000 when the cryogenic system was added to the hardware package (2026-09-14). Separate from programme reserve.
-startup_funding,Total funding requirement,,EUR,startup_planned+startup_reserve+startup_working_capital+startup_backup,
+startup_funding,Total funding requirement,,EUR,startup_planned+startup_reserve+startup_working_capital,
 startup_rounding,Funding display rounding increment,100000,EUR,,
 startup_funding_rounded,Funding requirement rounded up,,EUR,ceil(startup_funding/startup_rounding)*startup_rounding,
 startup_operating,Clinical regulatory and operating costs,,EUR,startup_nonhardware-startup_personnel,Excludes personnel and reserves.

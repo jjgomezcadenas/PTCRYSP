@@ -181,22 +181,21 @@
     "startup_admin_clerk_total": 160000.0,
     "startup_personnel": 1730000.0,
     "startup_clinical": 50000.0,
-    "startup_regulatory": 25000.0,
+    "startup_regulatory": 125000.0,
     "startup_space_annual": 10000.0,
     "startup_space_total": 40000.0,
     "startup_it_annual": 20000.0,
     "startup_it_total": 80000.0,
     "startup_travel_annual": 30000.0,
     "startup_travel_total": 120000.0,
-    "startup_nonhardware": 2045000.0,
-    "startup_planned": 3645000.0,
-    "startup_reserve": 252000.0,
+    "startup_nonhardware": 2145000.0,
+    "startup_planned": 3745000.0,
+    "startup_reserve": 255000.0,
     "startup_working_capital": 0.0,
-    "startup_backup": 103000.0,
     "startup_funding": 4000000.0,
     "startup_rounding": 100000.0,
     "startup_funding_rounded": 4000000.0,
-    "startup_operating": 315000.0,
+    "startup_operating": 415000.0,
     "team_ceo_annual": 100000.0,
     "team_ceo_years": 4.0,
     "team_ceo_total": 400000.0,
@@ -230,7 +229,7 @@
     "programme_device_reserve": 300000.0,
     "programme_hardware_package": 1600000.0,
     "programme_clinical": 50000.0,
-    "programme_regulatory": 25000.0,
+    "programme_regulatory": 125000.0,
     "programme_first": 1.0,
     "programme_second": 2.0,
     "programme_clinical_start": 3.0,
@@ -775,17 +774,12 @@
       {
         "id": "startup_operating",
         "format": "k",
-        "display": "315"
+        "display": "415"
       },
       {
         "id": "startup_reserve",
         "format": "k",
-        "display": "252"
-      },
-      {
-        "id": "startup_backup",
-        "format": "k",
-        "display": "103"
+        "display": "255"
       },
       {
         "id": "startup_funding",
@@ -810,7 +804,7 @@
       {
         "id": "startup_regulatory",
         "format": "k",
-        "display": "25"
+        "display": "125"
       },
       {
         "id": "startup_space_total",
@@ -1034,7 +1028,7 @@
       {
         "id": "programme_regulatory",
         "format": "k",
-        "display": "25"
+        "display": "125"
       }
     ]
   }
