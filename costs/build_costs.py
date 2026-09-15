@@ -227,7 +227,7 @@ def main():
         for name, content in outputs.items(): (ROOT / name).write_text(content)
         write_workbook(tables, values, cells)
     check_workbook(tables, values, cells)
-    main_tex = (ROOT.parent / 'pbt_argos.tex').read_text()
+    main_tex = (ROOT.parent / 'pbt_argos_final.tex').read_text()
     block = main_tex.count(r'\input{costs/slides.tex}')
     per_slide = [main_tex.count('\\input{costs/slides/%s.tex}' % name) for name in TABLES]
     assert (block == 1 and not any(per_slide)) or (block == 0 and all(n == 1 for n in per_slide)), \
@@ -244,7 +244,7 @@ def main():
         lines += [f'- PASS: {name}: rendered PDF page {page}; all model number strings found.' for name, page in pdf_pages.items()]
         lines += ['- PDF matching checks displayed numbers and titles, not layout; visual review remains a separate step.']
     else:
-        lines += ['- PDF not checked in this run. Rebuild the talk, then run with --check --pdf ../pbt_argos.pdf.']
+        lines += ['- PDF not checked in this run. Rebuild the talk, then run with --check --pdf ../pbt_argos_final.pdf.']
     (ROOT / 'consistency_report.md').write_text('\n'.join(lines) + '\n')
     print('\n'.join(lines))
 
