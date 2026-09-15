@@ -36,7 +36,7 @@ First service year included & {{first_year_service|k}} \\
 {\LARGE\bfseries\color{darkred}\EUR\,{{installation_price|m1}} M\par}
 {\scriptsize per installed system, excluding VAT; first service year included\par}
 \vspace{0.16cm}
-{\small\textbf{\EUR\,{{installation_profit|m1}} M gross profit}\par
+{\small\textbf{\EUR\,{{installation_profit|m2}} M gross profit}\par
 \textbf{ {{installation_margin|p1}}\% gross margin}\par}
 \vspace{0.14cm}
 {\scriptsize Sensitivity: at \EUR\,{{sens_cost_mid|m1}} M delivered, {{sens_margin_mid|p}}\% margin;

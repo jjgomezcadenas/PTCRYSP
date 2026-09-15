@@ -229,18 +229,10 @@ Sources of uncertainty
 \end{itemize}
 
 }
-\begin{center}
-{\Large\bfseries\color{PTred}
-$\Downarrow$
-}
-
+{\large\color{crGrey}$\Downarrow$\par}
 \vspace{0.08cm}
-
-{\scriptsize\bfseries\color{PTred}
-Uncertainty in where
-the beam actually stops
-}
-\end{center}
+{\scriptsize\bfseries\color{crBlue}\raggedright
+Uncertainty in where the beam actually stops\par}
 
 
 % ============================================================
@@ -257,13 +249,13 @@ Clinical consequence
 \vspace{0.18cm}
 
 \includegraphics[
-    width=0.94\linewidth
+    width=0.68\linewidth
 ]{figs/under.png}
 
-\vspace{0.15cm}
+\vspace{0.05cm}
 
 \includegraphics[
-    width=0.94\linewidth
+    width=0.68\linewidth
 ]{figs/over.png}
 
 
@@ -280,33 +272,24 @@ Conservative clinical response
 
 {\tiny
 \begin{itemize}
-    \item \textbf{Robust treatment planning:} Range setup uncertainties are explicitly incorporated into the plan.
-    \item \textbf{Conservative beam selection:} Avoidance of beam paths where range errors could place the distal edge
-inside a critical structure.
-    \item \textbf{Loss of conformality:} Extra robustness can increase irradiation of normal tissue and partially erode the physical advantage of protons.
-    \item\textbf{More verification and adaptation:} Repeat imaging, robustness evaluation and, when needed, adaptive replanning.
-
+    \item \textbf{Robust treatment planning:} uncertainties built into the plan.
+    \item \textbf{Conservative beam selection:} avoid paths ending near critical structures.
+    \item \textbf{Loss of conformality:} robustness erodes part of the proton advantage.
+    \item \textbf{More verification and adaptation:} repeat imaging and replanning.
 \end{itemize}
 }
-\begin{center}
-{\Large\bfseries\color{PTred}
-$\Downarrow$
-}
-
+{\large\color{crGrey}$\Downarrow$\par}
 \vspace{0.08cm}
-
-{\scriptsize\bfseries\color{PTred}
-Uncertainty can restrict optimal beam arrangements and reduce the expected benefit in anatomically variable or particularly demanding cases.
-}
-\end{center}
+{\scriptsize\bfseries\color{crBlue}\raggedright\setlength{\baselineskip}{0.85\baselineskip}
+Uncertainty can restrict optimal beam arrangements and reduce the expected benefit in anatomically variable or particularly demanding cases.\par}
 
 \end{columns}
 
 \vfill
 
 \begin{center}
-{\large\bfseries\color{PTred}
-The paradox: greater physical precision requires greater confidence in what was actually delivered.
+{\footnotesize\bfseries\color{darkred}
+Greater physical precision requires greater confidence in what was actually delivered.
 }
 \end{center}
 
@@ -415,18 +398,18 @@ Range errors can cause target undershoot or distal overshoot into normal tissue,
 \begin{column}{0.43\textwidth}
 \begin{beamercolorbox}[sep=3mm,wd=\linewidth]{block body}
 \textbf{A planning study: 27 brain-tumour patients}
-\par\vspace{3mm}
+\par\vspace{2mm}
 Range uncertainty reduced from \hi{3\% to 2\%}.
-\par\vspace{3mm}
+\par\vspace{2mm}
 \hi{24 of 27 patients (89\%)} had a relevant dose reduction to at least one organ at risk.
 \end{beamercolorbox}
 \end{column}
 \end{columns}
-\par\vspace{3mm}
+\par\vspace{1mm}
 In brain tumours, proton range uncertainties of \hi{1\,mm or less} can in principle be achieved.$^{*}$
 \source{https://doi.org/10.1259/bjr.20230110}{Taasti et al., British Journal of Radiology 96, 20230110 (2023).}
 \source{https://doi.org/10.1002/mp.15644}{Beam-direction benefit: Tattenberg et al., Medical Physics (2022).}
-\par\vspace{1mm}{\scriptsize\color{crGrey}$^{*}$J.J. G\'omez-Cadenas et al., \emph{A High-Sensitivity In-Room CRYSP Scanner for Distal-Edge Verification in Proton Therapy}, paper in preparation, available upon request.}
+\par{\tiny\color{crGrey}$^{*}$J.J. G\'omez-Cadenas et al., \emph{A High-Sensitivity In-Room CRYSP Scanner for Distal-Edge Verification in Proton Therapy}, paper in preparation, available upon request.}
 \end{frame}
 
 %========================================================================
@@ -1095,7 +1078,7 @@ scalability and efficiency}
   \end{columns}
 \end{frame}
 
-\begin{frame}{Reference protocol: all scanner configurations are sub-mm}
+\begin{frame}{Reference protocol: activity-edge statistical precision below 0.2\,mm}
   \begin{columns}[T]
     \begin{column}{0.44\textwidth}
       \begin{itemize}
@@ -1269,13 +1252,13 @@ trial data from ClinicalTrials.gov.
 % =========================================================
 \column{0.33\textwidth}
 
-{\large\bfseries
+{\normalsize\bfseries
 The evidence base is changing
 }
 
-\vspace{0.35cm}
+\vspace{0.08cm}
 
-{\LARGE\bfseries\color{PTred}
+{\Large\bfseries\color{PTred}
 35+
 }
 
@@ -1288,7 +1271,7 @@ major Phase III trials
 \emph{A large concentration of trial readouts is expected between \textbf{2026 and 2030}.}
 }
 
-\vspace{0.45cm}
+\vspace{0.06cm}
 
 {\scriptsize\bfseries
 Early Phase III results:
@@ -1766,42 +1749,42 @@ Success means a validated clinical service, with hardware, software and response
 \begin{frame}{Strategy to overcome the translation barriers}
 
 {\small Develop the technology, the clinical use case and the regulatory pathway \hi{in parallel}, not sequentially.\par}
-\vspace{0.16cm}
+\vspace{0.08cm}
 \setbeamercolor{adoptionpanel}{bg=crBlue!5,fg=black}
 \begin{columns}[T,onlytextwidth]
 \column{0.485\textwidth}
 \begin{beamercolorbox}[sep=6pt,wd=\linewidth]{adoptionpanel}
-\begin{minipage}[t][2.3cm][t]{\linewidth}\raggedright
+\begin{minipage}[t][2.45cm][t]{\linewidth}\raggedright
 {\footnotesize\bfseries\color{crBlue}1. Build on a common detector platform\par}
 \vspace{0.07cm}
 {\scriptsize CRYSP (PET) and COCOA (Compton camera) share SiPM readout, monolithic crystals and neural-network reconstruction, addressing complementary verification approaches.\par\vspace{0.06cm}
-Non-strategic materials: no rare-earth supply dependence, at a \textbf{competitive detector cost}.\par}
+No rare-earth scintillators, at a \textbf{competitive detector cost}.\par}
 \end{minipage}
 \end{beamercolorbox}
 \column{0.485\textwidth}
 \begin{beamercolorbox}[sep=6pt,wd=\linewidth]{adoptionpanel}
-\begin{minipage}[t][2.3cm][t]{\linewidth}\raggedright
+\begin{minipage}[t][2.45cm][t]{\linewidth}\raggedright
 {\footnotesize\bfseries\color{crBlue}2. Co-develop the clinical use case\par}
 \vspace{0.07cm}
-{\scriptsize Work with \textbf{BioGipuzkoa} and the clinical teams at \textbf{Onkologikoa} from the development phase, using the new facility (expected 2027) to define treatment geometries, validation protocols and prospective studies.\par\vspace{0.06cm}
+{\scriptsize Work with \textbf{BioGipuzkoa} and the clinical teams at \textbf{Onkologikoa} from the start; the new facility (first patients January 2028) defines geometries, protocols and prospective studies.\par\vspace{0.06cm}
 \textbf{Key question:} which measured deviation should trigger review, re-imaging or replanning?\par}
 \end{minipage}
 \end{beamercolorbox}
 \end{columns}
-\par\vspace{0.20cm}
+\par\vspace{0.12cm}
 \begin{columns}[T,onlytextwidth]
 \column{0.485\textwidth}
 \begin{beamercolorbox}[sep=6pt,wd=\linewidth]{adoptionpanel}
-\begin{minipage}[t][2.3cm][t]{\linewidth}\raggedright
+\begin{minipage}[t][2.45cm][t]{\linewidth}\raggedright
 {\footnotesize\bfseries\color{crBlue}3. Design for certification from day one\par}
 \vspace{0.07cm}
 {\scriptsize An \textbf{ISO 13485} quality system from the start of development. Design controls, traceability, risk management, verification and validation built into R\&D rather than retrofitted.\par\vspace{0.06cm}
-\textbf{Objective:} a shorter path from research prototype to medical device.\par}
+\textbf{Objective:} a shorter path from research prototype to medical device. \textbf{Owner:} F. L\'opez Gejo.\par}
 \end{minipage}
 \end{beamercolorbox}
 \column{0.485\textwidth}
 \begin{beamercolorbox}[sep=6pt,wd=\linewidth]{adoptionpanel}
-\begin{minipage}[t][2.3cm][t]{\linewidth}\raggedright
+\begin{minipage}[t][2.45cm][t]{\linewidth}\raggedright
 {\footnotesize\bfseries\color{crBlue}4. Validate towards clinical action\par}
 \vspace{0.07cm}
 {\scriptsize Staged programme: detector performance, beam and phantom validation, treatment-room integration, clinical validation. Quantitative go/no-go criteria for sensitivity, false alerts, acquisition time and decision relevance.\par\vspace{0.06cm}
@@ -1809,7 +1792,7 @@ The endpoint is a \textbf{trustworthy clinical decision tool}, not just a better
 \end{minipage}
 \end{beamercolorbox}
 \end{columns}
-\vspace{0.14cm}
+\vspace{0.08cm}
 {\footnotesize\bfseries\color{darkred}Technology platform + clinical co-development + regulatory-by-design: a shorter, lower-risk path to adoption.\par}
 \end{frame}
 
@@ -1819,7 +1802,7 @@ The endpoint is a \textbf{trustworthy clinical decision tool}, not just a better
   \par\vspace{1mm}
   \begin{flushleft}\scriptsize
   \begin{itemize}\setlength{\itemsep}{0pt}
-    \item \hi{Years 1--2 (2027--2028):} technology development and first pre-clinical measurements, \EUR\,2.5 M public funding.
+    \item \hi{Years 1--2 (2027--2028):} technology development and first pre-clinical measurements from 2028; \EUR\,1 M public funding allocated, \EUR\,1.5 M applied for.
     \item \hi{Years 3--6 (2029--2032):} four-year programme to a certified device and market entry, \EUR\,4 M private round. Investors enter at the end of year 2.
   \end{itemize}
   \end{flushleft}
@@ -1898,7 +1881,7 @@ including PETALO and CRYSP.
 Francisco López Gejo
 \hfill
 {\tiny\bfseries\color{black}
-Industrialisation \& Business Development}
+Industrialisation, Business Development \& Quality/Regulatory}
 }
 
 \vspace{0.03cm}
@@ -1910,6 +1893,7 @@ entrepreneurship. He was co-founder and General Manager of BihurCrystal,
 a Deep Tech venture focused on transferring technologies from fundamental
 research to industry. At DIPC, he works at the interface between research,
 technology transfer and project development.
+Responsible for quality assurance and regulatory work, based on his previous experience.
 }
 
 {\color{gray!35}\rule{\textwidth}{0.35pt}}
@@ -2038,12 +2022,9 @@ to companies controlling proton delivery, radiotherapy workflow or treatment QA.
 % ============================================================
 \column{0.31\textwidth}
 
-\scriptsize\bfseries\color{PTblue}
-Proton-therapy OEMs
-
+{\scriptsize\bfseries\color{PTblue}Proton-therapy OEMs\par}
 \vspace{0.12cm}
-
-\tiny\color{black}
+\tiny
 
 \textbf{IBA}\\
 
@@ -2074,11 +2055,8 @@ and differentiate the next generation of proton-therapy systems.
 % ============================================================
 \column{0.31\textwidth}
 
-\scriptsize\bfseries\color{PTblue}
-{QA and dosimetry players}
-
+{\scriptsize\bfseries\color{PTblue}QA and dosimetry players\par}
 \vspace{0.12cm}
-
 \tiny
 
 \textbf{Sun Nuclear / Mirion}\\
@@ -2109,12 +2087,9 @@ of what was actually delivered.
 % ============================================================
 \column{0.31\textwidth}
 
-\scriptsize\bfseries\color{PTblue}
-Workflow and software players
-
+{\scriptsize\bfseries\color{PTblue}Workflow and software players\par}
 \vspace{0.12cm}
-
-\tiny\color{black}
+\tiny
 
 \textbf{RaySearch Laboratories}\\
 Relevant if measured range information becomes integrated
@@ -2128,12 +2103,9 @@ detector hardware into a verification and decision-support platform.
 
 \vspace{0.30cm}
 
-\scriptsize\bfseries\color{darkred}
-Most likely exit route
-
+{\scriptsize\bfseries\color{darkred}Most likely exit route\par}
 \vspace{0.10cm}
-
-\tiny\color{black}
+\tiny
 
 Strategic acquisition by a proton-therapy OEM or a radiotherapy
 QA company after clinical validation and early market deployment.
@@ -2148,6 +2120,41 @@ The strategic value is not only the detector:
 it is the ability to connect beam delivery, verification and clinical action.
 \end{center}
 
+\end{frame}
+
+\begin{frame}{ARGOS proposal: the physics}
+\small
+\begin{itemize}
+\setlength{\itemsep}{0.18cm}
+\item Proton therapy is one of the most precise forms of radiotherapy: the dose stops at the tumour and spares the healthy tissue behind it.
+\item That precision is only as good as our knowledge of where the beam actually stops. Range uncertainty forces conservative plans and gives away part of the advantage.
+\item ARGOS verifies each fraction with two instruments of our own design: \hi{CRYSP}, a high-sensitivity in-room PET scanner, and \hi{COCOA}, a compact Compton camera that watches the beam online.
+\item Local AI analysis compares the measurement with the plan and flags deviations for the clinicians before the next fraction. Data and models stay in the hospital.
+\item In simulations of brain-tumour treatments the statistical precision on the activity edge is below 0.2\,mm, and a realistic overall precision of about \hi{1\,mm} is expected.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{ARGOS proposal: business case and funding}
+\small
+\begin{itemize}
+\setlength{\itemsep}{0.18cm}
+\item A system sells for \hi{\EUR\,2.5 M}, including the first year of service.
+\item The service contract is \hi{\EUR\,400 k per year for five years}, with an ARGOS specialist on site, followed by \EUR\,50 k per year for hardware maintenance.
+\item 2027--2028: technology development with public funds, \EUR\,1 M allocated and \EUR\,1.5 M applied for.
+\item 2029--2032: a four-year programme to a certified device, validated with Onkologikoa and BioGipuzkoa.
+\item We ask for a \hi{\EUR\,4 M private round}, with investors entering at the end of 2028.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{ARGOS proposal: market and exit}
+\small
+\begin{itemize}
+\setlength{\itemsep}{0.18cm}
+\item About 300 proton treatment rooms operate today, 20 to 30 new rooms are ordered every year, and we expect 500 to 600 rooms by 2036.
+\item Demand is not the limit: more than 35 phase III trials read out between 2026 and 2030, and the machine vendors already recognise range verification as the next step.
+\item In-vivo verification has been tried for twenty years without becoming routine. ARGOS combines a complete instrument, local analysis and a specialist on site, which is what was missing.
+\item The natural exit is an acquisition by a proton-therapy vendor or a radiotherapy QA company once the device is clinically validated.
+\end{itemize}
 \end{frame}
 
 \end{document}

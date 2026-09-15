@@ -287,8 +287,8 @@
       },
       {
         "id": "installation_profit",
-        "format": "m1",
-        "display": "1.1"
+        "format": "m2",
+        "display": "1.05"
       },
       {
         "id": "installation_margin",
@@ -488,31 +488,6 @@
         "id": "post_profit",
         "format": "k",
         "display": "20"
-      },
-      {
-        "id": "salary",
-        "format": "k",
-        "display": "50"
-      },
-      {
-        "id": "employer_rate",
-        "format": "p",
-        "display": "32"
-      },
-      {
-        "id": "relief_rate",
-        "format": "p",
-        "display": "20"
-      },
-      {
-        "id": "personnel_unrounded",
-        "format": "k1",
-        "display": "79.2"
-      },
-      {
-        "id": "personnel_spain",
-        "format": "k",
-        "display": "80"
       }
     ],
     "recurring_market": [
