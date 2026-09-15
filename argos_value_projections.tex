@@ -1,0 +1,345 @@
+% Standalone valuation discussion; compile with latexmk -pdf.
+% Snapshot of the v2 cost model on 14 September 2026.
+\documentclass[aspectratio=169,11pt]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{helvet,booktabs,array,amsmath,eurosym}
+\usepackage{hyperref}
+\usetheme{default}
+\definecolor{crBlue}{RGB}{22,88,138}
+\definecolor{crRed}{RGB}{200,74,40}
+\definecolor{crGrey}{RGB}{90,95,100}
+\definecolor{darkred}{RGB}{145,35,45}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{title}{fg=crBlue}
+\setbeamercolor{frametitle}{fg=crBlue}
+\setbeamercolor{structure}{fg=crBlue}
+\setbeamercolor{normal text}{fg=black}
+\setbeamerfont{frametitle}{series=\bfseries,size=\large}
+\setbeamerfont{title}{series=\bfseries}
+\setbeamertemplate{itemize item}{\color{crRed}\textbullet}
+\setbeamersize{text margin left=7mm,text margin right=7mm}
+\setbeamertemplate{frametitle}{%
+ \vspace{3mm}\hspace{2mm}%
+ {\usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle}\par
+ {\color{crBlue}\rule{\textwidth}{1.1pt}}\vspace{-1mm}}
+\setbeamertemplate{footline}{%
+ \hbox{}\hfill{\color{crGrey}\scriptsize\insertframenumber\,/\,\inserttotalframenumber}%
+ \hspace{3mm}\vspace{2mm}}
+\newcommand{\hi}[1]{\textcolor{crRed}{#1}}
+\newcommand{\source}[2]{\par\vspace{2mm}{\fontsize{6}{7}\selectfont\color{crGrey}\href{#1}{#2}\par}}
+\newcommand{\gap}{\par\vspace{2mm}}
+\title{ARGOS: company value in ten years}
+\subtitle{Commercial assumptions, earnings and acquisition value}
+\author{Investment discussion}
+\date{14 September 2026}
+\begin{document}
+{\setbeamertemplate{footline}{}
+\begin{frame}[plain,noframenumbering]
+\titlepage
+\end{frame}}
+
+\begin{frame}{The proposed outcome}
+
+\begin{columns}[T,onlytextwidth]
+\column{0.53\textwidth}
+{\small
+\textbf{Four years of development}\gap
+One PET scanner (positron emission tomography), one Compton camera, integrated software and a clinical monitoring service.\gap
+Development and clinical validation with Donostia Hospital.\gap
+\textbf{Six years of commercial deployment}\gap
+Sales to new treatment rooms and retrofits of existing rooms.}
+\column{0.42\textwidth}
+\setbeamercolor{valuepanel}{bg=crBlue!5,fg=black}
+\begin{beamercolorbox}[sep=10pt,wd=\linewidth]{valuepanel}
+{\footnotesize\bfseries Central successful outcome\par}
+\vspace{3mm}
+{\LARGE\bfseries\color{darkred}\EUR\,150--220 M\par}
+\vspace{2mm}
+{\small Enterprise value in year ten\par}
+\vspace{4mm}
+{\small 42 commercial installations\par
+\EUR\,42 M annual revenue\par
+Approximately \EUR\,175 M central value\par}
+\end{beamercolorbox}
+\end{columns}
+\gap
+{\footnotesize Enterprise value is the value of the operating business before adjusting for cash and debt.
+M means million; k means thousand. All projections use constant 2026 euros.}
+\end{frame}
+
+\begin{frame}{Assumptions behind the valuation}
+
+\small
+\begin{itemize}
+\item \textbf{Timing:} years 1--4 fund development; years 5--10 are commercial years. The ten-year endpoint is approximately 2036.
+\item \textbf{Technical and clinical success:} the integrated system works, the intended clinical use is validated and required market approvals are obtained.
+\item \textbf{Commercial rights:} ARGOS holds sufficient intellectual-property rights and licences to sell and support the system.
+\item \textbf{Customers:} one system per eligible treatment room; the research demonstrator is excluded from commercial sales.
+\item \textbf{Pricing:} the v2 system price and service fees are achieved without discounts; real costs remain at the modelled level.
+\item \textbf{Contracts:} every buyer takes the five-year paid service contract; no cancellations, defaults or early room closures.
+\end{itemize}
+\gap
+{\footnotesize This is a conditional commercial-success scenario. The development budget is \EUR\,4 M; later growth financing is not assumed to be included in that amount.}
+\end{frame}
+
+\begin{frame}{Economics of one installation}
+
+{\small Proposed prices and costs from the revised presentation.\par}
+\gap
+\begin{center}
+\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{9pt}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+ & Revenue & Direct cost & Gross profit \\
+ & \EUR\,k & \EUR\,k & \EUR\,k \\
+\midrule
+System, including first service year & 2,500 & 1,450 & 1,050 \\
+Each paid full-service year & 400 & 130 & 270 \\
+Annual maintenance after handover & 50 & 30 & 20 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\gap
+{\small
+\textbf{System cost:} \EUR\,1.35 M delivered hardware and integration, plus \EUR\,100k for the included service year.\gap
+\textbf{Paid service cost:} \EUR\,80k personnel, \EUR\,30k hardware, \EUR\,5k software operations and \EUR\,15k liability cover and post-market surveillance.}
+\gap
+{\footnotesize Gross profit is revenue less direct delivery and service costs. Central company expenses are deducted later.}
+\end{frame}
+
+\begin{frame}{The service contract has a defined lifetime}
+
+\begin{center}
+\small\renewcommand{\arraystretch}{1.2}\setlength{\tabcolsep}{8pt}
+\begin{tabular}{@{}p{3.2cm}p{5.4cm}r@{}}
+\toprule
+Age of installation & Scope & Annual service fee \\
+\midrule
+First year & ARGOS monitoring specialist; service included with system & Included \\
+Following five years & Specialist on site, support and training of hospital personnel & \EUR\,400k \\
+Seventh year onwards & Hospital operates the system; hardware maintenance contract & \EUR\,50k \\
+\bottomrule
+\end{tabular}
+\end{center}
+\gap
+{\small\textbf{Through the first six years:} \EUR\,4.5 M revenue and \EUR\,2.4 M gross profit per installation, before central expenses.}
+\gap
+{\footnotesize Central software support and manufacturer obligations continue after handover. The \EUR\,50k maintenance fee is not a continuation of the full monitoring service.}
+\end{frame}
+
+\begin{frame}{A commercial ramp consistent with the central case}
+
+\begin{center}
+\small\renewcommand{\arraystretch}{1.4}\setlength{\tabcolsep}{9pt}
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+Programme year & 5 & 6 & 7 & 8 & 9 & 10 \\
+\midrule
+New commercial installations & 2 & 4 & 6 & 8 & 10 & 12 \\
+Cumulative installations & 2 & 6 & 12 & 20 & 30 & 42 \\
+Paid full-service contracts & 0 & 2 & 6 & 12 & 20 & 30 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\gap
+{\small
+\textbf{Year ten:} 12 newly delivered systems and 30 paid service contracts. None has yet reached the maintenance-only stage.\gap
+\textbf{Timing convention:} delivery at the start of each model year; one full included service year, followed by five full paid years. Actual accounts would reflect commissioning dates and allocate bundled revenue between hardware and service.\gap
+This ramp is a proposed sales assumption, not a customer order book.}
+\end{frame}
+
+\begin{frame}{What market position does this require?}
+
+\begin{columns}[T,onlytextwidth]
+\column{0.48\textwidth}
+{\small\textbf{Worldwide room base}\gap
+Provisional 2026 starting point: \hi{300 rooms}.\gap
+At 5\% assumed annual net growth:\gap
+$300\times1.05^{10}\approx\hi{489\text{ rooms}}$.\gap
+42 ARGOS installations represent approximately \hi{8.6\%} of that room base.}
+\column{0.48\textwidth}
+{\small\textbf{Annual sales mix}\gap
+An example for year ten:\gap
+\hi{6 new-room installations + 6 retrofits}.\gap
+At the projected room base, net additions are about 24 rooms in the following year. Six new-room sales are roughly one quarter of that flow.\gap
+Manufacturer partnerships and international sales access are material commercial assumptions.}
+\end{columns}
+\gap
+{\footnotesize Operating rooms, orders and new commissioning are different measures. The 300-room baseline and 5\% growth are planning assumptions from the market note.}
+\source{https://doi.org/10.3389/fonc.2026.1791102}{Yap et al., Frontiers in Oncology 16 (2026) 1791102: 128 operating proton facilities in January 2026; facilities can contain multiple rooms.}
+\end{frame}
+
+\begin{frame}{Central case: annual earnings in year ten}
+
+\begin{center}
+\small\renewcommand{\arraystretch}{1.2}\setlength{\tabcolsep}{12pt}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+ & Revenue, \EUR\,M & Gross profit, \EUR\,M \\
+\midrule
+12 installations & 30.0 & 12.6 \\
+30 paid service contracts & 12.0 & 8.1 \\
+\midrule
+\textbf{Total} & \textbf{42.0} & \textbf{20.7} \\
+Central company operating expenses & & $-6.0$ \\
+\midrule
+\textbf{Indicative EBITDA} & & \textbf{14.7} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\gap
+{\small\textbf{EBITDA:} earnings before interest, taxes, depreciation and amortisation. Here it is estimated as gross profit less central cash operating expenses.}
+\gap
+{\footnotesize The resulting margin is 35\% of revenue. This is a simplified operating model; tax, capital expenditure, working capital and financing are not deducted from EBITDA.}
+\end{frame}
+
+\begin{frame}{Allowing for a larger operating company}
+
+{\small Proposed central expenses in year ten; additional to direct system and service costs.\par}
+\gap
+\begin{center}
+\small\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{12pt}
+\begin{tabular}{@{}lr@{}}
+\toprule
+Central function & \EUR\,M/year \\
+\midrule
+Research, product development and central software support & 2.5 \\
+Sales, distribution and international business development & 1.5 \\
+Quality, regulatory work and clinical evidence & 1.0 \\
+Management, finance, legal work and administration & 0.6 \\
+Premises and central information technology & 0.4 \\
+\midrule
+\textbf{Total} & \textbf{6.0} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\gap
+{\footnotesize The 42 installations also require on-site personnel: \EUR\,3.36 M/year at \EUR\,80k per installation, already included in direct costs. Supplier margins and distributor terms must fit the stated allowances.}
+\end{frame}
+
+\begin{frame}{From annual earnings to enterprise value}
+
+{\small A buyer pays a multiple of sustainable annual earnings. The multiple reflects growth, customer retention, technology and business risk.\par}
+\gap
+\begin{center}
+{\Large\bfseries\color{darkred}\EUR\,14.7 M $\times$ 12 $=$ \EUR\,176.4 M}
+\end{center}
+\gap
+\begin{center}
+\small\renewcommand{\arraystretch}{1.4}\setlength{\tabcolsep}{14pt}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Annual earnings assumption & $10\times$ & $12\times$ & $15\times$ \\
+ & \multicolumn{3}{c}{Enterprise value, \EUR\,M} \\
+\midrule
+\EUR\,14.7 M EBITDA; \EUR\,6 M central expenses & 147 & 176.4 & 220.5 \\
+\EUR\,12.7 M EBITDA; \EUR\,8 M central expenses & 127 & 152.4 & 190.5 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\gap
+{\small Central working range: \hi{\EUR\,150--220 M}. These are assumed acquisition multiples, not a forecast of 2036 market pricing.}
+\end{frame}
+
+\begin{frame}{Acquisition evidence in related businesses}
+
+\small
+\textbf{Mirion acquisition programme}\gap
+Mirion's 2024 investor presentation reports approximately \hi{12 times EBITDA at purchase}, falling to about seven times after expected post-acquisition synergies. This is a programme-level reference, not a direct ARGOS valuation.
+\source{https://ir.mirion.com/_assets/_3c48ad21bba5417c23d35a2222015784/mirion/files/pages/investor-day/FINAL_-_Mirion-Investor_Day_FullDeck.pdf}{Mirion Investor Day 2024, slide 26: acquisition multiples and revenue at acquisition.}
+\gap
+\textbf{Sun Nuclear: radiation-oncology quality assurance}\gap
+Mirion paid about \hi{\$258 M net of acquired cash} in 2020. Reported revenue at acquisition was \hi{\$90--110 M}: approximately 2.3--2.9 times revenue using that purchase-price measure.
+\source{https://ir.mirion.com/filings/all-sec-filings/content/0001628280-22-004286/mir-20211231.htm}{Mirion 2021 annual filing: Sun Nuclear purchase consideration. Revenue range: Mirion Investor Day 2024, slide 26. Dollar figures are historical transaction amounts.}
+\gap
+{\footnotesize ARGOS at \EUR\,176 M would be valued at approximately 4.2 times revenue. That premium requires stronger growth, profitability or strategic differentiation. The historical transaction ratios are context, not an exact enterprise-value comparison.}
+\end{frame}
+
+\begin{frame}{Three levels of commercial success}
+
+\begin{center}
+\footnotesize\renewcommand{\arraystretch}{1.2}\setlength{\tabcolsep}{6pt}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Year-ten measure & Smaller business & Central & Strong adoption \\
+\midrule
+Installations in years 5--10 & 1,2,3,4,5,6 & 2,4,6,8,10,12 & 5,8,12,15,20,20 \\
+Total commercial installations & 21 & 42 & 80 \\
+New installations in year ten & 6 & 12 & 20 \\
+Paid service contracts & 15 & 30 & 60 \\
+Annual revenue, \EUR\,M & 21.0 & 42.0 & 74.0 \\
+Gross profit, \EUR\,M & 10.35 & 20.70 & 37.20 \\
+Central expenses, \EUR\,M & 4.0 & 6.0 & 10.0 \\
+EBITDA, \EUR\,M & 6.35 & 14.70 & 27.20 \\
+\midrule
+\textbf{Value at 10--15 times EBITDA, \EUR\,M} & \textbf{64--95} & \textbf{147--221} & \textbf{272--408} \\
+\bottomrule
+\end{tabular}
+\end{center}
+{\footnotesize Same unit prices and direct costs in all cases; central staffing and overhead scale with the business. Values rounded to whole millions. These are different sales outcomes after successful development.}
+\end{frame}
+
+\begin{frame}{Which assumptions move the value?}
+
+{\small Change one assumption at a time from the central case; retain a 12-times EBITDA multiple.\par}
+\gap
+\begin{center}
+\small\renewcommand{\arraystretch}{1.4}\setlength{\tabcolsep}{9pt}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Year-ten change & EBITDA, \EUR\,M & Value, \EUR\,M \\
+\midrule
+Central case & 14.7 & 176.4 \\
+System price falls from \EUR\,2.50 M to \EUR\,2.25 M & 11.7 & 140.4 \\
+Annual full-service fee falls to \EUR\,300k & 11.7 & 140.4 \\
+Delivered cost rises from \EUR\,1.35 M to \EUR\,1.60 M & 11.7 & 140.4 \\
+Central expenses rise from \EUR\,6 M to \EUR\,8 M & 12.7 & 152.4 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\gap
+{\footnotesize Changes to service fees apply here to all 30 paid contracts as an alternative pricing case, not as an assumed unilateral change to signed contracts. Each row is separate; effects are not added.}
+\end{frame}
+
+\begin{frame}{Revenue after the first contracts mature}
+
+\small
+The first commercial cohort reaches maintenance-only service in year eleven.
+\gap
+Assume \textbf{12 new installations in year eleven}:\gap
+\begin{center}
+\renewcommand{\arraystretch}{1.2}\setlength{\tabcolsep}{12pt}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Activity & Installations & Revenue, \EUR\,M \\
+\midrule
+New systems, including first-year service & 12 & 30.0 \\
+Paid full service: cohorts from years 6--10 & 40 & 16.0 \\
+Maintenance only: cohort from year 5 & 2 & 0.1 \\
+\midrule
+\textbf{Total} & \textbf{54} & \textbf{46.1} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\gap
+{\footnotesize Service revenue depends on the age of each installation and on continued sales. If new sales stop, all existing full-service contracts eventually step down to maintenance. The valuation assumes a continuing commercial business.}
+\end{frame}
+
+\begin{frame}{Company value and investor proceeds}
+
+\small
+\textbf{Enterprise value}\gap
+The operating business: approximately \hi{\EUR\,175 M} in the central year-ten case.
+\gap
+\textbf{Equity value}\gap
+Enterprise value plus excess cash, less debt and other relevant claims.
+\gap
+\textbf{An investor's proceeds}\gap
+Depend on ownership at exit, dilution from later funding and the rights attached to each investment.
+\gap
+The initial \EUR\,4 M finances development. Later manufacturing and international deployment may require customer deposits, borrowing or additional equity.
+\gap
+{\footnotesize These are future company values in constant 2026 euros, not today's valuation or a return multiple on the initial funding. Nominal exit values require explicit inflation assumptions.}
+\end{frame}
+\end{document}
